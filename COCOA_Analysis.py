@@ -1,0 +1,26 @@
+from SubSys import cocoa_get
+from SubSys import cocoa_pyocr
+from SubSys import cocoa_wordsearch_datapush
+from SubSys import cocoa_sheetDL
+#from SubSys import cocoa_tweet
+
+
+def main_process():
+    print("Start Main\n")
+
+    #print("\n[Image Get...]\n")
+    cocoa_get.get_image()
+
+    #print("[OCR Process...]\n")
+    cocoa_pyocr.pyocr()
+
+    #print("[Data Sample & GoogleSheet DataPush Process... ]\n")
+    cocoa_wordsearch_datapush.search_and_push()
+
+    #print("[GoogleSheet Downloads Process... ]\n")
+    cocoa_sheetDL.sheet_dl()
+
+    # Tweet Process
+    # cocoa_tweet.tweet()
+
+    print("End Main")
