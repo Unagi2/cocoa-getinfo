@@ -32,7 +32,7 @@ def get_image():
 
         # 取得画像保存
         # file_name_dy = r'..\getIMG_pool\cocoa_info_' + str_date + r'.png'
-        file_name_d = os.path.join(my_path, r"..\getIMG_pool\cocoa_info_" + str_date + r".png")
+        file_name_dy = os.path.join(my_path, r"..\getIMG_pool\cocoa_info_" + str_date + r".png")
         with open(file_name_dy, "wb") as aaa:
             aaa.write(img)
             #要素 = soup.find(class_="class名")
