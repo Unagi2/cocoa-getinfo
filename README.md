@@ -1,9 +1,9 @@
 # cocoa-getinfo:COCOA-appに関する公式情報取得
 ![GitHub top language](https://img.shields.io/github/languages/top/Unagi2/cocoa-getinfo?style=flat-square)
+![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/Unagi2/cocoa-getinfo?style=flat-square)
 ![MIT License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)
 ![GitHub last commit](https://img.shields.io/github/last-commit/Unagi2/cocoa-getinfo?style=flat-square)
 ![GitHub issues](https://img.shields.io/github/issues/Unagi2/cocoa-getinfo?style=flat-square)
-![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/Unagi2/cocoa-getinfo?style=flat-square)
 ![Commit Msg](https://img.shields.io/badge/Commit%20message-Ja-brightgreen.svg?style=flat-square)
 ![Code Cmnt](https://img.shields.io/badge/code%20comment-Ja-brightgreen.svg?style=flat-square)
 
