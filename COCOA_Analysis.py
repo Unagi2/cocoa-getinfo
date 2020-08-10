@@ -12,7 +12,7 @@ def main_process():
     cocoa_get.get_image()
 
     #print("[OCR Process...]\n")
-    cocoa_pyocr.pyocr()
+    cocoa_pyocr.py_ocr()
 
     #print("[Data Sample & GoogleSheet DataPush Process... ]\n")
     cocoa_wordsearch_datapush.search_and_push()
