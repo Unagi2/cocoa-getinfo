@@ -12,7 +12,7 @@ my_path = os.path.abspath(os.path.dirname(__file__))
 
 
 
-def pyocr():
+def py_ocr():
 
     print("[Processing OCR...]\n")
 
@@ -58,4 +58,4 @@ def pyocr():
     print("[OCR Processing complete]\n")
 
 if __name__ == "__main__":
-    pyocr()
+    py_ocr()
