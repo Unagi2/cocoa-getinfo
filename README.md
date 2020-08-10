@@ -13,7 +13,7 @@
 * https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/cocoa_00138.html
 
 # DEMO
-1.  スクレイピングによる画像取得の進捗画面
+1.  [Program Start]スクレイピングによる画像取得の進捗画面
 ![DEMO1](https://user-images.githubusercontent.com/34627350/89762892-4d4a9980-db2c-11ea-9c26-df6df3efd753.png)
 
 2.  OCRプログラム稼働中の進捗画面
@@ -25,11 +25,14 @@
 3. テキストの整形及びデータ抽出の進捗画面
 ![DEMO3](https://user-images.githubusercontent.com/34627350/89762890-4cb20300-db2c-11ea-8b1d-94c6bf51ff48.png)
 
-4. Google Spreadsheetからのグラフ取得(画像)の進捗画面
+4. [Program End]Google Spreadsheetからのグラフ取得(画像)の進捗画面
 ![DEMO4](https://user-images.githubusercontent.com/34627350/89762888-4c196c80-db2c-11ea-987b-7185c9306510.png)
 
-5. GoogleSheetへの書き込みと生成したグラフのサンプル
-![DEMO5](https://user-images.githubusercontent.com/34627350/89763736-14abbf80-db2e-11ea-80c0-d09c45eb56c0.png)![sheet_date0810](https://user-images.githubusercontent.com/34627350/89763552-ba126380-db2d-11ea-8f75-0ad5d2d800d6.png)
+5. 出力状況（GoogleSheetの状況と生成したグラフの画像取得）
+
+| シートへの書き込み | グラフ作成 |
+|---|---|
+|![DEMO5](https://user-images.githubusercontent.com/34627350/89763736-14abbf80-db2e-11ea-80c0-d09c45eb56c0.png)|![sheet_date0810](https://user-images.githubusercontent.com/34627350/89763552-ba126380-db2d-11ea-8f75-0ad5d2d800d6.png)|
 
 # Features
 
