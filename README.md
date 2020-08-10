@@ -12,6 +12,7 @@
 今回、文字認識（OCR）にはCloudVisionなどのクラウドサービスを使わずに、「Tesseract」を使用しており導入がしやすくなっている。
 
 # Requirement
+* Tesseractの導入方法:https://rightcode.co.jp/blog/information-technology/python-tesseract-image-processing-ocr
 
 "cocoa-getinfo"を動かすのに必要なライブラリは以下に示す。
 
@@ -70,7 +71,7 @@ python cocoa_tweet.py
 # Note
 
 注意点
-* Googleスプレッドショートへの編集権限を必要とするため、「サービスアカウント」を作成する必要がある。
+* Googleスプレッドショートへの編集権限を必要とするため、「サービスアカウント」を作成する必要がある。また、作成した認証情報のjsonファイルは、key_poolディレクトリに入れること。
 参考リンク：https://qiita.com/akabei/items/0eac37cb852ad476c6b9
 * Twitterへのツイート権限を必要とするため、Twitter APIを取得する必要がある。
 * Googleスプレッドシートのグラフの画像取得を可能にするため、事前に「グラフの公開」より 画像公開リンクを作成する必要がある。
