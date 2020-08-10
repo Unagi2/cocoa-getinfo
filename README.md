@@ -17,7 +17,7 @@
 ![DEMO1](https://user-images.githubusercontent.com/34627350/89762892-4d4a9980-db2c-11ea-9c26-df6df3efd753.png)
 2.  OCRプログラム稼働中の進捗画面
 |取得画像|TesseractによるOCR後の出力|
-|---|---|
+----|----
 |![cocoa_info_0810](https://user-images.githubusercontent.com/34627350/89762922-618e9680-db2c-11ea-8d15-e53a7fc5c570.png)|![DEMO2](https://user-images.githubusercontent.com/34627350/89762891-4d4a9980-db2c-11ea-8410-b460420d9b95.png)|
 3. テキストの整形及びデータ抽出の進捗画面
 ![DEMO3](https://user-images.githubusercontent.com/34627350/89762890-4cb20300-db2c-11ea-8b1d-94c6bf51ff48.png)
