@@ -10,10 +10,12 @@ def tweet():
 
     print("[Processing Tweet... ]\n")
 
-    #twitter API認証情報読み込み
+    # twitter API認証情報読み込み
     my_path = os.path.abspath(os.path.dirname(__file__))
+
     path = os.path.join(my_path, r"..\key_pool\twitter_api.json")
     #jsonfile = r'..\key_pool\twitter_api.json'
+
     with open(path) as json_open:
         json_load = json.load(json_open)
         CK = json_load["ConsumerKey"]
@@ -41,9 +43,12 @@ def tweet():
     file_name_date = r'..\chart_pool\sheet_date' + str_date + r'.png'
     file_name_dy = r'..\chart_pool\sheet_dy' + str_date + r'.png'
     """
-    file_name_today = os.path.join(my_path, r"..\chart_pool\sheet_today" + str_date + r".png")
-    file_name_date = os.path.join(my_path, r"..\chart_pool\sheet_date" + str_date + r".png")
-    file_name_dy = os.path.join(my_path, r"..\chart_pool\sheet_dy" + str_date + r".png")
+    file_name_today = os.path.join(
+        my_path, r"..\chart_pool\sheet_today" + str_date + r".png")
+    file_name_date = os.path.join(
+        my_path, r"..\chart_pool\sheet_date" + str_date + r".png")
+    file_name_dy = os.path.join(
+        my_path, r"..\chart_pool\sheet_dy" + str_date + r".png")
 
     # テキスト内容に入れるデータ参照パス
     output_path = r'..\log_pool\download.txt'
@@ -99,6 +104,7 @@ def tweet():
                           twitter_second, filename=file_name_dy)
 
     print("[Tweet processing completed]\n")
+
 
 if __name__ == "__main__":
     tweet()

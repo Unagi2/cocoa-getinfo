@@ -7,7 +7,7 @@ import csv
 # google sheetの前処理
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
-#パス
+# パス
 import os.path
 
 
@@ -41,9 +41,7 @@ def search_and_push():
 
     f.close()
 
-    # with open(input_path, mode='r',encoding='utf-8') as file:
-    #clear = file.replace('\n','')
-    # print(clear)
+    # 現在時刻取得
     genzai = datetime.now()
 
     # ワード検索及びデータの抽出処理
@@ -129,6 +127,7 @@ def search_and_push():
         SPREADSHEET_KEY = '1mq_yfYhArPPoL_n3zNZSoL_dMaxGLMmBkVnM3gcJGgM'
         wb = gc.open_by_key(SPREADSHEET_KEY)
         ws = wb.sheet1
+
         # 複数のセルに値を入力（1行のみ）
         datas = [today.days, str_date, ffound, ffound2, dx1, dx2]
         ws.append_row(datas)
@@ -146,6 +145,7 @@ def search_and_push():
             # f.write('\n')
 
     print("[Completed data extraction and output processing]\n")
+
 
 if __name__ == "__main__":
     search_and_push()
