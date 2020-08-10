@@ -24,3 +24,6 @@ def main_process():
     # cocoa_tweet.tweet()
 
     print("End Main")
+
+if __name__ == "__main__":
+    main_process()
