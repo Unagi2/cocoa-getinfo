@@ -7,25 +7,29 @@ import csv
 # google sheetの前処理
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
+#パス
+import os.path
 
 
 def search_and_push():
 
     print("[Processing data extraction and output... ]\n")
 
+    my_path = os.path.abspath(os.path.dirname(__file__))
     # google Sheet前処理
     scope = ['https://spreadsheets.google.com/feeds',
              'https://www.googleapis.com/auth/drive']
 
     # 秘密鍵（JSONファイル）のファイル名を入力
+    path_api = os.path.join(my_path, r"..\key_pool\google_api.json")
     credentials = ServiceAccountCredentials.from_json_keyfile_name(
-        r'..\key_pool\google_api.json', scope)
+        path_api, scope)
     gc = gspread.authorize(credentials)
 
     # 入出力のパス
-    input_path = r'..\log_pool\log.txt'
-    output_path = r'..\log_pool\download.txt'
-    output_path2 = r'..\log_pool\positive.txt'
+    input_path = os.path.join(my_path, r"..\log_pool\log.txt")
+    output_path = os.path.join(my_path, r"..\log_pool\download.txt")
+    output_path2 = os.path.join(my_path, r"..\log_pool\positive.txt")
 
     # ファイル読み込みと改行コード削除
     f = open(input_path, 'r', encoding='utf-8')
@@ -78,7 +82,8 @@ def search_and_push():
         print("経過日数 : " + str(today.days))
 
         # csv出力
-        with open(r'..\log_pool\cocoa_data.csv', 'a') as f:
+        path_log = os.path.join(my_path, r"..\log_pool\cocoa_data.csv")
+        with open(path_log, 'a') as f:
             writer = csv.writer(f)
             writer.writerow(
                 [today.days, str_date, found, found2, "N/A", "N/A"])
@@ -114,7 +119,8 @@ def search_and_push():
         # print(dx1)
 
         # csv出力
-        with open(r'..\log_pool\cocoa_data.csv', 'a') as f:
+        path_log = os.path.join(my_path, r"..\log_pool\cocoa_data.csv")
+        with open(path_log, 'a') as f:
             writer = csv.writer(f)
             writer.writerow([today.days, str_date, ffound, ffound2, dx1, dx2])
 
@@ -140,3 +146,6 @@ def search_and_push():
             # f.write('\n')
 
     print("[Completed data extraction and output processing]\n")
+
+if __name__ == "__main__":
+    search_and_push()

@@ -2,7 +2,8 @@ import requests
 from bs4 import BeautifulSoup
 import base64
 from datetime import datetime
-
+import os.path
+my_path = os.path.abspath(os.path.dirname(__file__))
 
 def get_image():
 
@@ -26,10 +27,12 @@ def get_image():
         # print(imgcode_clear)
 
         img = base64.b64decode(imgcode_clear.encode())
-        #f = open(r"C:\Users\KITAKAMI\Desktop\web_python\infoimg.png", 'bw')
+        # f = open(r"C:\Users\KITAKAMI\Desktop\web_python\infoimg.png", 'bw')
         # f.write(img)
 
-        file_name_dy = r'..\getIMG_pool\cocoa_info_' + str_date + r'.png'
+        # 取得画像保存
+        # file_name_dy = r'..\getIMG_pool\cocoa_info_' + str_date + r'.png'
+        file_name_d = os.path.join(my_path, r"..\getIMG_pool\cocoa_info_" + str_date + r".png")
         with open(file_name_dy, "wb") as aaa:
             aaa.write(img)
             #要素 = soup.find(class_="class名")
