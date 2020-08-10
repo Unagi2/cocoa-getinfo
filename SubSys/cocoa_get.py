@@ -5,6 +5,7 @@ from datetime import datetime
 import os.path
 my_path = os.path.abspath(os.path.dirname(__file__))
 
+
 def get_image():
 
     print("\n[Processing image acquisition...]\n")
@@ -19,8 +20,10 @@ def get_image():
     soup = BeautifulSoup(html.content, "html.parser")
 
     # IDで検索し、その中のすべてのliタグを検索して表示する
+    # 要素 = soup.find(class_="class名")
+    # 「class」はPythonの予約語でそのままでは使えないので「class_」と書く。
     chap2 = soup.find(class_="m-grid__col1")    # idが「chap2」を検索
-    for element in chap2.find_all('img'):    # その中のliタグの文字列を表示
+    for element in chap2.find_all('img'):    # その中のimgタグの文字列を表示
         imgcode = element['src']
         imgcode_clear = imgcode.replace('data:image/png;base64,', '')
         # print(element['src'])
@@ -32,13 +35,13 @@ def get_image():
 
         # 取得画像保存
         # file_name_dy = r'..\getIMG_pool\cocoa_info_' + str_date + r'.png'
-        file_name_dy = os.path.join(my_path, r"..\getIMG_pool\cocoa_info_" + str_date + r".png")
+        file_name_dy = os.path.join(
+            my_path, r"..\getIMG_pool\cocoa_info_" + str_date + r".png")
         with open(file_name_dy, "wb") as aaa:
             aaa.write(img)
-            #要素 = soup.find(class_="class名")
-            # 「class」はPythonの予約語でそのままでは使えないので「class_」と書きます。
 
     print("[Image acquisition processing completed]\n")
+
 
 if __name__ == "__main__":
     get_image()
