@@ -39,3 +39,6 @@ def get_image():
             # 「class」はPythonの予約語でそのままでは使えないので「class_」と書きます。
 
     print("[Image acquisition processing completed]\n")
+
+if __name__ == "__main__":
+    get_image()
