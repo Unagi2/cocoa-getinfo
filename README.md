@@ -1,6 +1,8 @@
 # cocoa-getinfo:COCOA-appに関する公式情報取得
-![Commit Msg](https://img.shields.io/badge/Commit%20message-Ja-brightgreen.svg)
-![Code Cmnt](https://img.shields.io/badge/code%20comment-Ja-brightgreen.svg)
+![MIT License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)
+![Bitbucket open issues](https://img.shields.io/bitbucket/issues-raw/Unagi2/cocoa-getinfo?style=flat-square)
+![Commit Msg](https://img.shields.io/badge/Commit%20message-Ja-brightgreen.svg?style=flat-square)
+![Code Cmnt](https://img.shields.io/badge/code%20comment-Ja-brightgreen.svg?style=flat-square)
 
 本システムは、厚生労働省が発表する接触確認アプリの「ダウンロード数」や「陽性登録数」の情報を取得する事が可能である。またこれに付随し、本システムは取得したデータをGoogleスプレッドシートに出力、グラフ画像の取得、Twitterへの自動投稿などの機能を有している。
 
