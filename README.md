@@ -14,21 +14,22 @@
 
 -   <https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/cocoa_00138.html>
 
-# DEMO
+# DEMO(COCOA_Analysis.py実行時)
 
-1.  [Program Start]スクレイピングによる画像取得の進捗画面
+1.  [Start]スクレイピングによる画像取得の進捗画面
 
 ```
-    ==Start Main==
+==Start Main==
 
-    [Processing image acquisition...]
+[Processing image acquisition...]
 
-    [Image acquisition processing completed]
+[Image acquisition processing completed]
 ```
+
 2.  OCRプログラム稼働中の進捗画面
 
-| 　取得画像　                                                                                                                   | 　TesseractによるOCR後の出力　                                                                                          |
-| ------------------------------------------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------- |
+| 取得画像 | TesseractによるOCR後の出力 |
+| ---|---|
 | ![cocoa_info_0810](https://user-images.githubusercontent.com/34627350/89762922-618e9680-db2c-11ea-8d15-e53a7fc5c570.png) | ![DEMO2](https://user-images.githubusercontent.com/34627350/89762891-4d4a9980-db2c-11ea-8410-b460420d9b95.png) |
 
 3.  テキストの整形及びデータ抽出の進捗画面
@@ -47,20 +48,23 @@ Mode : 土日祝日処理
 
 経過日数 : 52
 [Completed data extraction and output processing]
+
 ```
 
-4.  [Program End]Google Spreadsheetからのグラフ取得(画像)の進捗画面
-        ```
-        [Google Sheet download in progress... ]
-
-    [Google Sheet download process complete]
-
-    ==End Main==
+4.  [End]Google Spreadsheetからのグラフ取得(画像)の進捗画面
 ```
+[Google Sheet download in progress... ]
+
+[Google Sheet download process complete]
+
+==End Main==
+
+```
+
 5.  出力状況（GoogleSheetの状況と生成したグラフの画像取得）
 
-| シートへの書き込み                                                                                                      | グラフ作成                                                                                                                   |
-| -------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------- |
+| シートへの書き込み | グラフ作成 |
+| ---|---|
 | ![DEMO6](https://user-images.githubusercontent.com/34627350/89765181-c9df7700-db30-11ea-8f40-a9fc773907de.png) | ![sheet_date0810](https://user-images.githubusercontent.com/34627350/89763552-ba126380-db2d-11ea-8f75-0ad5d2d800d6.png) |
 
 # Features
