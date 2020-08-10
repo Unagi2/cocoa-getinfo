@@ -8,6 +8,7 @@
 ![Code Cmnt](https://img.shields.io/badge/code%20comment-Ja-brightgreen.svg?style=flat-square)
 
 本システムは、厚生労働省が発表する接触確認アプリの「ダウンロード数」や「陽性登録数」の情報を取得する事が可能である。またこれに付随し、本システムは取得したデータをGoogleスプレッドシートに出力、グラフ画像の取得、Twitterへの自動投稿などの機能を有している。
+
 情報取得先は厚生労働省の特設サイト「新型コロナウイルス接触確認アプリ（COCOA) COVID-19 Contact-Confirming Application」である。
 * https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/cocoa_00138.html
 
