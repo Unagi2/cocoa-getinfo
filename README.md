@@ -19,6 +19,8 @@
 1.  [Start]スクレイピングによる画像取得の進捗画面
 
 ```
+python COCOA_Analysis.py
+
 ==Start Main==
 
 [Processing image acquisition...]
