@@ -32,7 +32,7 @@
 
 | シートへの書き込み | グラフ作成 |
 |---|---|
-|![DEMO5](https://user-images.githubusercontent.com/34627350/89763736-14abbf80-db2e-11ea-80c0-d09c45eb56c0.png)|![sheet_date0810](https://user-images.githubusercontent.com/34627350/89763552-ba126380-db2d-11ea-8f75-0ad5d2d800d6.png)|
+|![DEMO6](https://user-images.githubusercontent.com/34627350/89765181-c9df7700-db30-11ea-8f40-a9fc773907de.png)|![sheet_date0810](https://user-images.githubusercontent.com/34627350/89763552-ba126380-db2d-11ea-8f75-0ad5d2d800d6.png)|
 
 # Features
 
