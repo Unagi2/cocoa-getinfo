@@ -2,10 +2,14 @@ from datetime import datetime
 from PIL import Image
 import pyocr
 import os
+import os.path
 # インストールしたTesseract-OCRのパスを環境変数「PATH」へ追記する。
 # OS自体に設定してあれば以下の2行は不要
 path = 'C:\\Program Files\\Tesseract-OCR'
 os.environ['PATH'] = os.environ['PATH'] + path
+
+my_path = os.path.abspath(os.path.dirname(__file__))
+
 
 
 def pyocr():
@@ -14,7 +18,8 @@ def pyocr():
 
     genzai = datetime.now()
     str_date = genzai.strftime('%m%d')
-    file_name_dy = r'..\getIMG_pool\cocoa_info_' + str_date + r'.png'
+    # file_name_dy = r'..\getIMG_pool\cocoa_info_' + str_date + r'.png'
+    file_name_dy = os.path.join(my_path, r"..\getIMG_pool\cocoa_info_" + str_date + r".png")
 
     # pyocrへ利用するOCRエンジンをTesseractに指定する。
     tools = pyocr.get_available_tools()
@@ -43,10 +48,14 @@ def pyocr():
     builder = pyocr.builders.TextBuilder(tesseract_layout=3)
     text = tool.image_to_string(img2, lang="jpn", builder=builder)
 
-    print(text)
+    print("\n" + text + "\n")
 
-    with open(r'..\log_pool\log.txt', 'w', encoding="utf_8") as f:
+    log_path = os.path.join(my_path, r"..\log_pool\log.txt")
+    with open(log_path,'w', encoding="utf_8") as f:
         print(text, file=f)
         f.write('\n')
 
     print("[OCR Processing complete]\n")
+
+if __name__ == "__main__":
+    pyocr()
