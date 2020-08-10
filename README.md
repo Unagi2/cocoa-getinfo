@@ -153,7 +153,7 @@ python cocoa_tweet.py
 -   Googleスプレッドショートへの編集権限を必要とするため、「サービスアカウント」を作成する必要がある。また、作成した認証情報のjsonファイルは、key_poolディレクトリに入れること。
 
     参考リンク：<https://qiita.com/akabei/items/0eac37cb852ad476c6b9>
--   Twitterへのツイート権限を必要とするため、Twitter APIを取得する必要がある。
+-   Twitterへのツイート権限を必要とするため、Twitter APIを取得する必要がある。認証情報は、cocoa_tweet.py内の26行目を参照し、key_poolディレクトリに保存すること。
 -   Googleスプレッドシートのグラフの画像取得を可能にするため、事前に「グラフの公開」より 画像公開リンクを作成する必要がある。
 
 # Author
