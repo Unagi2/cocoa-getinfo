@@ -15,6 +15,7 @@
 # DEMO
 1.  スクレイピングによる画像取得の進捗画面
 ![DEMO1](https://user-images.githubusercontent.com/34627350/89762892-4d4a9980-db2c-11ea-9c26-df6df3efd753.png)
+<img src="https://user-images.githubusercontent.com/34627350/89762892-4d4a9980-db2c-11ea-9c26-df6df3efd753.png" width="680px">
 2.  OCRプログラム稼働中の進捗画面
 |取得画像|TesseractによるOCR後の出力|
 ----|----
