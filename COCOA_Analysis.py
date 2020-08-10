@@ -8,22 +8,23 @@ from SubSys import cocoa_sheetDL
 def main_process():
     print("Start Main\n")
 
-    #print("\n[Image Get...]\n")
+    # print("\n[Image Get...]\n")
     cocoa_get.get_image()
 
-    #print("[OCR Process...]\n")
+    # print("[OCR Process...]\n")
     cocoa_pyocr.py_ocr()
 
-    #print("[Data Sample & GoogleSheet DataPush Process... ]\n")
+    # print("[Data Sample & GoogleSheet DataPush Process... ]\n")
     cocoa_wordsearch_datapush.search_and_push()
 
-    #print("[GoogleSheet Downloads Process... ]\n")
+    # print("[GoogleSheet Downloads Process... ]\n")
     cocoa_sheetDL.sheet_dl()
 
     # Tweet Process
     # cocoa_tweet.tweet()
 
     print("End Main")
+
 
 if __name__ == "__main__":
     main_process()
