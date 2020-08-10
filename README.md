@@ -14,7 +14,15 @@
 
 # DEMO
 1.  [Program Start]スクレイピングによる画像取得の進捗画面
-![DEMO1](https://user-images.githubusercontent.com/34627350/89762892-4d4a9980-db2c-11ea-9c26-df6df3efd753.png)
+
+'''
+==Start Main==
+
+
+[Processing image acquisition...]
+
+[Image acquisition processing completed]
+'''
 
 2.  OCRプログラム稼働中の進捗画面
 
@@ -23,10 +31,34 @@
 |![cocoa_info_0810](https://user-images.githubusercontent.com/34627350/89762922-618e9680-db2c-11ea-8d15-e53a7fc5c570.png)|![DEMO2](https://user-images.githubusercontent.com/34627350/89762891-4d4a9980-db2c-11ea-8410-b460420d9b95.png)|
 
 3. テキストの整形及びデータ抽出の進捗画面
-![DEMO3](https://user-images.githubusercontent.com/34627350/89762890-4cb20300-db2c-11ea-8b1d-94c6bf51ff48.png)
+'''
+[Processing data extraction and output... ]
+
+接触確認アプリは、iOS・Androidともに、現在、「1.1.2」を配布しています。古いバージョンのアプブリをご利用の方は、App StoreまたはGoogle Playから「接触確認アプリ」を検索いただき、 アップデートをお願いします。ダウンロード数は、8月7日17:00現在、 合計で約1.205万件です。・iOS、Android両方の合計の数になります。・ダウンロード後に削除し、再度ダウンロードした場合は、複 数回カウントされる場合があります。陽性登録件数は、8月7日17:00現在、合計で165件です。
+
+データ取得日 : 08/10
+
+Mode : 土日祝日処理
+
+ダウンロード数 : N/A
+
+陽性者登録数 : N/A
+
+経過日数 : 52
+[Completed data extraction and output processing]
+
+'''
 
 4. [Program End]Google Spreadsheetからのグラフ取得(画像)の進捗画面
-![DEMO4](https://user-images.githubusercontent.com/34627350/89762888-4c196c80-db2c-11ea-987b-7185c9306510.png)
+'''
+[Google Sheet download in progress... ]
+
+[Google Sheet download process complete]
+
+
+==End Main==
+
+'''
 
 5. 出力状況（GoogleSheetの状況と生成したグラフの画像取得）
 
