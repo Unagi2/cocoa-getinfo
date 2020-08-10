@@ -1,5 +1,6 @@
 import requests
 from datetime import datetime
+import os.path
 
 def sheet_dl():
 
@@ -18,13 +19,22 @@ def sheet_dl():
     url_dy_eng ="https://docs.google.com/spreadsheets/d/e/2PACX-1vT5VMVHVap55nc8cC27_Y94rda9iA9_daY1Wvc6R40x8M5Y6XrIwVc9pqVzGgieMDSL7WqFvKg6J4Vy/pubchart?oid=731084205&format=image"
 
     #画像の保存先パス
+    """
     file_name_today = r'..\chart_pool\sheet_today' + str_date + r'.png'
     file_name_date = r'..\chart_pool\sheet_date' + str_date + r'.png'
     file_name_dy = r'..\chart_pool\sheet_dy' + str_date + r'.png'
     file_name_today_eng = r'..\chart_pool\sheet_today_eng' + str_date + r'.png'
     file_name_date_eng = r'..\chart_pool\sheet_date_eng' + str_date + r'.png'
     file_name_dy_eng = r'..\chart_pool\sheet_dy_eng' + str_date + r'.png'
+    """
+    my_path = os.path.abspath(os.path.dirname(__file__))
 
+    file_name_today = os.path.join(my_path, r"..\chart_pool\sheet_today" + str_date + r".png")
+    file_name_date = os.path.join(my_path, r"..\chart_pool\sheet_date" + str_date + r".png")
+    file_name_dy = os.path.join(my_path, r"..\chart_pool\sheet_dy" + str_date + r".png")
+    file_name_today_eng = os.path.join(my_path, r"..\chart_pool\sheet_today_eng" + str_date + r".png")
+    file_name_date_eng = os.path.join(my_path, r"..\chart_pool\sheet_date_eng" + str_date + r".png")
+    file_name_dy_eng = os.path.join(my_path, r"..\chart_pool\sheet_dy_eng" + str_date + r".png")
 
     #sheet_today
     response = requests.get(url_today)
@@ -75,3 +85,6 @@ def sheet_dl():
 
 
     print("[Google Sheet download process complete]\n")
+
+if __name__ == "__main__":
+    sheet_dl()

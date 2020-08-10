@@ -2,34 +2,62 @@ import tweepy
 from datetime import datetime
 import time
 
+import json
+import os.path
+
 
 def tweet():
 
     print("[Processing Tweet... ]\n")
 
-    # Twitter API各種キーを代入する
-    CK = "Consumer Key"
-    CS = "Consumer Secret"
-    AT = "Access Token"
-    AS = "Access Token Secret"
+    #twitter API認証情報読み込み
+    my_path = os.path.abspath(os.path.dirname(__file__))
+    path = os.path.join(my_path, r"..\key_pool\twitter_api.json")
+    #jsonfile = r'..\key_pool\twitter_api.json'
+    with open(path) as json_open:
+        json_load = json.load(json_open)
+        CK = json_load["ConsumerKey"]
+        CS = json_load["ConsumerSecret"]
+        AT = json_load["AccessToken"]
+        AS = json_load["AccessTokenSecret"]
+
+    # ここでTwitter APIキーに関するJSONファイルの作成を推奨
+    """key_poolディレクトリに保存
+    {
+      "ConsumerKey": "1234",
+      "ConsumerSecret": "5678",
+      "AccessToken": "9abc",
+      "AccessTokenSecret": "defg"
+    }
+    """
 
     # 現在時刻
     genzai = datetime.now()
     str_date = genzai.strftime('%m%d')
 
     # 画像元のパス
+    """
     file_name_today = r'..\chart_pool\sheet_today' + str_date + r'.png'
     file_name_date = r'..\chart_pool\sheet_date' + str_date + r'.png'
     file_name_dy = r'..\chart_pool\sheet_dy' + str_date + r'.png'
+    """
+    file_name_today = os.path.join(my_path, r"..\chart_pool\sheet_today" + str_date + r".png")
+    file_name_date = os.path.join(my_path, r"..\chart_pool\sheet_date" + str_date + r".png")
+    file_name_dy = os.path.join(my_path, r"..\chart_pool\sheet_dy" + str_date + r".png")
 
     # テキスト内容に入れるデータ参照パス
     output_path = r'..\log_pool\download.txt'
+    path_1 = os.path.join(my_path, output_path)
     output_path2 = r'..\log_pool\positive.txt'
+    path_2 = os.path.join(my_path, output_path2)
 
-    y1 = open(output_path, 'r', encoding='utf-8')
+    # ダウンロード前回データ
+    y1 = open(path_1, 'r', encoding='utf-8')
     found1 = y1.read()
     found1 = found1.replace('.', ',')
-    y2 = open(output_path2, 'r', encoding='utf-8')
+
+    # 陽性登録数前回データ
+    y2 = open(path_2, 'r', encoding='utf-8')
     found2 = y2.read()
     found2 = found2.replace('.', ',')
 
@@ -71,3 +99,6 @@ def tweet():
                           twitter_second, filename=file_name_dy)
 
     print("[Tweet processing completed]\n")
+
+if __name__ == "__main__":
+    tweet()
