@@ -77,6 +77,7 @@ Mode : 土日祝日処理
 # Requirement
 
 -   Tesseractの導入方法について
+
     参考リンク:<https://rightcode.co.jp/blog/information-technology/python-tesseract-image-processing-ocr>
 
 "cocoa-getinfo"を動かすのに必要なライブラリは以下に示す。
