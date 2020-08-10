@@ -11,7 +11,6 @@ os.environ['PATH'] = os.environ['PATH'] + path
 my_path = os.path.abspath(os.path.dirname(__file__))
 
 
-
 def py_ocr():
 
     print("[Processing OCR...]\n")
@@ -19,7 +18,8 @@ def py_ocr():
     genzai = datetime.now()
     str_date = genzai.strftime('%m%d')
     # file_name_dy = r'..\getIMG_pool\cocoa_info_' + str_date + r'.png'
-    file_name_dy = os.path.join(my_path, r"..\getIMG_pool\cocoa_info_" + str_date + r".png")
+    file_name_dy = os.path.join(
+        my_path, r"..\getIMG_pool\cocoa_info_" + str_date + r".png")
 
     # pyocrへ利用するOCRエンジンをTesseractに指定する。
     tools = pyocr.get_available_tools()
@@ -51,11 +51,12 @@ def py_ocr():
     print("\n" + text + "\n")
 
     log_path = os.path.join(my_path, r"..\log_pool\log.txt")
-    with open(log_path,'w', encoding="utf_8") as f:
+    with open(log_path, 'w', encoding="utf_8") as f:
         print(text, file=f)
         f.write('\n')
 
     print("[OCR Processing complete]\n")
+
 
 if __name__ == "__main__":
     py_ocr()
