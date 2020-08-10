@@ -71,12 +71,13 @@ Mode : 土日祝日処理
 
 # Features
 
-厚生労働省から発表される情報は、画像化されておりデータ抽出には文字認識を行う必要がある。
+厚生労働省から発表される掲載情報は、テキストデータが画像化されておりデータ抽出には文字認識を行う必要がある。
 今回、文字認識（OCR）にはCloudVisionなどのクラウドサービスを使わずに、「Tesseract」を使用しており導入がしやすくなっている。
 
 # Requirement
 
--   Tesseractの導入方法:<https://rightcode.co.jp/blog/information-technology/python-tesseract-image-processing-ocr>
+-   Tesseractの導入方法について
+    参考リンク:<https://rightcode.co.jp/blog/information-technology/python-tesseract-image-processing-ocr>
 
 "cocoa-getinfo"を動かすのに必要なライブラリは以下に示す。
 
