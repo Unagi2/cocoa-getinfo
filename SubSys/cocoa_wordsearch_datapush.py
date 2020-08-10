@@ -19,7 +19,7 @@ def search_and_push():
 
     # 秘密鍵（JSONファイル）のファイル名を入力
     credentials = ServiceAccountCredentials.from_json_keyfile_name(
-        r'..\key_pool\cocoa-getinfo-d7da4636a8cb.json', scope)
+        r'..\key_pool\google_api.json', scope)
     gc = gspread.authorize(credentials)
 
     # 入出力のパス
