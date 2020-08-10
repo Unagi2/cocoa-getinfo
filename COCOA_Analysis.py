@@ -6,7 +6,7 @@ from SubSys import cocoa_sheetDL
 
 
 def main_process():
-    print("Start Main\n")
+    print("\n==Start Main==\n")
 
     # print("\n[Image Get...]\n")
     cocoa_get.get_image()
@@ -20,10 +20,10 @@ def main_process():
     # print("[GoogleSheet Downloads Process... ]\n")
     cocoa_sheetDL.sheet_dl()
 
-    # Tweet Process
+    # Tweet Process(Test ver.)
     # cocoa_tweet.tweet()
 
-    print("End Main")
+    print("\n==End Main==\n")
 
 
 if __name__ == "__main__":
