@@ -8,7 +8,7 @@ my_path = os.path.abspath(os.path.dirname(__file__))
 
 def get_image():
 
-    print("\n[Processing image acquisition...]\n")
+    print("\n[1/5 Processing image acquisition...]\n")
 
     # 時刻取得
     genzai = datetime.now()

@@ -4,7 +4,7 @@ import os.path
 
 def sheet_dl():
 
-    print("[Google Sheet download in progress... ]\n")
+    print("[4/5 Google Sheet download in progress... ]\n")
 
     #時刻取得
     genzai = datetime.now()
