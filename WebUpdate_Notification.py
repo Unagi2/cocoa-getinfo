@@ -44,9 +44,9 @@ def web_update():
 if __name__ == "__main__":
     print("\nWeb更新の監視スクリプト開始\n")
 
-    for i in range(0, 6, 1): #接続トライ
-        print(i*5, "分経過\n")
-        print(i+1,"/6回目の検知\n")
+    for i in range(0, 3, 1): #接続トライ
+        print(i*10, "分経過\n")
+        print(i+1,"/3回目の検知\n")
 
         if(web_update()):
             #更新通知
@@ -64,6 +64,6 @@ if __name__ == "__main__":
             break
 
         #Interval
-        time.sleep(300)    #1sec/60sec=1min/300sec=5min/600sec=10min
+        time.sleep(600)    #1sec/60sec=1min/300sec=5min/600sec=10min
 
     print("\n監視スクリプト終了\n")
