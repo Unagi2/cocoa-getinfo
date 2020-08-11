@@ -2,7 +2,7 @@ from SubSys import cocoa_get
 from SubSys import cocoa_pyocr
 from SubSys import cocoa_wordsearch_datapush
 from SubSys import cocoa_sheetDL
-#from SubSys import cocoa_tweet
+from SubSys import cocoa_tweet
 
 
 def main_process():
@@ -21,7 +21,7 @@ def main_process():
     cocoa_sheetDL.sheet_dl()
 
     # Tweet Process(Test ver.)
-    # cocoa_tweet.tweet()
+    cocoa_tweet.tweet()
 
     print("\n==End Main==\n")
 
