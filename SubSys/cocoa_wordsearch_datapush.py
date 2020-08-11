@@ -144,7 +144,7 @@ def search_and_push():
             f.writelines(found2)
             # f.write('\n')
 
-    print("[Completed data extraction and output processing]\n")
+    print("[Completed!]\n")
 
 
 if __name__ == "__main__":

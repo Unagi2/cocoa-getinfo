@@ -103,7 +103,7 @@ def tweet():
     api.update_with_media(status='画像付きツイートテスト2' +
                           twitter_second, filename=file_name_dy)
 
-    print("[Tweet processing completed]\n")
+    print("[Completed!]\n")
 
 
 if __name__ == "__main__":
