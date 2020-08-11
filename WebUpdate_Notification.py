@@ -3,6 +3,7 @@ from bs4 import BeautifulSoup
 from datetime import datetime
 import os.path
 import COCOA_Analysis
+import time
 
 my_path = os.path.abspath(os.path.dirname(__file__))
 # 当「WebUpdate_Notification.py」のスクリプト自体を毎分おきに実行する
@@ -32,7 +33,7 @@ def web_update():
         old_data = ' '
 
     if(str_imgcode == old_data):
-        print("[不検知]")
+        print("[不検知]\n")
         return False
     else:
         file_log = open(file_path, 'w', encoding='utf-8')
@@ -43,17 +44,26 @@ def web_update():
 if __name__ == "__main__":
     print("\nWeb更新の監視スクリプト開始\n")
 
-    if(web_update()):
-        #更新通知
-        print("\n[！！更新検知！！]\n")
+    for i in range(0, 6, 1): #接続トライ
+        print(i*5, "分経過\n")
+        print(i+1,"/6回目の検知\n")
 
-        # 現在時刻取得
-        genzai = datetime.now()
-        str_now = genzai.strftime('%Y/%m/%d %H:%M')
-        print("検知時刻:" + str_now + "\n")
+        if(web_update()):
+            #更新通知
+            print("\n[！！更新検知！！]\n")
 
-        #更新作業実行
-        COCOA_Analysis.main_process()
+            # 現在時刻取得
+            genzai = datetime.now()
+            str_now = genzai.strftime('%Y/%m/%d %H:%M')
+            print("検知時刻:" + str_now + "\n")
 
+            #更新作業実行
+            COCOA_Analysis.main_process()
+
+            #検知成功条件ではループ中断
+            break
+
+        #Interval
+        time.sleep(300)    #1sec/60sec=1min/300sec=5min/600sec=10min
 
     print("\n監視スクリプト終了\n")
