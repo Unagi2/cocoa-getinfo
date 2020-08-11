@@ -53,7 +53,7 @@ if __name__ == "__main__":
         print("検知時刻:" + str_now + "\n")
 
         #更新作業実行
-        #COCOA_Analysis.main_process()
+        COCOA_Analysis.main_process()
 
 
     print("\n監視スクリプト終了\n")
