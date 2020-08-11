@@ -159,7 +159,7 @@ python cocoa_tweet.py
 参考サイト
 
 -   Webページ更新を自動チェックして通知させよう <http://shinnandesu.hatenablog.com/entry/2018/05/26/172751>
-
+-   【Windows】Pythonでスクリプトを自動実行する方法を現役エンジニアが解説【初心者向け】<https://techacademy.jp/magazine/31962>
 # Author
 
 -   Unagi.
