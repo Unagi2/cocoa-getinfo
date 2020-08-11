@@ -156,6 +156,10 @@ python cocoa_tweet.py
 -   Twitterへのツイート権限を必要とするため、Twitter APIを取得する必要がある。認証情報は、cocoa_tweet.py内の26行目を参照し、key_poolディレクトリに保存すること。
 -   Googleスプレッドシートのグラフの画像取得を可能にするため、事前に「グラフの公開」より 画像公開リンクを作成する必要がある。
 
+参考サイト
+
+-   Webページ更新を自動チェックして通知させよう <http://shinnandesu.hatenablog.com/entry/2018/05/26/172751>
+
 # Author
 
 -   Unagi.
