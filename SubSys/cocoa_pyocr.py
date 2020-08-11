@@ -13,7 +13,7 @@ my_path = os.path.abspath(os.path.dirname(__file__))
 
 def py_ocr():
 
-    print("[Processing OCR...]\n")
+    print("[2/5 Processing OCR...]\n")
 
     genzai = datetime.now()
     str_date = genzai.strftime('%m%d')

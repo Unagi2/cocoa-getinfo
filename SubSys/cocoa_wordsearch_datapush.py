@@ -13,7 +13,7 @@ import os.path
 
 def search_and_push():
 
-    print("[Processing data extraction and output... ]\n")
+    print("[3/5 Processing data extraction and output... ]\n")
 
     my_path = os.path.abspath(os.path.dirname(__file__))
     # google Sheet前処理

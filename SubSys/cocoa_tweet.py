@@ -8,7 +8,7 @@ import os.path
 
 def tweet():
 
-    print("[Processing Tweet... ]\n")
+    print("[5/5 Processing Tweet... ]\n")
 
     # twitter API認証情報読み込み
     my_path = os.path.abspath(os.path.dirname(__file__))
