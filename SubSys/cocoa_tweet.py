@@ -24,7 +24,7 @@ def tweet():
         AS = json_load["AccessTokenSecret"]
 
     # ここでTwitter APIキーに関するJSONファイルの作成を推奨
-    """key_poolディレクトリに保存
+    """key_poolディレクトリに保存(twitter_api.json)
     {
       "ConsumerKey": "1234",
       "ConsumerSecret": "5678",
