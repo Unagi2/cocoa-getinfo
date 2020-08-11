@@ -3,7 +3,7 @@ from SubSys import cocoa_pyocr
 from SubSys import cocoa_wordsearch_datapush
 from SubSys import cocoa_sheetDL
 from SubSys import cocoa_tweet
-
+import time
 
 def main_process():
     print("\n==Start Main==\n")
@@ -17,6 +17,9 @@ def main_process():
     # print("[Data Sample & GoogleSheet DataPush Process... ]\n")
     cocoa_wordsearch_datapush.search_and_push()
 
+    print("\nInterval Time\n")
+    time.sleep(5)
+    
     # print("[GoogleSheet Downloads Process... ]\n")
     cocoa_sheetDL.sheet_dl()
 
