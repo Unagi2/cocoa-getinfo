@@ -56,7 +56,7 @@ def sheet_dl():
     response = requests.get(url_dy)
     image = response.content
 
-    with open(file_name_dy_eng, "wb") as aaa:
+    with open(file_name_dy, "wb") as aaa:
         aaa.write(image)
 
 
@@ -80,7 +80,7 @@ def sheet_dl():
     response = requests.get(url_dy_eng)
     image = response.content
 
-    with open(file_name_dy, "wb") as aaa:
+    with open(file_name_dy_eng, "wb") as aaa:
         aaa.write(image)
 
 
