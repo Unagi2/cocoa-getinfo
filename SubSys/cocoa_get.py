@@ -40,7 +40,7 @@ def get_image():
         with open(file_name_dy, "wb") as aaa:
             aaa.write(img)
 
-    print("[Image acquisition processing completed]\n")
+    print("[Completed!]\n")
 
 
 if __name__ == "__main__":

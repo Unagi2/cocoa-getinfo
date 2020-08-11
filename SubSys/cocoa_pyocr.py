@@ -55,7 +55,7 @@ def py_ocr():
         print(text, file=f)
         f.write('\n')
 
-    print("[OCR Processing complete]\n")
+    print("[Completed!]\n")
 
 
 if __name__ == "__main__":
