@@ -44,6 +44,16 @@ def search_and_push():
     # 現在時刻取得
     genzai = datetime.now()
 
+    # 時間取得
+    str_date = genzai.strftime('%Y/%m/%d')
+
+    # リリース日からの経過日数
+    today = datetime.now() - datetime(2020, 6, 19)
+    # print(today.days)
+
+    # Spreadsheet用日付取得（テスト用）
+    #today_gs = "=today()"
+
     # ワード検索及びデータの抽出処理
     # 重要処理のため、原文の書式変更に合わせる必要あり（数字の前後）
 
@@ -64,15 +74,8 @@ def search_and_push():
         found2 = 'N/A'  # apply your error handling
         # sample-code:print(int('10,000'.replace(',', '')))
 
-    # 時間取得
-    str_date = genzai.strftime('%m/%d')
-
-    # リリース日からの経過日数
-    today = datetime.now() - datetime(2020, 6, 19)
-    # print(today.days)
-
     # googleスプレッドシートに追加処理と各種値更新
-    if found is 'N/A' and found2 is 'N/A':
+    if found is 'N/A' and found2 is 'N/A':  # 追加処理のみ更新無
         print("\nデータ取得日 : " + str_date + "\n")
         print("Mode : 土日祝日処理\n")
         print("ダウンロード数 : " + found + "\n")
@@ -94,8 +97,10 @@ def search_and_push():
 
         # 複数のセルに値を入力（1行のみ）
         datas = [today.days, str_date, found, found2, "N/A", "N/A"]
-        ws.append_row(datas)
-    else:
+        ws.append_row(datas, value_input_option='USER_ENTERED')
+        # value_input_option (str) – (optional) Determines how input data should be interpreted. Possible values are RAW or USER_ENTERED.
+
+    else:   # データ更新処理
         print("\nデータ取得日 : " + str_date + "\n")
         print("Mode : データ更新処理\n")
         print("ダウンロード数 : " + found + "\n")
@@ -130,8 +135,9 @@ def search_and_push():
 
         # 複数のセルに値を入力（1行のみ）
         datas = [today.days, str_date, ffound, ffound2, dx1, dx2]
-        ws.append_row(datas)
+        ws.append_row(datas, value_input_option='USER_ENTERED')
 
+        # データ記録用日付
         str_genzai = genzai.strftime('%Y/%m/%d %H:%M')
 
         # 前回データの更新処理
@@ -144,7 +150,7 @@ def search_and_push():
             f.writelines(found2)
             # f.write('\n')
 
-    print("[Completed!]\n")
+    print("\n[Completed!]\n")
 
 
 if __name__ == "__main__":
