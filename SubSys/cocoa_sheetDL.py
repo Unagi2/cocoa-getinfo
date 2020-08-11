@@ -84,7 +84,7 @@ def sheet_dl():
         aaa.write(image)
 
 
-    print("[Google Sheet download process complete]\n")
+    print("[Completed!]\n")
 
 if __name__ == "__main__":
     sheet_dl()
