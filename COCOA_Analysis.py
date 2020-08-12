@@ -23,6 +23,9 @@ def main_process():
     # print("[GoogleSheet Downloads Process... ]\n")
     cocoa_sheetDL.sheet_dl()
 
+    print("\nInterval Time 5sec\n")
+    time.sleep(1)
+
     # Tweet Process(Test ver.)
     cocoa_tweet.tweet()
 
