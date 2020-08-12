@@ -17,9 +17,9 @@ def main_process():
     # print("[Data Sample & GoogleSheet DataPush Process... ]\n")
     cocoa_wordsearch_datapush.search_and_push()
 
-    print("\nInterval Time\n")
+    print("\nInterval Time 5sec\n")
     time.sleep(5)
-    
+
     # print("[GoogleSheet Downloads Process... ]\n")
     cocoa_sheetDL.sheet_dl()
 
