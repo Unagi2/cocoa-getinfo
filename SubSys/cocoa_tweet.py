@@ -88,8 +88,8 @@ def tweet():
     twitter_second = text1 + text9 + text10 + text11   + text7
 
     # 確認用
-    print("\n\n[First tweet]\n" + twitter_first + "\n\n")
-    print("\n\n[Second tweet]\n" + twitter_second + "\n\n")
+    print("\n\n[First tweet]\n\n" + twitter_first + "\n\n")
+    print("\n\n[Second tweet]\n\n" + twitter_second + "\n\n")
 
     # Twitterオブジェクトの生成
     auth = tweepy.OAuthHandler(CK, CS)
@@ -98,12 +98,12 @@ def tweet():
     api = tweepy.API(auth)
 
     # 画像付きツイート
-    api.update_with_media(status='画像付きツイートテスト' +
+    api.update_with_media(status='[Auto Tweet Mode]\n\n' +
                           twitter_first, filename=file_name_date)
 
     time.sleep(5)
 
-    api.update_with_media(status='画像付きツイートテスト2' +
+    api.update_with_media(status='[Auto Tweet Mode]\n\n' +
                           twitter_second, filename=file_name_dy)
 
     print("[Completed!]\n")
