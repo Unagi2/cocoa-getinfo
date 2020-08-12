@@ -81,8 +81,8 @@ def tweet():
     text11 = "https://t.co/doJh6Y0Uzm?amp=1\n\n"
 
     # ツイート本文生成
-    twitter_first = text1 + text2 + text3 + text4 + text5 + text6  # + text7
-    twitter_second = text1 + text9 + text10 + text11  # + text7
+    twitter_first = text1 + text2 + text3 + text4 + text5 + text6   + text7
+    twitter_second = text1 + text9 + text10 + text11   + text7
 
     # 確認用
     print("\n\n[First tweet]\n" + twitter_first + "\n\n")
