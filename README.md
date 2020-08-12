@@ -16,7 +16,7 @@
 
 # DEMO(COCOA_Analysis.py実行時)
 
-1.  **[Start]スクレイピングによる画像取得の進捗画面**
+**1.  [Start]スクレイピングによる画像取得の進捗画面**
 
 ```
 python COCOA_Analysis.py
