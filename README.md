@@ -28,13 +28,13 @@ python COCOA_Analysis.py
 [Image acquisition processing completed]
 ```
 
-2.  OCRプログラム稼働中の進捗画面
+**2.  OCRプログラム稼働中の進捗画面**
 
 | 取得画像 | TesseractによるOCR後の出力 |
 | ---|---|
 | ![cocoa_info_0810](https://user-images.githubusercontent.com/34627350/89762922-618e9680-db2c-11ea-8d15-e53a7fc5c570.png) | ![DEMO2](https://user-images.githubusercontent.com/34627350/89762891-4d4a9980-db2c-11ea-8410-b460420d9b95.png) |
 
-3.  テキストの整形及びデータ抽出の進捗画面
+**3.  テキストの整形及びデータ抽出の進捗画面**
 - データの更新が無い土日祝日のモード
 ```
 [Processing data extraction and output... ]
@@ -72,7 +72,7 @@ Mode : データ更新処理
 [Completed!]
 ```
 
-4.  [End]Google Spreadsheetからのグラフ取得(画像)の進捗画面
+**4.  [End]Google Spreadsheetからのグラフ取得(画像)の進捗画面**
 ```
 [Google Sheet download in progress... ]
 
@@ -82,7 +82,7 @@ Mode : データ更新処理
 
 ```
 
-5.  出力状況（GoogleSheetの状況と生成したグラフの画像取得）
+**5.  出力状況（GoogleSheetの状況と生成したグラフの画像取得）**
 
 | シートへの書き込み | グラフ作成 |
 | ---|---|
