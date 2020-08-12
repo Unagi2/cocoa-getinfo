@@ -37,6 +37,7 @@ def search_and_push():
 
     text = Allf.replace('\n', '')
     text = text.replace('\r', '')
+    text = text.replace(' ', '')
     print(text)
 
     f.close()
