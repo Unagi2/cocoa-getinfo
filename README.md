@@ -35,6 +35,7 @@ python COCOA_Analysis.py
 | ![cocoa_info_0810](https://user-images.githubusercontent.com/34627350/89762922-618e9680-db2c-11ea-8d15-e53a7fc5c570.png) | ![DEMO2](https://user-images.githubusercontent.com/34627350/89762891-4d4a9980-db2c-11ea-8410-b460420d9b95.png) |
 
 3.  テキストの整形及びデータ抽出の進捗画面
+- データの更新が無い土日祝日のモード
 ```
 [Processing data extraction and output... ]
 
@@ -51,6 +52,24 @@ Mode : 土日祝日処理
 経過日数 : 52
 [Completed data extraction and output processing]
 
+```
+
+- データ更新された際のモード
+```
+[3/5 Processing data extraction and output... ]
+
+接触確認アプリは、iOS・Androidともに、現在、「1.1.2」を配布しています。古いバージョンのアプブリをご利用の方は、App StoreまたはGoogle Playから「接触確認アプリ」を検索いただき、 アップデートをお願いします。ダウンロード数は、8月11日17:00現在、合計で約1.274万件です。・iOS、Android両方の合計の数になります。・ダウンロード後に削除し、再度ダウンロードした場合は、複 数回カウントされる場合があります。陽性登録件数は、8月11日17:00現在、合計で208件です。
+
+データ取得日 : 2020/08/11
+
+Mode : データ更新処理
+
+ダウンロード数 : 1.274
+
+陽性者登録数 : 208
+
+経過日数 : 53
+[Completed!]
 ```
 
 4.  [End]Google Spreadsheetからのグラフ取得(画像)の進捗画面
