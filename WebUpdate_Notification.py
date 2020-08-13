@@ -70,7 +70,7 @@ if __name__ == "__main__":
             continue
 
         #Interval
-        time.sleep(5)    #1sec/60sec=1min/300sec=5min/600sec=10min
+        time.sleep(60)    #1sec/60sec=1min/300sec=5min/600sec=10min
         triger += 1
     else:
         print("\n更新チェック終了\n")
