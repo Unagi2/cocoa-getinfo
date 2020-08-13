@@ -42,11 +42,15 @@ def web_update():
         return True
 
 if __name__ == "__main__":
-    print("\nWeb更新の監視スクリプト開始\n")
+    count = 0
+    total = 1
+    triger = 0
 
-    for i in range(0, 6, 1): #接続トライ
-        print(i*5, "分経過\n")
-        print(i+1,"/6回目の検知\n")
+    print("\nWeb更新チェック開始\n")
+
+    while count < 1 and triger < 45:
+        print(triger*5, "分経過\n")
+        print(triger+1,"/6回目の検知\n")
 
         if(web_update()):
             #更新通知
@@ -61,9 +65,12 @@ if __name__ == "__main__":
             COCOA_Analysis.main_process()
 
             #検知成功条件ではループ中断
-            break
+            #break
+            count += 1
+            continue
 
         #Interval
-        time.sleep(300)    #1sec/60sec=1min/300sec=5min/600sec=10min
-
-    print("\n監視スクリプト終了\n")
+        time.sleep(5)    #1sec/60sec=1min/300sec=5min/600sec=10min
+        triger += 1
+    else:
+        print("\n更新チェック終了\n")
