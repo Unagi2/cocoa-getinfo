@@ -12,11 +12,17 @@ def web_update():
     # データlog
     #web_log = r"log_pool\web_data_log.txt"
     file_path = os.path.join(my_path,r".\log_pool\web_data_log.txt")
+
+    headers = {
+    'User-Agent': 'COCOA-App Usage Status Get info scraping',
+    'From': 'unagitan774@gmail.com'  # This is another valid field
+    }
+
     # 監視対象URL
     load_url = "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/cocoa_00138.html"
 
     # Webページを取得して解析する
-    html = requests.get(load_url)
+    html = requests.get(load_url,headers=headers)
     html.raise_for_status()
     soup = BeautifulSoup(html.content, "html.parser")
 
