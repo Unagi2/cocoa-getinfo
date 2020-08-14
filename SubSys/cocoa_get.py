@@ -14,9 +14,14 @@ def get_image():
     genzai = datetime.now()
     str_date = genzai.strftime('%m%d')
 
+    headers = {
+    'User-Agent': 'COCOA-App Usage Status Get info scraping',
+    'From': 'unagitan774@gmail.com'  # This is another valid field
+    }
+
     # Webページを取得して解析する
     load_url = "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/cocoa_00138.html"
-    html = requests.get(load_url)
+    html = requests.get(load_url,headers=headers)
     soup = BeautifulSoup(html.content, "html.parser")
 
     # IDで検索し、その中のすべてのliタグを検索して表示する
