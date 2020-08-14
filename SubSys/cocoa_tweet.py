@@ -84,7 +84,7 @@ def tweet():
     text13 = "https://docs.google.com/spreadsheets/d/1mq_yfYhArPPoL_n3zNZSoL_dMaxGLMmBkVnM3gcJGgM/edit?usp=sharing"
 
     # ツイート本文生成
-    twitter_first = text1 + text2 + text3 + text4 + text5 + text6 + text7
+    twitter_first = text1 + text2 + text3 + text10 + text11 + text7
     twitter_second = text1 + text9 + text10 + text11 + text7
 
     # 確認用
