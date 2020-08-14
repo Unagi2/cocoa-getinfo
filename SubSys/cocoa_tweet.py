@@ -72,7 +72,7 @@ def tweet():
     text2 = "・ダウンロードは、合計" + str(found1) + "万件\n"
     text3 = "・陽性登録件数は、合計" + str(found2) + "件\n\n"
     text4 = "Google Sheetにてグラフ公開\n"
-    text5 = "パソコンなどでご覧いただくと，より詳細にデータを読み取ることが可能です\n"
+    text5 = "デバイスに関係なく、より詳細にデータを読み取ることが可能です\n"
     text6 = "https://t.co/an3puQWSOJ?amp=1\n\n"
     text7 = "#COCOA #接触確認アプリ"
 
@@ -84,8 +84,8 @@ def tweet():
     text13 = "https://docs.google.com/spreadsheets/d/1mq_yfYhArPPoL_n3zNZSoL_dMaxGLMmBkVnM3gcJGgM/edit?usp=sharing"
 
     # ツイート本文生成
-    twitter_first = text1 + text2 + text3 + text10 + text11 + text7
-    twitter_second = text1 + text9 + text10 + text11 + text7
+    twitter_first = text1 + text2 + text3 + text10 + text5 + text11 + text7
+    twitter_second = text1 + text9 + text10 + text5 + text11 + text7
 
     # 確認用
     print("\n\n[First tweet]\n\n" + twitter_first + "\n\n")
