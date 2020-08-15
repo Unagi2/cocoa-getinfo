@@ -15,13 +15,13 @@ def get_image():
     str_date = genzai.strftime('%m%d')
 
     headers = {
-    'User-Agent': 'COCOA-App Usage Status Get info scraping',
-    'From': 'unagitan774@gmail.com'  # This is another valid field
+        'User-Agent': '[COCOA-App Usage Status] I am scraping for the purpose of obtaining App information.',
+        'From': '30.unagi@gmail.com'  # This is another valid field
     }
 
     # Webページを取得して解析する
     load_url = "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/cocoa_00138.html"
-    html = requests.get(load_url,headers=headers)
+    html = requests.get(load_url, headers=headers)
     soup = BeautifulSoup(html.content, "html.parser")
 
     # IDで検索し、その中のすべてのliタグを検索して表示する
@@ -35,11 +35,8 @@ def get_image():
         # print(imgcode_clear)
 
         img = base64.b64decode(imgcode_clear.encode())
-        # f = open(r"C:\Users\KITAKAMI\Desktop\web_python\infoimg.png", 'bw')
-        # f.write(img)
 
         # 取得画像保存
-        # file_name_dy = r'..\getIMG_pool\cocoa_info_' + str_date + r'.png'
         file_name_dy = os.path.join(
             my_path, r"..\getIMG_pool\cocoa_info_" + str_date + r".png")
         with open(file_name_dy, "wb") as aaa:

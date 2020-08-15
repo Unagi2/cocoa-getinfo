@@ -60,7 +60,7 @@ def search_and_push():
 
     # ダウンロードデータの抽出
     try:
-        found = re.search('ダウンロード数は、'+ genzai.strftime('%m').lstrip("0") +'月' + genzai.strftime('%d').lstrip("0") +
+        found = re.search('ダウンロード数は、' + genzai.strftime('%m').lstrip("0") + '月' + genzai.strftime('%d').lstrip("0") +
                           '日17:00現在、合計で約(.+?)万件です。', text).group(1)
     except AttributeError:
         # AAA, ZZZ not found in the original string
@@ -68,7 +68,7 @@ def search_and_push():
 
     # 陽性登録件数データの抽出
     try:
-        found2 = re.search('陽性登録件数は、'+ genzai.strftime('%m').lstrip("0") +'月' + genzai.strftime('%d').lstrip("0") +
+        found2 = re.search('陽性登録件数は、' + genzai.strftime('%m').lstrip("0") + '月' + genzai.strftime('%d').lstrip("0") +
                            '日17:00現在、合計で(.+?)件です。', text).group(1)
     except AttributeError:
         # AAA, ZZZ not found in the original string

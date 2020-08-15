@@ -14,7 +14,6 @@ def tweet():
     my_path = os.path.abspath(os.path.dirname(__file__))
 
     path = os.path.join(my_path, r"..\key_pool\twitter_api.json")
-    #jsonfile = r'..\key_pool\twitter_api.json'
 
     with open(path) as json_open:
         json_load = json.load(json_open)
@@ -38,11 +37,6 @@ def tweet():
     str_date = genzai.strftime('%m%d')
 
     # 画像元のパス
-    """
-    file_name_today = r'..\chart_pool\sheet_today' + str_date + r'.png'
-    file_name_date = r'..\chart_pool\sheet_date' + str_date + r'.png'
-    file_name_dy = r'..\chart_pool\sheet_dy' + str_date + r'.png'
-    """
     file_name_today = os.path.join(
         my_path, r"..\chart_pool\sheet_today" + str_date + r".png")
     file_name_date = os.path.join(

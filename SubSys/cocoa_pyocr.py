@@ -17,7 +17,7 @@ def py_ocr():
 
     genzai = datetime.now()
     str_date = genzai.strftime('%m%d')
-    # file_name_dy = r'..\getIMG_pool\cocoa_info_' + str_date + r'.png'
+
     file_name_dy = os.path.join(
         my_path, r"..\getIMG_pool\cocoa_info_" + str_date + r".png")
 

@@ -5,6 +5,7 @@ from SubSys import cocoa_sheetDL
 from SubSys import cocoa_tweet
 import time
 
+
 def main_process():
     print("\n==Start Main==\n")
 
