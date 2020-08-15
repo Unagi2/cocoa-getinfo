@@ -2,8 +2,8 @@ import requests
 from bs4 import BeautifulSoup
 from datetime import datetime
 import os.path
-import COCOA_Analysis
-import COCOA_Analysis_holiday
+import cocoa_analysis
+import cocoa_analysis_holiday
 import holiday
 import time
 
@@ -79,7 +79,7 @@ if __name__ == "__main__":
                 print("検知時刻:" + str_now + "\n")
 
                 # 更新作業実行
-                COCOA_Analysis.main_process()
+                cocoa_analysis.main_process()
 
                 # 検知成功条件ではループ中断
                 # break
@@ -98,7 +98,7 @@ if __name__ == "__main__":
         # 更新作業実行
         print("\n休日用データの出力開始\n")
 
-        COCOA_Analysis_holiday.main_process()
+        cocoa_analysis_holiday.main_process()
 
         print("\n休日用データの出力終了\n")
 
