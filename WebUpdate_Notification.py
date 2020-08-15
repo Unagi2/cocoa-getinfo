@@ -18,9 +18,10 @@ def web_update():
     #web_log = r"log_pool\web_data_log.txt"
     file_path = os.path.join(my_path,r".\log_pool\web_data_log.txt")
 
+    #接続する側の連絡先を明記（連絡先の使い回しは認めない。必ず変更すること）
     headers = {
-    'User-Agent': 'COCOA-App Usage Status Get info scraping',
-    'From': 'unagitan774@gmail.com'  # This is another valid field
+    'User-Agent': '[COCOA-App Usage Status] I am scraping for the purpose of obtaining App information.',
+    'From': '30.unagi@gmail.com'  # This is another valid field
     }
 
     # 監視対象URL
@@ -54,15 +55,15 @@ def web_update():
 
 if __name__ == "__main__":
     count = 0
-    total = 1
-    triger = 0
+    total = 1   #Loop End triger
+    triger = 0 #Max Time Count
     print("\nholiday.py Start process\n")
 
     if(holiday.isBizDay(DATE) == 1):    #Weekday=1
         print("Weekday Mode\n")
         print("\nWeb更新チェック開始\n")
 
-        while count < 1 and triger < 45:
+        while count < 1 and triger < 12:
             print(triger*5, "分経過\n")
             print(triger+1,"/6回目の検知\n")
 
