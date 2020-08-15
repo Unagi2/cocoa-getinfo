@@ -59,7 +59,7 @@ if __name__ == "__main__":
     print("\nholiday.py Start process\n")
 
     if(holiday.isBizDay(DATE) == 1):    #Weekday=1
-        print("Weekday\n")
+        print("Weekday Mode\n")
         print("\nWeb更新チェック開始\n")
 
         while count < 1 and triger < 45:
@@ -90,7 +90,7 @@ if __name__ == "__main__":
             print("\n更新チェック終了\n")
 
     elif(holiday.isBizDay(DATE) == 0):  #Holiday=0
-        print("holiday\n")
+        print("[Holiday Mode]\n")
 
         #更新作業実行
         print("\n休日用データの出力開始\n")
