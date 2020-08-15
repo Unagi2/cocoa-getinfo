@@ -3,10 +3,15 @@ from bs4 import BeautifulSoup
 from datetime import datetime
 import os.path
 import COCOA_Analysis
+import COCOA_Analysis_holiday
+import holiday
 import time
 
 my_path = os.path.abspath(os.path.dirname(__file__))
 # 当「WebUpdate_Notification.py」のスクリプト自体を毎分おきに実行する
+
+genzai = datetime.now()
+DATE = genzai.strftime('%Y%m%d')
 
 def web_update():
     # データlog
@@ -51,9 +56,54 @@ if __name__ == "__main__":
     count = 0
     total = 1
     triger = 0
+    print("\nholiday.py Start process\n")
 
-    print("\nWeb更新チェック開始\n")
+    if(holiday.isBizDay(DATE) == 1):    #Weekday=1
+        print("Weekday\n")
+        print("\nWeb更新チェック開始\n")
 
+        while count < 1 and triger < 45:
+            print(triger*5, "分経過\n")
+            print(triger+1,"/6回目の検知\n")
+
+            if(web_update()):
+                #更新通知
+                print("\n[！！更新検知！！]\n")
+
+                # 現在時刻取得
+                # genzai = datetime.now()
+                str_now = genzai.strftime('%Y/%m/%d %H:%M')
+                print("検知時刻:" + str_now + "\n")
+
+                #更新作業実行
+                COCOA_Analysis.main_process()
+
+                #検知成功条件ではループ中断
+                #break
+                count += 1
+                continue
+
+            #Interval
+            time.sleep(300)    #1sec/60sec=1min/300sec=5min/600sec=10min
+            triger += 1
+        else:
+            print("\n更新チェック終了\n")
+
+    elif(holiday.isBizDay(DATE) == 0):  #Holiday=0
+        print("holiday\n")
+
+        #更新作業実行
+        print("\n休日用データの出力開始\n")
+
+        COCOA_Analysis_holiday.main_process()
+
+        print("\n休日用データの出力終了\n")
+
+    else:   #Error
+        print("Error-holiday.py ~All Processing Stopped!!~")
+
+    print("\nholiday.py END process\n")
+"""
     while count < 1 and triger < 45:
         print(triger*5, "分経過\n")
         print(triger+1,"/6回目の検知\n")
@@ -63,7 +113,7 @@ if __name__ == "__main__":
             print("\n[！！更新検知！！]\n")
 
             # 現在時刻取得
-            genzai = datetime.now()
+            # genzai = datetime.now()
             str_now = genzai.strftime('%Y/%m/%d %H:%M')
             print("検知時刻:" + str_now + "\n")
 
@@ -80,3 +130,4 @@ if __name__ == "__main__":
         triger += 1
     else:
         print("\n更新チェック終了\n")
+"""
