@@ -1,7 +1,7 @@
-from SubSys import cocoa_get
+from SubSys import cocoa_fetch
 from SubSys import cocoa_pyocr
 from SubSys import cocoa_wordsearch_datapush
-from SubSys import cocoa_sheetDL
+from SubSys import cocoa_sheet_load
 from SubSys import cocoa_tweet
 import time
 
@@ -10,7 +10,7 @@ def main_process():
     print("\n==土日祝日用　Start Main==\n")
 
     # print("\n[Image Get...]\n")
-    cocoa_get.get_image()
+    cocoa_fetch.fetch_image()
 
     # print("[OCR Process...]\n")
     cocoa_pyocr.py_ocr()

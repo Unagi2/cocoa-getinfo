@@ -1,7 +1,7 @@
-from SubSys import cocoa_get
+from SubSys import cocoa_fetch
 from SubSys import cocoa_pyocr
 from SubSys import cocoa_wordsearch_datapush
-from SubSys import cocoa_sheetDL
+from SubSys import cocoa_sheet_load
 from SubSys import cocoa_tweet
 import time
 
@@ -10,7 +10,7 @@ def main_process():
     print("\n==Start Main==\n")
 
     # print("\n[Image Get...]\n")
-    cocoa_get.get_image()
+    cocoa_fetch.fetch_image()
 
     # print("[OCR Process...]\n")
     cocoa_pyocr.py_ocr()
@@ -22,7 +22,7 @@ def main_process():
     time.sleep(5)
 
     # print("[GoogleSheet Downloads Process... ]\n")
-    cocoa_sheetDL.sheet_dl()
+    cocoa_sheet_load.sheet_load()
 
     print("\nInterval Time 5sec\n")
     time.sleep(1)
