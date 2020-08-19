@@ -46,4 +46,4 @@ def fetch_image():
 
 
 if __name__ == "__main__":
-    get_image()
+    fetch_image()
