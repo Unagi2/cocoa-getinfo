@@ -1,8 +1,8 @@
-from subsys import cocoa_fetch
-from subsys import cocoa_pyocr
-from subsys import cocoa_wordsearch_datapush
-from subsys import cocoa_sheet_load
-from subsys import cocoa_tweet
+from sub_sys import cocoa_fetch
+from sub_sys import cocoa_pyocr
+from sub_sys import cocoa_wordsearch_datapush
+from sub_sys import cocoa_sheet_load
+from sub_sys import cocoa_tweet
 import time
 
 
