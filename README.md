@@ -137,35 +137,35 @@ python cocoa_analysis.py
 -   画像取得処理
 
 ```bash
-cd cocoa-getinfo/SubSys
+cd cocoa-getinfo/sub_sys
 python cocoa_fetch.py
 ```
 
 -   OCR処理
 
 ```bash
-cd cocoa-getinfo/SubSys
+cd cocoa-getinfo/sub_sys
 python cocoa_ocr.py
 ```
 
 -   データ抽出とGoogleスプレッドシートへの書き込み処理
 
 ```bash
-cd cocoa-getinfo/SubSys
+cd cocoa-getinfo/sub_sys
 python cocoa_wordsearch_datapush.py
 ```
 
 -   Googleスプレッドシートのグラフ画像のダウンロード処理
 
 ```bash
-cd cocoa-getinfo/SubSys
+cd cocoa-getinfo/sub_sys
 python cocoa_sheet_load.py
 ```
 
 -   ツイート投稿処理
 
 ```bash
-cd cocoa-getinfo/SubSys
+cd cocoa-getinfo/sub_sys
 python cocoa_tweet.py
 ```
 
