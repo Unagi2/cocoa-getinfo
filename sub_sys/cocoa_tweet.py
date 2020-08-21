@@ -100,9 +100,9 @@ def tweet():
     api.update_with_media(status='[Auto Tweet]\n\n' +
                           twitter_second, filename=file_name_dy)
 
-    time.sleep(5)
+    #time.sleep(5)
 
-    api.update_status(
+    #api.update_status(
         "[Auto Tweet]\n\nCOCOA-Appのダウンロード数、陽性登録数などをグラフで公開しています。\nリリース日から現在までの推移がご覧になれます。\n\n#COCOA #接触確認アプリ #COCOA普及キャンペーン\n" + text11)
 
     print("[Completed!]\n")
