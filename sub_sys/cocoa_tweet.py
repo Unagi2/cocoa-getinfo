@@ -71,7 +71,7 @@ def tweet():
     text7 = "#COCOA #接触確認アプリ"
 
     text9 = "更新日毎の増分変化についてのグラフ\n\n"
-    text10 = "8/18より画像内の一部が乱れています。ご了承ください。\n\nGoogle Data Portalにてグラフ公開\n"
+    text10 = "8/18より画像内の一部が乱れています。ご了承ください。\n\nGoogle Data Portalにてレポート公開\n"
     text11 = "https://datastudio.google.com/u/0/reporting/f9081247-b6d3-48b8-a6e2-82d3b0b018ce/page/EczbB\n\n"
 
     #text12 = "Sheetデータを閲覧用で公開"
