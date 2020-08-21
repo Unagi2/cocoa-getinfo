@@ -103,7 +103,7 @@ def tweet():
     #time.sleep(5)
 
     #api.update_status(
-        "[Auto Tweet]\n\nCOCOA-Appのダウンロード数、陽性登録数などをグラフで公開しています。\nリリース日から現在までの推移がご覧になれます。\n\n#COCOA #接触確認アプリ #COCOA普及キャンペーン\n" + text11)
+    #    "[Auto Tweet]\n\nCOCOA-Appのダウンロード数、陽性登録数などをグラフで公開しています。\nリリース日から現在までの推移がご覧になれます。\n\n#COCOA #接触確認アプリ #COCOA普及キャンペーン\n" + text11)
 
     print("[Completed!]\n")
 
