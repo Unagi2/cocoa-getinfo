@@ -67,7 +67,7 @@ if __name__ == "__main__":
 
         while count < 1 and triger < 12:
             print(triger * 5, "分経過\n")
-            print(triger + 1, "/6回目の検知\n")
+            print(triger + 1, "/12回目の検知\n")
 
             if(web_update()):
                 # 更新通知
