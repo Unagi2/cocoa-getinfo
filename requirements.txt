@@ -3,7 +3,7 @@ tweepy
 oauthlib
 google-auth
 gspread
-Pillow
+pillow
 beautifulsoup4
 jpholiday
 holidays
