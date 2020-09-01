@@ -115,11 +115,15 @@ Tesseractの導入方法について
 -   Pillow 7.2.0
 
 # Installation
+まとめて必要ライブラリのインストールを行う方法
+```bash
+python3 -m pip install -r requirements.txt
+```
 
-未インストールのライブラリについては、適宜pipコマンドでインストールを行う
+個々のライブラリについては、適宜pipコマンドでインストールを行う
 
 ```bash
-pip install [ライブラリ名]
+python3 -m　pip install [ライブラリ名]
 ```
 
 # Usage
