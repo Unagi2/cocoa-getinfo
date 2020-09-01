@@ -1,6 +1,7 @@
 pyocr
 tweepy
 oauthlib
+oauth2client
 google-auth
 gspread
 pillow
