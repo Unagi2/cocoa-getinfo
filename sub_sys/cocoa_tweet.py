@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import tweepy
 from datetime import datetime
 import time
@@ -12,8 +13,12 @@ def tweet():
 
     # twitter API認証情報読み込み
     my_path = os.path.abspath(os.path.dirname(__file__))
-
-    path = os.path.join(my_path, r"..\key_pool\twitter_api.json")
+    target_path_1 = os.path.join(os.path.dirname(
+        __file__), '../key_pool/twitter_api.json')
+    print('normalize    : ', os.path.normpath(target_path_1))
+    path = os.path.normpath(os.path.join(
+        os.path.dirname(__file__), '../key_pool/twitter_api.json'))
+    #path = os.path.join(my_path, r"../key_pool/twitter_api.json")
 
     with open(path) as json_open:
         json_load = json.load(json_open)
@@ -37,18 +42,25 @@ def tweet():
     str_date = genzai.strftime('%m%d')
 
     # 画像元のパス
-    file_name_today = os.path.join(
-        my_path, r"..\chart_pool\sheet_today" + str_date + r".png")
-    file_name_date = os.path.join(
-        my_path, r"..\chart_pool\sheet_date" + str_date + r".png")
-    file_name_dy = os.path.join(
-        my_path, r"..\chart_pool\sheet_dy" + str_date + r".png")
+    #file_name_today = os.path.join(my_path, r"..\chart_pool\sheet_today" + str_date + r".png")
+    file_name_today = os.path.normpath(os.path.join(os.path.dirname(
+        __file__), '../chart_pool/sheet_today' + str_date + '.png'))
+    #file_name_date = os.path.join(my_path, r"..\chart_pool\sheet_date" + str_date + r".png")
+    file_name_date = os.path.normpath(os.path.join(os.path.dirname(
+        __file__), '../chart_pool/sheet_date' + str_date + '.png'))
+    #file_name_dy = os.path.join(my_path, r"..\chart_pool\sheet_dy" + str_date + r".png")
+    file_name_dy = os.path.normpath(os.path.join(os.path.dirname(
+        __file__), '../chart_pool/sheet_dy' + str_date + '.png'))
 
     # テキスト内容に入れるデータ参照パス
-    output_path = r'..\log_pool\download.txt'
-    path_1 = os.path.join(my_path, output_path)
-    output_path2 = r'..\log_pool\positive.txt'
-    path_2 = os.path.join(my_path, output_path2)
+    #output_path = r'..\log_pool\download.txt'
+    #path_1 = os.path.join(my_path, output_path)
+    path_1 = os.path.normpath(os.path.join(
+        os.path.dirname(__file__), '../log_pool/download.txt'))
+    #output_path2 = r'..\log_pool\positive.txt'
+    #path_2 = os.path.join(my_path, output_path2)
+    path_2 = os.path.normpath(os.path.join(
+        os.path.dirname(__file__), '../log_pool/positive.txt'))
 
     # ダウンロード前回データ
     y1 = open(path_1, 'r', encoding='utf-8')
@@ -100,9 +112,9 @@ def tweet():
     api.update_with_media(status='[Auto Tweet]\n\n' +
                           twitter_second, filename=file_name_dy)
 
-    #time.sleep(5)
+    # time.sleep(5)
 
-    #api.update_status(
+    # api.update_status(
     #    "[Auto Tweet]\n\nCOCOA-Appのダウンロード数、陽性登録数などをグラフで公開しています。\nリリース日から現在までの推移がご覧になれます。\n\n#COCOA #接触確認アプリ #COCOA普及キャンペーン\n" + text11)
 
     print("[Completed!]\n")

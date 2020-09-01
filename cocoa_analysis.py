@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from sub_sys import cocoa_fetch
 from sub_sys import cocoa_pyocr
 from sub_sys import cocoa_wordsearch_datapush

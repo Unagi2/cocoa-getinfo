@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import requests
 from bs4 import BeautifulSoup
 from datetime import datetime
@@ -17,7 +18,9 @@ DATE = genzai.strftime('%Y%m%d')
 def web_update():
     # データlog
     #web_log = r"log_pool\web_data_log.txt"
-    file_path = os.path.join(my_path, r".\log_pool\web_data_log.txt")
+    #file_path = os.path.join(my_path, r".\log_pool\web_data_log.txt")
+    file_path = os.path.normpath(os.path.join(
+        os.path.dirname(__file__), './log_pool/web_data_log.txt'))
 
     # 接続する側の連絡先を明記（連絡先の使い回しは認めない。必ず変更すること）
     headers = {

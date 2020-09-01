@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import sys
 import re
 from datetime import datetime
@@ -21,15 +22,25 @@ def search_and_push():
              'https://www.googleapis.com/auth/drive']
 
     # 秘密鍵（JSONファイル）のファイル名を入力
-    path_api = os.path.join(my_path, r"..\key_pool\google_api.json")
+    #target_path_1 = os.path.join(os.path.dirname(__file__), '..\key_pool\google_api.json')
+    path_api = os.path.normpath(os.path.join(
+        os.path.dirname(__file__), '../key_pool/google_api.json'))
+    #path_api = os.path.normpath(target_path_1)
+    #path_api = os.path.join(my_path, r"..\key_pool\google_api.json")
     credentials = ServiceAccountCredentials.from_json_keyfile_name(
         path_api, scope)
     gc = gspread.authorize(credentials)
 
     # 入出力のパス
-    input_path = os.path.join(my_path, r"..\log_pool\log.txt")
-    output_path = os.path.join(my_path, r"..\log_pool\download.txt")
-    output_path2 = os.path.join(my_path, r"..\log_pool\positive.txt")
+    #input_path = os.path.join(my_path, r"..\log_pool\log.txt")
+    input_path = os.path.normpath(os.path.join(
+        os.path.dirname(__file__), '../log_pool/log.txt'))
+    #output_path = os.path.join(my_path, r"..\log_pool\download.txt")
+    output_path = os.path.normpath(os.path.join(
+        os.path.dirname(__file__), '../log_pool/download.txt'))
+    #output_path2 = os.path.join(my_path, r"..\log_pool\positive.txt")
+    output_path2 = os.path.normpath(os.path.join(
+        os.path.dirname(__file__), '../log_pool/positive.txt'))
 
     # ファイル読み込みと改行コード削除
     f = open(input_path, 'r', encoding='utf-8')
@@ -76,7 +87,7 @@ def search_and_push():
         # sample-code:print(int('10,000'.replace(',', '')))
 
     # googleスプレッドシートに追加処理と各種値更新
-    if found is 'N/A' and found2 is 'N/A':  # 追加処理のみ更新無
+    if found == 'N/A' and found2 == 'N/A':  # 追加処理のみ更新無
         print("\nデータ取得日 : " + str_date + "\n")
         print("Mode : 土日祝日処理\n")
         print("ダウンロード数 : " + found + "\n")
@@ -84,7 +95,10 @@ def search_and_push():
         print("経過日数 : " + str(today.days))
 
         # csv出力
-        path_log = os.path.join(my_path, r"..\log_pool\cocoa_data.csv")
+        #path_log = os.path.join(my_path, r"..\log_pool\cocoa_data.csv")
+        path_log = os.path.normpath(os.path.join(
+            os.path.dirname(__file__), '../log_pool/cocoa_data.csv'))
+
         with open(path_log, 'a') as f:
             writer = csv.writer(f)
             writer.writerow(
@@ -123,7 +137,10 @@ def search_and_push():
         # print(dx1)
 
         # csv出力
-        path_log = os.path.join(my_path, r"..\log_pool\cocoa_data.csv")
+        #path_log = os.path.join(my_path, r"..\log_pool\cocoa_data.csv")
+        path_log = os.path.normpath(os.path.join(
+            os.path.dirname(__file__), '../log_pool/cocoa_data.csv'))
+
         with open(path_log, 'a') as f:
             writer = csv.writer(f)
             writer.writerow([today.days, str_date, ffound, ffound2, dx1, dx2])

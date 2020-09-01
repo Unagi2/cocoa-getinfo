@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from datetime import datetime
 from PIL import Image
 import pyocr
@@ -18,8 +19,9 @@ def py_ocr():
     genzai = datetime.now()
     str_date = genzai.strftime('%m%d')
 
-    file_name_dy = os.path.join(
-        my_path, r"..\getIMG_pool\cocoa_info_" + str_date + r".png")
+    #file_name_dy = os.path.join(my_path, r"..\getIMG_pool\cocoa_info_" + str_date + r".png")
+    file_name_dy = os.path.normpath(os.path.join(os.path.dirname(
+        __file__), '../getIMG_pool/cocoa_info_' + str_date + '.png'))
 
     # pyocrへ利用するOCRエンジンをTesseractに指定する。
     tools = pyocr.get_available_tools()
@@ -50,7 +52,10 @@ def py_ocr():
 
     print("\n" + text + "\n")
 
-    log_path = os.path.join(my_path, r"..\log_pool\log.txt")
+    #log_path = os.path.join(my_path, r"..\log_pool\log.txt")
+    log_path = os.path.normpath(os.path.join(
+        os.path.dirname(__file__), '../log_pool/log.txt'))
+
     with open(log_path, 'w', encoding="utf_8") as f:
         print(text, file=f)
         f.write('\n')

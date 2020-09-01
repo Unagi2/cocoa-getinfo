@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import requests
 from bs4 import BeautifulSoup
 import base64
@@ -37,8 +38,10 @@ def fetch_image():
         img = base64.b64decode(imgcode_clear.encode())
 
         # 取得画像保存
-        file_name_dy = os.path.join(
-            my_path, r"..\getIMG_pool\cocoa_info_" + str_date + r".png")
+        #file_name_dy = os.path.join(my_path, r"..\getIMG_pool\cocoa_info_" + str_date + r".png")
+        file_name_dy = os.path.normpath(os.path.join(os.path.dirname(
+            __file__), '../getIMG_pool/cocoa_info_' + str_date + '.png'))
+
         with open(file_name_dy, "wb") as aaa:
             aaa.write(img)
 
