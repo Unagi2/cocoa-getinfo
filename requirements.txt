@@ -1,0 +1,10 @@
+pyocr
+tweepy
+oauthlib
+google-auth
+gspread
+Pillow
+beautifulsoup4
+jpholiday
+holidays
+requests
