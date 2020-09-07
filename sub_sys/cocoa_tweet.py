@@ -39,7 +39,7 @@ def tweet():
 
     # 現在時刻
     genzai = datetime.now()
-    str_date = genzai.strftime('%m%d')
+    str_date = genzai.strftime('%Y%m%d')
 
     # 画像元のパス
     #file_name_today = os.path.join(my_path, r"..\chart_pool\sheet_today" + str_date + r".png")

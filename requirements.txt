@@ -9,3 +9,6 @@ beautifulsoup4
 jpholiday
 holidays
 requests
+numpy
+pandas
+matplotlib
