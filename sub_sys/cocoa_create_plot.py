@@ -136,7 +136,7 @@ def graph_date(df):
     # 色の設定(tab20採用)
     color_1 = cm.tab20.colors[0]
     color_2 = cm.tab20.colors[7]
-    color_3 = cm.tab20.colors[4]
+    color_3 = cm.tab20.colors[6]
 
     # Nanを無視して点間を結ぶ
     s1mask = np.isfinite(df['Download(×10,000)'])
@@ -211,7 +211,7 @@ def graph_date(df):
 
     # 軸の縦線の色を変更している
     ax1.tick_params(axis='y', colors=color_1, direction='out',length = 5,width = 1)
-    ax2.tick_params(axis='y', colors=color_2, direction='out',length = 5,width = 1)
+    ax2.tick_params(axis='y', colors=color_3, direction='out',length = 5,width = 1)
     ax1.tick_params(axis='x', which='major',direction='out',length = 5,width = 1)
     ax2.tick_params(axis='x', which='major',direction='out',length = 5,width = 1)
 
@@ -306,7 +306,7 @@ def graph_dy(df):
     cycle = plt.rcParams['axes.prop_cycle'].by_key()['color']  # ココがポイント
     color_1 = cm.tab20.colors[0]
     color_2 = cm.tab20.colors[7]
-    color_3 = cm.tab20.colors[4]
+    color_3 = cm.tab20.colors[6]
 
     #新たなデータフレーム
     #print(df)
@@ -369,7 +369,7 @@ def graph_dy(df):
 
     # 軸の縦線の色を変更している
     ax1.tick_params(axis='y', colors=color_1, direction='out',length = 5,width = 1)
-    ax2.tick_params(axis='y', colors=color_2, direction='out',length = 5,width = 1)
+    ax2.tick_params(axis='y', colors=color_3, direction='out',length = 5,width = 1)
     ax1.tick_params(axis='x', which='major',direction='out',length = 5,width = 1)
     ax2.tick_params(axis='x', which='major',direction='out',length = 5,width = 1)
 
