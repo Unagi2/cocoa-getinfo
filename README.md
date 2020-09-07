@@ -279,16 +279,17 @@ python3 cocoa_tweet.py
 
 **注意点**
 -   Googleスプレッドショートへの編集権限を必要とするため、「サービスアカウント」を作成する必要がある。また、作成した認証情報のjsonファイルは、key_poolディレクトリに入れること。
+    <br>
     参考リンク：<https://qiita.com/akabei/items/0eac37cb852ad476c6b9>
 -   Twitterへのツイート権限を必要とするため、Twitter APIを取得する必要がある。認証情報は、cocoa_tweet.py内の26行目を参照し、key_poolディレクトリに保存すること。
 -   Googleスプレッドシートのグラフの画像取得を可能にするため、事前に「グラフの公開」より 画像公開リンクを作成する必要がある。（2020/9/7 グラフ生成システムへの移行により本画像取得機能は廃止）
 
 **出典・引用サイト**
--   新型コロナウイルス接触確認アプリ（COCOA) COVID-19 Contact-Confirming Application(厚生労働省)
+-   新型コロナウイルス接触確認アプリ（COCOA) COVID-19 Contact-Confirming Application(厚生労働省)<br>
     <https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/cocoa_00138.html>
--   Webページ更新を自動チェックして通知させよう 
+-   Webページ更新を自動チェックして通知させよう <br>
     <http://shinnandesu.hatenablog.com/entry/2018/05/26/172751>
--   【Windows】Pythonでスクリプトを自動実行する方法を現役エンジニアが解説【初心者向け】
+-   【Windows】Pythonでスクリプトを自動実行する方法を現役エンジニアが解説【初心者向け】<br>
     <https://techacademy.jp/magazine/31962>
 -   Raspberry PiのPythonライブラリはpipよりapt-getで入れるのが断然早い<https://karaage.hatenadiary.jp/entry/2018/10/05/073000>
 -   python 時系列データの補間<https://qiita.com/kenichi-hamaguchi/items/3c5e63e195e06a21d1da>
