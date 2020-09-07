@@ -155,7 +155,7 @@ def graph_dl_rol(df):
 
     sns.set(style="whitegrid", font="IPAexGothic")
 
-    rcParams['figure.figsize'] = 10, 5
+    rcParams['figure.figsize'] = 9, 5
 
     # Figure and Axes
     plt.close(1)  # 既にFigure1が開かれていれば閉じる
@@ -284,7 +284,7 @@ def graph_posi_rol(df):
 
     # Graph
     sns.set(style="whitegrid", font="IPAexGothic")
-    rcParams['figure.figsize'] = 10, 5
+    rcParams['figure.figsize'] = 9, 5
 
     # Figure and Axes
     plt.close(1)  # 既にFigure1が開かれていれば閉じる

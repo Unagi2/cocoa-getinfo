@@ -117,7 +117,7 @@ def graph_date(df):
 
     # Graph
     sns.set(style="whitegrid", font="IPAexGothic")
-    rcParams['figure.figsize'] = 10, 5
+    rcParams['figure.figsize'] =  9, 5
 
     # Figure and Axes
     plt.close(1)  # 既にFigure1が開かれていれば閉じる
@@ -287,7 +287,7 @@ def graph_dy(df):
     # Graph Create
 
     sns.set(style="whitegrid", font="IPAexGothic")
-    rcParams['figure.figsize'] = 10, 5
+    rcParams['figure.figsize'] =  9, 5
 
     # Figure and Axes
     plt.close(1)  # 既にFigure1が開かれていれば閉じる
