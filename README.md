@@ -27,22 +27,21 @@
 
 ```
 cd cocoa-getinfo
+python3 webupdate_notify.py #基幹プログラム開始
 
-python3 webupdate_notify.py
+holiday.py Start process #土日祝日判別プログラム
 
-holiday.py Start process
-
-Weekday Mode
+Weekday Mode #処理結果:平日
 
 Web更新チェック開始
 
-[！！更新検知！！]
+[！！更新検知！！] 
 
 検知時刻:2020/09/07 17:11
 
 ==Start Main==
 
-[1/5 Processing image acquisition...]
+[1/5 Processing image acquisition...] #画像取得プログラム
 
 [Completed!]
 ```
@@ -50,7 +49,7 @@ Web更新チェック開始
 **2.  OCRプログラム稼働中の進捗画面**
 
 ```
-[2/5 Processing OCR...]
+[2/5 Processing OCR...] #OCR処理（画像->文字）
 
 と 接触 確認 アブ プリ は 、iOS・Android と も に 、 現 在 、「1.1.2」 を 配布 し て いま す 。
 古い バー ジョ ン の アブ リ を ご 利用 の 方 は 、App Store ま た は Googsle Play か ら 「 接 触 確
@@ -68,13 +67,13 @@ Web更新チェック開始
 
 | 取得画像 | TesseractによるOCR後の出力 |
 | ---|---|
-| ![cocoa_info_0810](https://user-images.githubusercontent.com/34627350/89762922-618e9680-db2c-11ea-8d15-e53a7fc5c570.png) | ![DEMO2](https://user-images.githubusercontent.com/34627350/89762891-4d4a9980-db2c-11ea-8410-b460420d9b95.png =100x20) |
+| ![cocoa_info_0810](https://user-images.githubusercontent.com/34627350/89762922-618e9680-db2c-11ea-8d15-e53a7fc5c570.png) | ![DEMO2](https://user-images.githubusercontent.com/34627350/89762891-4d4a9980-db2c-11ea-8410-b460420d9b95.png) |
 
 **3.  テキストの整形及びデータ抽出の進捗画面**
 
 - 公式情報が更新される平日のモード
 ```
-[3/5 Processing data extraction and output... ]
+[3/5 Processing data extraction and output... ] #数値データの抽出とログ出力
 
 と接触確認アブプリは、iOS・Androidともに、現在、「1.1.2」を配布しています。古いバージョンのアブリをご利用の方は、AppStoreまたはGoogslePlayから「接触確認アブリ」を検索いただき、アップデートをお願いします。・ダウンロード数は、9月7日17:00現在、合計で約1.631万件です。・ios、Android両方の合計の数になります。・ダウンロード後に削除し、再度ダウンロードした場合は、複数回カウントされる場合があります。・陽性登録件数は、9月7日17:00現在、合計で623件です。
 
@@ -113,19 +112,19 @@ Mode : 土日祝日処理
 **4.  Google Spreadsheetからデータを読み取り，グラフ生成時の進捗画面**
 ```
 
-Plot of Accumulation[start]
-Saving
+Plot of Accumulation[start] #累積グラフ作成
+Saving #画像保存中
 Plot of Accumulation[finish]
 
-Plot of the increase[start]
+Plot of the increase[start]　#増加量グラフ作成
 Saving
 Plot of the increase[finish]
 
-Plot of Download Moving Average[start]
+Plot of Download Moving Average[start] #移動平均グラフ（Test）
 Saving
 Plot of Download Moving Average[finish]
 
-Plot of Positive Moving Average[start]
+Plot of Positive Moving Average[start]#移動平均グラフ（Test）
 Saving
 Plot of Positive Moving Average[finish]
 
@@ -173,7 +172,7 @@ holiday.py END process
 
 | シートへの書き込み | グラフ作成 |
 | ---|---|
-| ![DEMO6](https://user-images.githubusercontent.com/34627350/89765181-c9df7700-db30-11ea-8f40-a9fc773907de.png) | ![plot_date_20200907](https://user-images.githubusercontent.com/34627350/92386120-188f2980-f14e-11ea-9a6b-46dddbd4c06e.png) |
+| ![DEMO6](https://user-images.githubusercontent.com/34627350/89765181-c9df7700-db30-11ea-8f40-a9fc773907de.png) | <img src="https://user-images.githubusercontent.com/34627350/92386120-188f2980-f14e-11ea-9a6b-46dddbd4c06e.png"width=50%> |
 
 # Features
 
@@ -291,15 +290,24 @@ python3 cocoa_tweet.py
     <http://shinnandesu.hatenablog.com/entry/2018/05/26/172751>
 -   【Windows】Pythonでスクリプトを自動実行する方法を現役エンジニアが解説【初心者向け】<br>
     <https://techacademy.jp/magazine/31962>
--   Raspberry PiのPythonライブラリはpipよりapt-getで入れるのが断然早い<https://karaage.hatenadiary.jp/entry/2018/10/05/073000>
--   python 時系列データの補間<https://qiita.com/kenichi-hamaguchi/items/3c5e63e195e06a21d1da>
--   Scipy.interpolate を使った様々な補間法<https://qiita.com/maskot1977/items/913ef108ff1e2ba5b63f>
--   欠損値を処理する方法<https://qiita.com/ground0state/items/40c2cf0295af53d1193e>
--   pandasで欠損値NaNを前後の値から補間するinterpolate<https://note.nkmk.me/python-pandas-interpolate/>
--   matplotlib 54. ConciseDateFormatterで時系列グラフの軸ラベルをシンプルにする<https://sabopy.com/py/matplotlib-54/>
--   Matplotlib-2軸グラフの書き方<https://datumstudio.jp/blog/matplotlib-2%E8%BB%B8%E3%82%B0%E3%83%A9%E3%83%95%E3%81%AE%E6%9B%B8%E3%81%8D%E6%96%B9>
--   matplotlibで二軸のグラフを作成する<https://www.so-wi.com/2019/12/11/two_axises_chart.html>
--   matplotlibでグラフのスムージング<https://snova301.hatenablog.com/entry/2018/10/07/135233>
+-   Raspberry PiのPythonライブラリはpipよりapt-getで入れるのが断然早い<br>
+    <https://karaage.hatenadiary.jp/entry/2018/10/05/073000>
+-   python 時系列データの補間<br>
+    <https://qiita.com/kenichi-hamaguchi/items/3c5e63e195e06a21d1da>
+-   Scipy.interpolate を使った様々な補間法<br>
+    <https://qiita.com/maskot1977/items/913ef108ff1e2ba5b63f>
+-   欠損値を処理する方法<br>
+    <https://qiita.com/ground0state/items/40c2cf0295af53d1193e>
+-   pandasで欠損値NaNを前後の値から補間するinterpolate<br>
+    <https://note.nkmk.me/python-pandas-interpolate/>
+-   matplotlib 54. ConciseDateFormatterで時系列グラフの軸ラベルをシンプルにする<br>
+    <https://sabopy.com/py/matplotlib-54/>
+-   Matplotlib-2軸グラフの書き方<br>
+    <https://datumstudio.jp/blog/matplotlib-2%E8%BB%B8%E3%82%B0%E3%83%A9%E3%83%95%E3%81%AE%E6%9B%B8%E3%81%8D%E6%96%B9>
+-   matplotlibで二軸のグラフを作成する<br>
+    <https://www.so-wi.com/2019/12/11/two_axises_chart.html>
+-   matplotlibでグラフのスムージング<br>
+    <https://snova301.hatenablog.com/entry/2018/10/07/135233>
 
 # Author
 
