@@ -8,12 +8,16 @@
 ![Commit Msg](https://img.shields.io/badge/Commit%20message-Ja-brightgreen.svg?style=flat-square)
 ![Code Cmnt](https://img.shields.io/badge/code%20comment-Ja-brightgreen.svg?style=flat-square)
 
-本システムは、厚生労働省が発表する接触確認アプリの「ダウンロード数」や「陽性登録数」の情報を取得する事が可能である。またこれに付随し、本システムは取得したデータをGoogleスプレッドシートに出力、グラフ画像の取得、Twitterへの自動投稿などの機能を有している。
+本システムは、厚生労働省が発表する接触確認アプリの「ダウンロード数」や「陽性登録数」の情報を取得する事が可能である。
+
+またこれに付随し、本システムは取得したデータをGoogleスプレッドシートに出力、matplotlibによるグラフ生成と画像出力、Twitterへの自動投稿などの機能を有している。
 
 情報取得先は厚生労働省の特設サイト「新型コロナウイルス接触確認アプリ（COCOA) COVID-19 Contact-Confirming Application」である。
 
-本プロジェクトは，厚生労働省が公開する情報を収集するため，スクレイピングシステムを搭載している。
-そのため，厚生労働省のrobot.txt（<https://www.mhlw.go.jp/robots.txt>）によるクローラ許可範囲の確認，「利用規約・リンク・著作権等」に則り制作しております。また，アクセス先サーバへの負担軽減やDoS状態を防ぐため，アクセスリトライ間隔は「５分」に設定している。
+本プロジェクトは，厚生労働省が公開する情報を収集するため，スクレイピングプログラムを搭載している。
+そのため，厚生労働省のrobot.txt（<https://www.mhlw.go.jp/robots.txt>）によるクローラ許可範囲の確認，「利用規約・リンク・著作権等」に則り制作しております。
+
+また，アクセス先サーバへの負担軽減やDoS状態を防ぐため，更新される時間帯のみにプログラムを作動させ，アクセスリトライ間隔は「５分」に設定しています。
 
 -   「新型コロナウイルス接触確認アプリ」（厚生労働省）（<https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/cocoa_00138.html>）を加工して作成
 
@@ -47,6 +51,7 @@ Web更新チェック開始
 
 ```
 [2/5 Processing OCR...]
+
 と 接触 確認 アブ プリ は 、iOS・Android と も に 、 現 在 、「1.1.2」 を 配布 し て いま す 。
 古い バー ジョ ン の アブ リ を ご 利用 の 方 は 、App Store ま た は Googsle Play か ら 「 接 触 確
 認 ア ブリ 」 を 検索 いた だ き 、 アッ プ デ ー ト を お 願い し ます 。
@@ -63,7 +68,7 @@ Web更新チェック開始
 
 | 取得画像 | TesseractによるOCR後の出力 |
 | ---|---|
-| ![cocoa_info_0810](https://user-images.githubusercontent.com/34627350/89762922-618e9680-db2c-11ea-8d15-e53a7fc5c570.png) | ![DEMO2](https://user-images.githubusercontent.com/34627350/89762891-4d4a9980-db2c-11ea-8410-b460420d9b95.png) |
+| ![cocoa_info_0810](https://user-images.githubusercontent.com/34627350/89762922-618e9680-db2c-11ea-8d15-e53a7fc5c570.png) | ![DEMO2](https://user-images.githubusercontent.com/34627350/89762891-4d4a9980-db2c-11ea-8410-b460420d9b95.png =100x20) |
 
 **3.  テキストの整形及びデータ抽出の進捗画面**
 
@@ -274,15 +279,17 @@ python3 cocoa_tweet.py
 
 **注意点**
 -   Googleスプレッドショートへの編集権限を必要とするため、「サービスアカウント」を作成する必要がある。また、作成した認証情報のjsonファイルは、key_poolディレクトリに入れること。
-
     参考リンク：<https://qiita.com/akabei/items/0eac37cb852ad476c6b9>
 -   Twitterへのツイート権限を必要とするため、Twitter APIを取得する必要がある。認証情報は、cocoa_tweet.py内の26行目を参照し、key_poolディレクトリに保存すること。
 -   Googleスプレッドシートのグラフの画像取得を可能にするため、事前に「グラフの公開」より 画像公開リンクを作成する必要がある。（2020/9/7 グラフ生成システムへの移行により本画像取得機能は廃止）
 
 **出典・引用サイト**
--   新型コロナウイルス接触確認アプリ（COCOA) COVID-19 Contact-Confirming Application(厚生労働省)<https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/cocoa_00138.html>
--   Webページ更新を自動チェックして通知させよう <http://shinnandesu.hatenablog.com/entry/2018/05/26/172751>
--   【Windows】Pythonでスクリプトを自動実行する方法を現役エンジニアが解説【初心者向け】<https://techacademy.jp/magazine/31962>
+-   新型コロナウイルス接触確認アプリ（COCOA) COVID-19 Contact-Confirming Application(厚生労働省)
+    <https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/cocoa_00138.html>
+-   Webページ更新を自動チェックして通知させよう 
+    <http://shinnandesu.hatenablog.com/entry/2018/05/26/172751>
+-   【Windows】Pythonでスクリプトを自動実行する方法を現役エンジニアが解説【初心者向け】
+    <https://techacademy.jp/magazine/31962>
 -   Raspberry PiのPythonライブラリはpipよりapt-getで入れるのが断然早い<https://karaage.hatenadiary.jp/entry/2018/10/05/073000>
 -   python 時系列データの補間<https://qiita.com/kenichi-hamaguchi/items/3c5e63e195e06a21d1da>
 -   Scipy.interpolate を使った様々な補間法<https://qiita.com/maskot1977/items/913ef108ff1e2ba5b63f>
