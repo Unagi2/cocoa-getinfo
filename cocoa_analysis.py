@@ -31,22 +31,22 @@ def main_process():
     ###新ver.画像取得システム###
 
     #DataFlame Get
-    df = gspread.sheet_pull()
+    df = cocoa_gspread_pull.sheet_pull()
     #print(df)
     #print(gspread_pull())
 
     # Plot of Accumulation
-    create_plot.graph_date(df)
+    cocoa_create_plot.graph_date(df)
 
     # Plot of the increase
-    create_plot.graph_dy(df)
+    cocoa_create_plot.graph_dy(df)
 
     # Moving average
     # download
-    rolling_plot.graph_dl_rol(df)
+    cocoa_rolling_plot.graph_dl_rol(df)
 
     # positive
-    rolling_plot.graph_posi_rol(df)
+    cocoa_rolling_plot.graph_posi_rol(df)
     #####
 
     print("\nInterval Time 5sec\n")
