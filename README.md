@@ -172,7 +172,7 @@ holiday.py END process
 
 | シートへの書き込み | グラフ作成 |
 | ---|---|
-| ![DEMO6](https://user-images.githubusercontent.com/34627350/89765181-c9df7700-db30-11ea-8f40-a9fc773907de.png) | ![date](https://user-images.githubusercontent.com/34627350/92386120-188f2980-f14e-11ea-9a6b-46dddbd4c06e.png) |
+| ![DEMO6](https://user-images.githubusercontent.com/34627350/89765181-c9df7700-db30-11ea-8f40-a9fc773907de.png) | ![sheet_date20200907](https://user-images.githubusercontent.com/34627350/92392694-9e64a200-f159-11ea-8479-9a1e6c79b9a3.png) |
 
 # Features
 
