@@ -9,16 +9,16 @@
 ![Code Cmnt](https://img.shields.io/badge/code%20comment-Ja-brightgreen.svg?style=flat-square)
 
 本システムは、厚生労働省が発表する接触確認アプリの「ダウンロード数」や「陽性登録数」の情報を取得する事が可能である。
-
+<br>
 またこれに付随し、本システムは取得したデータをGoogleスプレッドシートに出力、matplotlibによるグラフ生成と画像出力、Twitterへの自動投稿などの機能を有している。
-
+<br>
 情報取得先は厚生労働省の特設サイト「新型コロナウイルス接触確認アプリ（COCOA) COVID-19 Contact-Confirming Application」である。
-
+<br>
 本プロジェクトは，厚生労働省が公開する情報を収集するため，スクレイピングプログラムを搭載している。
 そのため，厚生労働省のrobot.txt（<https://www.mhlw.go.jp/robots.txt>）によるクローラ許可範囲の確認，「利用規約・リンク・著作権等」に則り制作しております。
-
+<br>
 また，アクセス先サーバへの負担軽減やDoS状態を防ぐため，更新される時間帯のみにプログラムを作動させ，アクセスリトライ間隔は「５分」に設定しています。
-
+<br>
 -   「新型コロナウイルス接触確認アプリ」（厚生労働省）（<https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/cocoa_00138.html>）を加工して作成
 
 # DEMO(cocoa_webupdate_nitify.py実行時)
@@ -279,8 +279,8 @@ python3 cocoa_tweet.py
 **注意点**
 -   Googleスプレッドショートへの編集権限を必要とするため、「サービスアカウント」を作成する必要がある。また、作成した認証情報のjsonファイルは、key_poolディレクトリに入れること。
     <br>
-    参考リンク：<https://qiita.com/akabei/items/0eac37cb852ad476c6b9>
--   Twitterへのツイート権限を必要とするため、Twitter APIを取得する必要がある。認証情報は、cocoa_tweet.py内の26行目を参照し、key_poolディレクトリに保存すること。
+    参考リンク：<https://qiita.com/akabei/items/0eac37cb852ad476c6b9><br>
+-   Twitterへのツイート権限を必要とするため、Twitter APIを取得する必要がある。認証情報は、cocoa_tweet.py内の26行目を参照し、key_poolディレクトリに保存すること。<br>
 -   Googleスプレッドシートのグラフの画像取得を可能にするため、事前に「グラフの公開」より 画像公開リンクを作成する必要がある。（2020/9/7 グラフ生成システムへの移行により本画像取得機能は廃止）
 
 **出典・引用サイト**
