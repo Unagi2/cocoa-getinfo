@@ -4,9 +4,9 @@ from sub_sys import cocoa_pyocr
 from sub_sys import cocoa_wordsearch_datapush
 from sub_sys import cocoa_sheet_load
 from sub_sys import cocoa_tweet
-from sub_sys import gspread_pull
-from sub_sys import create_plot
-from sub_sys import rolling_plot
+from sub_sys import cocoa_gspread_pull
+from sub_sys import cocoa_create_plot
+from sub_sys import cocoa_rolling_plot
 import time
 
 

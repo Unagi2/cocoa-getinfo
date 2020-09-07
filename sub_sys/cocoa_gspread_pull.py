@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from pylab import rcParams
-import cocoa_create_plot
-import cocoa_rolling_plot
+from sub_sys import cocoa_create_plot
+from sub_sys import cocoa_rolling_plot
 import japanize_matplotlib
 from datetime import datetime
 import pandas as pd
