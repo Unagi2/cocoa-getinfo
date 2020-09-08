@@ -8,10 +8,10 @@
 ![Commit Msg](https://img.shields.io/badge/Commit%20message-Ja-brightgreen.svg?style=flat-square)
 ![Code Cmnt](https://img.shields.io/badge/code%20comment-Ja-brightgreen.svg?style=flat-square)
 
-本システムは、厚生労働省が発表する接触確認アプリの「ダウンロード数」や「陽性登録数」の情報を取得する事が可能である。
+本システムを利用することで、厚生労働省が発表する接触確認アプリの「ダウンロード数」や「陽性登録数」の情報を取得する事が可能である。
 
 
-またこれに付随し、本システムは取得したデータをGoogleスプレッドシートに出力、matplotlibによるグラフ生成と画像出力、Twitterへの自動投稿などの機能を有している。
+またこれに付随し、取得したデータをGoogleスプレッドシートに出力、matplotlibによるグラフ生成と画像出力、Twitterへの自動投稿などの機能を有している。
 
 
 情報取得先は厚生労働省の特設サイト「新型コロナウイルス接触確認アプリ（COCOA) COVID-19 Contact-Confirming Application」である。
@@ -21,13 +21,13 @@
 そのため，厚生労働省のrobot.txt（<https://www.mhlw.go.jp/robots.txt>）によるクローラ許可範囲の確認，「利用規約・リンク・著作権等」に則り制作している。
 
 
-また，アクセス先サーバへの負担軽減やDoS状態を防ぐため，プログラムは更新される時間帯のみに作動させ，アクセスリトライ間隔は余裕を持たせた「５分」に設定している。
+また，アクセス先サーバへの負担軽減やDoS状態を防ぐため，スクレイピングプログラムは公式情報が更新される時間帯(17:00-18:30)のみ作動させている。この時間帯の中で，プログラムは動作し，更新が確認されるまで再アクセスを行う。アクセスのリトライ間隔は余裕を持たせた「５分」に設定している。
 
 
 
 -   「新型コロナウイルス接触確認アプリ」（厚生労働省）（<https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/cocoa_00138.html>）を加工して作成
 
-# DEMO(cocoa_webupdate_nitify.py実行時)
+# DEMO(cocoa_webupdate_notify.py実行時)
 
 **1.  [Start]スクレイピングによる画像取得の進捗画面**
 
