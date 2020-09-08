@@ -178,9 +178,12 @@ def graph_dl_rol(df):
     s1mask = np.isfinite(df['Downlowd incremental(×10,000)'])
     s2mask = np.isfinite(df['Increment of positive registration'])
 
-    #補間用のデータフレーム設定と補間処理
+    #補間用のデータフレーム設定と補間処理(線形補間)
     df_copy = df.copy()
-    df_copy.interpolate('akima',inplace=True)
+    df_copy.interpolate(inplace=True)
+    #df_copy.interpolate('akima',inplace=True)
+    print(df)
+    print(df_copy)
 
 
     # 補間データフレーム内のNanを無視して点間を結ぶ
@@ -302,9 +305,12 @@ def graph_posi_rol(df):
     color_2 = cm.tab20.colors[7]
     color_3 = cm.tab20.colors[8]
 
-    #新たなデータフレーム
+    #補間用のデータフレーム設定と補間処理(線形補間)
     df_copy = df.copy()
-    df_copy.interpolate('akima',inplace=True)
+    df_copy.interpolate(inplace=True)
+    #df_copy.interpolate('akima',inplace=True)
+    print(df)
+    print(df_copy)
 
     # Nanを無視して点間を結ぶ
     s1mask = np.isfinite(df['Downlowd incremental(×10,000)'])
