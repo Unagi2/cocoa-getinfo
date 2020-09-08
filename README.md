@@ -289,9 +289,10 @@ python3 cocoa_tweet.py
 -   Twitterへのツイート権限を必要とするため、Twitter APIを取得する必要がある。認証情報は、cocoa_tweet.py内の26行目を参照し、key_poolディレクトリに保存すること。<br>
 -   Googleスプレッドシートのグラフの画像取得を可能にするため、事前に「グラフの公開」より 画像公開リンクを作成する必要がある。（2020/9/7 グラフ生成システムへの移行により本画像取得機能は廃止）
 
-**出典・引用サイト**
+**出典**
 -   新型コロナウイルス接触確認アプリ（COCOA) COVID-19 Contact-Confirming Application(厚生労働省)<br>
     <https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/cocoa_00138.html>
+<!---
 -   Webページ更新を自動チェックして通知させよう <br>
     <http://shinnandesu.hatenablog.com/entry/2018/05/26/172751>
 -   【Windows】Pythonでスクリプトを自動実行する方法を現役エンジニアが解説【初心者向け】<br>
@@ -314,7 +315,7 @@ python3 cocoa_tweet.py
     <https://www.so-wi.com/2019/12/11/two_axises_chart.html>
 -   matplotlibでグラフのスムージング<br>
     <https://snova301.hatenablog.com/entry/2018/10/07/135233>
-
+-->
 # Author
 
 -   Unagi.
