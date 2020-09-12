@@ -38,7 +38,6 @@ def spline_interp(x,y):
     t_new_unix = [a.timestamp() for a in t_new]
 
     '''
-    # 方法2: scipy で補間
     # 補間方法選択
     # kind = "linear", "nearest", "zero", "slinear", "quadratic", "cubic", "previous", "next"
     kind = "cubic"
