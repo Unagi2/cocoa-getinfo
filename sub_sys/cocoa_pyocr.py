@@ -48,7 +48,7 @@ def py_ocr():
 
     # 画像から文字を読み込む
     builder = pyocr.builders.TextBuilder(tesseract_layout=3)
-    text = tool.image_to_string(img2, lang="jpn", builder=builder)
+    text = tool.image_to_string(img, lang="jpn", builder=builder)
 
     print("\n" + text + "\n")
 
