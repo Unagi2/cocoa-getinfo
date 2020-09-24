@@ -170,7 +170,7 @@ def sheet_pull():
                         #print(ave)
                         
                         #要素平均値置換
-                        print("置換処理")
+                        #print("置換処理")
                         count_three_df = count_df
                         for b in df_interpolate.iloc[:, col_pick][count_df:(count_df + count_two_df)]:
                             
