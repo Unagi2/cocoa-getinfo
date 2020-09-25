@@ -133,7 +133,7 @@ def search_and_push():
         y2 = open(output_path2, 'r', encoding='utf-8')
         yy2 = y2.read()
 
-        dx1 = ffound - int(yy1.replace('.', ''))
+        dx1 = ffound - int(yy1.replace(',', ''))
         dx2 = ffound2 - int(yy2.replace('.', ''))
         # print(dx1)
 
