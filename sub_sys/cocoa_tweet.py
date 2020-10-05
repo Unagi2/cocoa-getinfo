@@ -66,7 +66,7 @@ def tweet():
     y1 = open(path_1, 'r', encoding='utf-8')
     found1 = y1.read()
     #found1 = found1.replace('.', ',')
-    found1 = "{:,}".format(int(found1))
+    found1 = "{:,}".format(float(found1))
 
     # 3桁カンマ区切り
     # "{:,}".format(12345678)
@@ -76,7 +76,7 @@ def tweet():
     y2 = open(path_2, 'r', encoding='utf-8')
     found2 = y2.read()
     #found2 = found2.replace('.', ',')
-    found2 = "{:,}".format(int(found2))
+    found2 = "{:,}".format(float(found2))
 
     # テキスト個別生成
     text1 = genzai.strftime('%m').lstrip("0") + "月" + \
