@@ -1,11 +1,17 @@
 import os
-from datetime import datetime
+import git
 
-# Commit comment
-now = datetime.now()
-comment = datetime.now().strftime("%Y/%m/%d-%H:%M:%S")
+#Pushしたいリポジトリに移動
+os.chdir(r'/home/pi/Documents/Github/cocoa-getinfo')
+repo = git.Repo()
 
-# Push
-os.system('git add .')
-os.system('git commit -am "Regular update"')
-os.system('git push')
+#最新を取り込むため一旦Pull
+#o = repo.remotes.origin
+#o.pull()
+
+#Commit(サブディレクトリ含めて全て)
+repo.git.commit('.','-m','\"Commit Log\"')
+
+#Push
+origin = repo.remote(name='origin')
+origin.push()
