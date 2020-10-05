@@ -122,15 +122,13 @@ def search_and_push():
         print("陽性者登録数 : " + found2 + "\n")
         print("経過日数 : " + str(today.days))
 
-        # 文字列のint化
-        #ffound = int(found.replace(',', ''))  # カンマやピリオド消去
-        #ffound = int(found.replace('.', ''))
+        # 文字列のint化と数値整形
         ffound = int(re.sub("\\D", "", found))
-        print(ffound)
-        
-        #ffound2 = int(found2.replace('.', ''))
+        #print(ffound)
+
         ffound2 = int(re.sub("\\D", "", found2))
-        print(ffound2)
+        #print(ffound2)
+
         # 前回データとの差
         y1 = open(output_path, 'r', encoding='utf-8')
         yy1 = y1.read()
@@ -142,9 +140,9 @@ def search_and_push():
         dx2 = ffound2 - int(yy2.replace('.', ''))
         #dx2 = ffound2 - int(yy2.translate(str.maketrans({',': None, '.': None})))
 
-        print(dx1)
-        print(dx2)
-        '''
+        #print(dx1)
+        #print(dx2)
+
         # csv出力
         #path_log = os.path.join(my_path, r"..\log_pool\cocoa_data.csv")
         path_log = os.path.normpath(os.path.join(
@@ -176,7 +174,7 @@ def search_and_push():
             #f.write(str_genzai + ':')
             f.writelines(found2)
             # f.write('\n')
-        '''
+
     print("\n[Completed!]\n")
 
 

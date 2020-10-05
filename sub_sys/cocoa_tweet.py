@@ -65,18 +65,12 @@ def tweet():
     # ダウンロード前回データ
     y1 = open(path_1, 'r', encoding='utf-8')
     found1 = y1.read()
-    #found1 = found1.replace('.', ',')
     found1 = "{:,.0f}".format(float(found1))
-
-    # 3桁カンマ区切り
-    # "{:,}".format(12345678)
-    # '12,345,678'
 
     # 陽性登録数前回データ
     y2 = open(path_2, 'r', encoding='utf-8')
     found2 = y2.read()
-    #found2 = found2.replace('.', ',')
-    found2 = "{:,}".format(float(found2))
+    found2 = "{:,.0f}".format(float(found2))
 
     # テキスト個別生成
     text1 = genzai.strftime('%m').lstrip("0") + "月" + \
@@ -108,7 +102,7 @@ def tweet():
     auth.set_access_token(AT, AS)
 
     api = tweepy.API(auth)
-    '''
+    
     # 画像付きツイート
     api.update_with_media(status='[Auto Tweet]\n\n' +
                           twitter_first, filename=file_name_date)
@@ -117,7 +111,7 @@ def tweet():
 
     api.update_with_media(status='[Auto Tweet]\n\n' +
                           twitter_second, filename=file_name_dy)
-    '''
+    
     # time.sleep(5)
 
     # api.update_status(
