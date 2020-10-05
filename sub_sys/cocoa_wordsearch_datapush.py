@@ -76,13 +76,13 @@ def search_and_push():
         found = re.search('ダウンロード数は、' + genzai.strftime('%m').lstrip("0") + '月' + genzai.strftime('%d').lstrip("0") +
                           '日17:00時点、合計で約(.+?)万件です。', text).group(1)
         '''
-        for line in f:
+        for line in open(input_path, 'r', encoding='utf-8'):
             if "ダウンロード数" in line.replace(' ', ''):
                 line = line.replace(' ', '').translate(str.maketrans({',': '', '.': ''}))
                 match = regex.findall(line.replace(' ', ''))
                 found = match[0]
                 #print(line)
-                #print(match[0])
+                print(match[0])
         
     except AttributeError:
         # AAA, ZZZ not found in the original string
@@ -94,13 +94,13 @@ def search_and_push():
         found2 = re.search('陽性登録件数は、' + genzai.strftime('%m').lstrip("0") + '月' + genzai.strftime('%d').lstrip("0") +
                            '日17:00時点、合計で(.+?)件です。', text).group(1)
         '''
-        for line in f:
+        for line in open(input_path, 'r', encoding='utf-8'):
             if "陽性登録件数" in line.replace(' ', ''):
                 line2 = line.replace(' ', '').translate(str.maketrans({',': '', '.': ''}))
                 match2 = regex.findall(line2.replace(' ', ''))
                 found2 = match2[0]
                 #print(line2)
-                #print(match2[0])
+                print(match2[0])
         
     except AttributeError:
         # AAA, ZZZ not found in the original string
@@ -163,7 +163,7 @@ def search_and_push():
 
         #print(dx1)
         #print(dx2)
-
+        
         # csv出力
         #path_log = os.path.join(my_path, r"..\log_pool\cocoa_data.csv")
         path_log = os.path.normpath(os.path.join(
