@@ -66,7 +66,7 @@ def tweet():
     y1 = open(path_1, 'r', encoding='utf-8')
     found1 = y1.read()
     #found1 = found1.replace('.', ',')
-    found1 = "{:,}".format(float(found1))
+    found1 = "{:,.0f}".format(float(found1))
 
     # 3桁カンマ区切り
     # "{:,}".format(12345678)
