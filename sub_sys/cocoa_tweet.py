@@ -74,7 +74,7 @@ def tweet():
 
     # テキスト個別生成
     text1 = genzai.strftime('%m').lstrip("0") + "月" + \
-        genzai.strftime('%d').lstrip("0") + "日17:00現在\n"
+        genzai.strftime('%d').lstrip("0") + "日17:00時点\n"
     text2 = "・ダウンロードは、合計" + str(found1) + "万件\n"
     text3 = "・陽性登録件数は、合計" + str(found2) + "件\n\n"
     #text4 = "Google Sheetにてグラフを公開中\n"
