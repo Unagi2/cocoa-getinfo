@@ -68,9 +68,11 @@ def search_and_push():
 
     # ワード検索及びデータの抽出処理
     # 重要処理のため、原文の書式変更に合わせる必要あり（数字の前後）
+    regex = re.compile('\d{3,}')
 
     # ダウンロードデータの抽出
     try:
+        '''
         found = re.search('ダウンロード数は、' + genzai.strftime('%m').lstrip("0") + '月' + genzai.strftime('%d').lstrip("0") +
                           '日17:00時点、合計で約(.+?)万件です。', text).group(1)
         '''
@@ -79,15 +81,16 @@ def search_and_push():
                 line = line.replace(' ', '').translate(str.maketrans({',': '', '.': ''}))
                 match = regex.findall(line.replace(' ', ''))
                 found = match[0]
-                print(line)
-                print(match[0])
-        '''
+                #print(line)
+                #print(match[0])
+        
     except AttributeError:
         # AAA, ZZZ not found in the original string
         found = 'N/A'  # apply your error handling
 
     # 陽性登録件数データの抽出
     try:
+        '''
         found2 = re.search('陽性登録件数は、' + genzai.strftime('%m').lstrip("0") + '月' + genzai.strftime('%d').lstrip("0") +
                            '日17:00時点、合計で(.+?)件です。', text).group(1)
         '''
@@ -96,9 +99,9 @@ def search_and_push():
                 line2 = line.replace(' ', '').translate(str.maketrans({',': '', '.': ''}))
                 match2 = regex.findall(line2.replace(' ', ''))
                 found2 = match2[0]
-                print(line2)
-                print(match2[0])
-        '''
+                #print(line2)
+                #print(match2[0])
+        
     except AttributeError:
         # AAA, ZZZ not found in the original string
         found2 = 'N/A'  # apply your error handling
