@@ -342,9 +342,9 @@ def graph_dy(df):
 
     # 1つのaxesオブジェクトのlines属性に2つのLine2Dオブジェクトを追加
     ax1.plot(df['Update'][s1mask], df['Downlowd incremental(×10,000)'][s1mask],
-             color=color_1, label="ダウンロード数", marker="o",zorder=2,linewidth=0,markersize=5)
+             color=color_1, label="ダウンロード数", marker="o",zorder=2,markersize=5)
     #スプライン曲線
-    ax1.plot(spline[0],spline[1],color=color_1, label="",zorder=3)
+    #ax1.plot(spline[0],spline[1],color=color_1, label="",zorder=3)
 
     #移動平均線
     #ax1.plot(rol[0],rol[1],color=color_3, label="移動平均",zorder=4)
