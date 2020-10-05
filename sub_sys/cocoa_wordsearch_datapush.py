@@ -73,6 +73,15 @@ def search_and_push():
     try:
         found = re.search('ダウンロード数は、' + genzai.strftime('%m').lstrip("0") + '月' + genzai.strftime('%d').lstrip("0") +
                           '日17:00時点、合計で約(.+?)万件です。', text).group(1)
+        '''
+        for line in f:
+            if "ダウンロード数" in line.replace(' ', ''):
+                line = line.replace(' ', '').translate(str.maketrans({',': '', '.': ''}))
+                match = regex.findall(line.replace(' ', ''))
+                found = match[0]
+                print(line)
+                print(match[0])
+        '''
     except AttributeError:
         # AAA, ZZZ not found in the original string
         found = 'N/A'  # apply your error handling
@@ -81,6 +90,15 @@ def search_and_push():
     try:
         found2 = re.search('陽性登録件数は、' + genzai.strftime('%m').lstrip("0") + '月' + genzai.strftime('%d').lstrip("0") +
                            '日17:00時点、合計で(.+?)件です。', text).group(1)
+        '''
+        for line in f:
+            if "陽性登録件数" in line.replace(' ', ''):
+                line2 = line.replace(' ', '').translate(str.maketrans({',': '', '.': ''}))
+                match2 = regex.findall(line2.replace(' ', ''))
+                found2 = match2[0]
+                print(line2)
+                print(match2[0])
+        '''
     except AttributeError:
         # AAA, ZZZ not found in the original string
         found2 = 'N/A'  # apply your error handling
