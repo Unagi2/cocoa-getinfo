@@ -10,10 +10,10 @@ repo = git.Repo()
 #o.pull()
 
 #Add
-repo.git.add('.')
+#repo.git.add('.')
 
 #Commit(サブディレクトリ含めて全て)
-repo.git.commit('-am','\"Data update\"')
+repo.git.commit('-a','-m','\"Data update\"')
 
 #Push
 origin = repo.remote(name='origin')
