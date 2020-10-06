@@ -10,7 +10,7 @@ repo = git.Repo()
 #o.pull()
 
 #Add
-#repo.git.add('.')
+repo.git.add('.')
 
 #Commit(サブディレクトリ含めて全て)
 repo.git.commit('-a','-m','\"Data update\"')
