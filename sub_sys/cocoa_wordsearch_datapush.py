@@ -151,7 +151,7 @@ def search_and_push(set):
 
         # 文字列のint化と数値整形
         ffound = int(re.sub("\\D", "", found))
-        #print(ffound)
+        # print(ffound)
 
         ffound2 = int(re.sub("\\D", "", found2))
         # print(ffound2)
