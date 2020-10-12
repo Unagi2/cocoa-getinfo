@@ -12,7 +12,7 @@ from oauth2client.service_account import ServiceAccountCredentials
 import os.path
 
 
-def search_and_push():
+def search_and_push(set):
 
     print("[3/5 Processing data extraction and output... ]\n")
 
@@ -70,42 +70,48 @@ def search_and_push():
     # 重要処理のため、原文の書式変更に合わせる必要あり（数字の前後）
     regex = re.compile('\d{3,}')
 
-    # ダウンロードデータの抽出
-    try:
-        '''
-        found = re.search('ダウンロード数は、' + genzai.strftime('%m').lstrip("0") + '月' + genzai.strftime('%d').lstrip("0") +
-                          '日17:00時点、合計で約(.+?)万件です。', text).group(1)
-        '''
-        for line in open(input_path, 'r', encoding='utf-8'):
-            if "ダウンロード数" in line.replace(' ', ''):
-                line = line.replace(' ', '').translate(str.maketrans({',': '', '.': ''}))
-                match = regex.findall(line.replace(' ', ''))
-                found = match[0]
-                #print(line)
-                print(match[0])
-        
-    except AttributeError:
-        # AAA, ZZZ not found in the original string
-        found = 'N/A'  # apply your error handling
+    if set == 1:
+        # ダウンロードデータの抽出
+        try:
+            '''
+            found = re.search('ダウンロード数は、' + genzai.strftime('%m').lstrip("0") + '月' + genzai.strftime('%d').lstrip("0") +
+                            '日17:00時点、合計で約(.+?)万件です。', text).group(1)
+            '''
+            for line in open(input_path, 'r', encoding='utf-8'):
+                if "ダウンロード数" in line.replace(' ', ''):
+                    line = line.replace(' ', '').translate(
+                        str.maketrans({',': '', '.': ''}))
+                    match = regex.findall(line.replace(' ', ''))
+                    found = match[0]
+                    # print(line)
+                    print(match[0])
 
-    # 陽性登録件数データの抽出
-    try:
-        '''
-        found2 = re.search('陽性登録件数は、' + genzai.strftime('%m').lstrip("0") + '月' + genzai.strftime('%d').lstrip("0") +
-                           '日17:00時点、合計で(.+?)件です。', text).group(1)
-        '''
-        for line in open(input_path, 'r', encoding='utf-8'):
-            if "陽性登録件数" in line.replace(' ', ''):
-                line2 = line.replace(' ', '').translate(str.maketrans({',': '', '.': ''}))
-                match2 = regex.findall(line2.replace(' ', ''))
-                found2 = match2[0]
-                #print(line2)
-                print(match2[0])
-        
-    except AttributeError:
-        # AAA, ZZZ not found in the original string
-        found2 = 'N/A'  # apply your error handling
-        # sample-code:print(int('10,000'.replace(',', '')))
+        except AttributeError:
+            # AAA, ZZZ not found in the original string
+            found = 'N/A'  # apply your error handling
+
+        # 陽性登録件数データの抽出
+        try:
+            '''
+            found2 = re.search('陽性登録件数は、' + genzai.strftime('%m').lstrip("0") + '月' + genzai.strftime('%d').lstrip("0") +
+                            '日17:00時点、合計で(.+?)件です。', text).group(1)
+            '''
+            for line in open(input_path, 'r', encoding='utf-8'):
+                if "陽性登録件数" in line.replace(' ', ''):
+                    line2 = line.replace(' ', '').translate(
+                        str.maketrans({',': '', '.': ''}))
+                    match2 = regex.findall(line2.replace(' ', ''))
+                    found2 = match2[0]
+                    # print(line2)
+                    print(match2[0])
+
+        except AttributeError:
+            # AAA, ZZZ not found in the original string
+            found2 = 'N/A'  # apply your error handling
+            # sample-code:print(int('10,000'.replace(',', '')))
+    else:
+        found = 'N/A'
+        found2 = 'N/A'
 
     # googleスプレッドシートに追加処理と各種値更新
     if found == 'N/A' and found2 == 'N/A':  # 追加処理のみ更新無
@@ -148,7 +154,7 @@ def search_and_push():
         #print(ffound)
 
         ffound2 = int(re.sub("\\D", "", found2))
-        #print(ffound2)
+        # print(ffound2)
 
         # 前回データとの差
         y1 = open(output_path, 'r', encoding='utf-8')
@@ -161,9 +167,9 @@ def search_and_push():
         dx2 = ffound2 - int(yy2.replace('.', ''))
         #dx2 = ffound2 - int(yy2.translate(str.maketrans({',': None, '.': None})))
 
-        #print(dx1)
-        #print(dx2)
-        
+        # print(dx1)
+        # print(dx2)
+
         # csv出力
         #path_log = os.path.join(my_path, r"..\log_pool\cocoa_data.csv")
         path_log = os.path.normpath(os.path.join(
