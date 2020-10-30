@@ -68,9 +68,9 @@ if __name__ == "__main__":
         print("Weekday Mode\n")
         print("\nWeb更新チェック開始\n")
 
-        while count < 1 and triger < 18:
+        while count < 1 and triger < 36:
             print(triger * 5, "分経過\n")
-            print(triger + 1, "/18回目の検知90分間分\n")
+            print(triger + 1, "/36回目の検知180分間分\n")
 
             if(web_update()):
                 # 更新通知
