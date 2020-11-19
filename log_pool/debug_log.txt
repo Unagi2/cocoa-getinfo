@@ -53,3 +53,14 @@ Traceback (most recent call last):
     found2 = match2[0]
 IndexError: list index out of range
 
+1605786831443
+Traceback (most recent call last):
+  File "/home/pi/Documents/Github/cocoa-getinfo/webupdate_notify.py", line 85, in <module>
+
+    cocoa_analysis.main_process()
+  File "/home/pi/Documents/Github/cocoa-getinfo/cocoa_analysis.py", line 23, in main_process
+    cocoa_wordsearch_datapush.search_and_push(1)
+  File "/home/pi/Documents/Github/cocoa-getinfo/sub_sys/cocoa_wordsearch_datapush.py", line 104, in search_and_push
+    found2 = match2[0]
+IndexError: list index out of range
+
