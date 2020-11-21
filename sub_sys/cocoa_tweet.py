@@ -93,7 +93,7 @@ def tweet():
     #text6 = "https://t.co/an3puQWSOJ?amp=1\n\n"
     text7 = "#COCOA #接触確認アプリ"
 
-    text9 = "更新日毎の増分変化についてのグラフ\n\n"
+    text9 = "更新日毎の増分変化について\n\n"
     text10 = "\nGoogle Data Portalにてレポート公開\n"
     text11 = "https://datastudio.google.com/u/0/reporting/f9081247-b6d3-48b8-a6e2-82d3b0b018ce/page/EczbB\n\n"
     
@@ -106,7 +106,7 @@ def tweet():
 
     # ツイート本文生成
     twitter_first = text1 + text2 + text3 + text10 + text11 + text7
-    twitter_second = text1 + text9 + text10 + text11 + text7
+    twitter_second = text1 + text9 + text12 + text13 + text14 + text10 + text11 + text7
 
     # 確認用
     print("\n\n[First tweet]\n\n" + twitter_first + "\n\n")
