@@ -17,7 +17,7 @@ def py_ocr():
     print("[2/5 Processing OCR...]\n")
 
     genzai = datetime.now()
-    str_date = genzai.strftime('%m%d')
+    str_date = genzai.strftime('%Y%m%d')
 
     #file_name_dy = os.path.join(my_path, r"..\getIMG_pool\cocoa_info_" + str_date + r".png")
     file_name_dy = os.path.normpath(os.path.join(os.path.dirname(__file__), '../getIMG_pool/cocoa_info_' + str_date + '.png'))

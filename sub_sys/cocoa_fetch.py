@@ -13,7 +13,7 @@ def fetch_image():
 
     # 時刻取得
     genzai = datetime.now()
-    str_date = genzai.strftime('%m%d')
+    str_date = genzai.strftime('%Y%m%d')
 
     headers = {
         'User-Agent': '[COCOA-App Usage Status] I am scraping for the purpose of obtaining App information.',
