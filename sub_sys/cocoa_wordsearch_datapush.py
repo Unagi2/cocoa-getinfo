@@ -41,6 +41,10 @@ def search_and_push(set):
     #output_path2 = os.path.join(my_path, r"..\log_pool\positive.txt")
     output_path2 = os.path.normpath(os.path.join(
         os.path.dirname(__file__), '../log_pool/positive.txt'))
+    output_path3 = os.path.normpath(os.path.join(
+        os.path.dirname(__file__), '../log_pool/download_increment.txt'))
+    output_path4 = os.path.normpath(os.path.join(
+        os.path.dirname(__file__), '../log_pool/positive_increment.txt'))
 
     # ファイル読み込みと改行コード削除
     f = open(input_path, 'r', encoding='utf-8')
@@ -201,6 +205,14 @@ def search_and_push(set):
             #f.write(str_genzai + ':')
             f.writelines(found2)
             # f.write('\n')
+        
+        with open(output_path3, mode='w', encoding='utf-8') as f:
+            #f.write(str_genzai + ':')
+            f.writelines(dx1)
+        
+        with open(output_path4, mode='w', encoding='utf-8') as f:
+            #f.write(str_genzai + ':')
+            f.writelines(dx2)
 
     print("\n[Completed!]\n")
 

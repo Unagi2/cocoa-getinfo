@@ -61,6 +61,11 @@ def tweet():
     #path_2 = os.path.join(my_path, output_path2)
     path_2 = os.path.normpath(os.path.join(
         os.path.dirname(__file__), '../log_pool/positive.txt'))
+        
+    path_3 = os.path.normpath(os.path.join(
+        os.path.dirname(__file__), '../log_pool/download_increment.txt'))
+    path_4 = os.path.normpath(os.path.join(
+        os.path.dirname(__file__), '../log_pool/positive_increment.txt'))
 
     # ダウンロード前回データ
     y1 = open(path_1, 'r', encoding='utf-8')
@@ -71,6 +76,12 @@ def tweet():
     y2 = open(path_2, 'r', encoding='utf-8')
     found2 = y2.read()
     found2 = "{:,.0f}".format(float(found2))
+    
+    y3 = open(path_3, 'r', encoding='utf-8')
+    download_increment = y3.read()
+    
+    y4 = open(path_4, 'r', encoding='utf-8')
+    positive_increment = y4.read()
 
     # テキスト個別生成
     text1 = genzai.strftime('%m').lstrip("0") + "月" + \
@@ -85,7 +96,11 @@ def tweet():
     text9 = "更新日毎の増分変化についてのグラフ\n\n"
     text10 = "\nGoogle Data Portalにてレポート公開\n"
     text11 = "https://datastudio.google.com/u/0/reporting/f9081247-b6d3-48b8-a6e2-82d3b0b018ce/page/EczbB\n\n"
-
+    
+    text12= "前回データより、\n"
+    text13 = "・ダウンロードは、" + str(download_increment) + "件増\n"
+    text14 = "・陽性登録件数は、" + str(positive_increment) + "件増\n\n"
+    
     #text12 = "Sheetデータを閲覧用で公開"
     #text13 = "https://docs.google.com/spreadsheets/d/1mq_yfYhArPPoL_n3zNZSoL_dMaxGLMmBkVnM3gcJGgM/edit?usp=sharing"
 
