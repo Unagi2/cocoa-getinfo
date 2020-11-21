@@ -86,7 +86,7 @@ def search_and_push(set):
                     # print(line)
                     print(match[0])
 
-        except AttributeError:
+        except:
             # AAA, ZZZ not found in the original string
             found = 'N/A'  # apply your error handling
 
@@ -105,7 +105,7 @@ def search_and_push(set):
                     # print(line2)
                     print(match2[0])
 
-        except AttributeError:
+        except:
             # AAA, ZZZ not found in the original string
             found2 = 'N/A'  # apply your error handling
             # sample-code:print(int('10,000'.replace(',', '')))
