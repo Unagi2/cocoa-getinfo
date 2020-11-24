@@ -163,10 +163,10 @@ def search_and_push(set):
         # 前回データとの差
         y1 = open(output_path, 'r', encoding='utf-8')
         yy1 = y1.read()
-        first_line = yy1.split('\n', 1)[0]
+        #first_line = yy1.split('\n', 1)[0]
         y2 = open(output_path2, 'r', encoding='utf-8')
         yy2 = y2.read()
-        first_line2 = yy2.split('\n', 1)[0]
+        #first_line2 = yy2.split('\n', 1)[0]
 
         dx1 = ffound - int(first_line)
         dx2 = ffound2 - int(first_line2)
@@ -212,11 +212,11 @@ def search_and_push(set):
         
         with open(output_path3, mode='w', encoding='utf-8') as f:
             #f.write(str_genzai + ':')
-            f.writelines(dx1)
+            f.writelines(str(dx1))
         
         with open(output_path4, mode='w', encoding='utf-8') as f:
             #f.write(str_genzai + ':')
-            f.writelines(dx2)
+            f.writelines(str(dx2))
 
     print("\n[Completed!]\n")
 
