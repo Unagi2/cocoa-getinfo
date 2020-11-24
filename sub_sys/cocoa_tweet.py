@@ -97,8 +97,8 @@ def tweet():
     text10 = "\nGoogle Data Portalにてレポート公開\n"
     text11 = "https://datastudio.google.com/u/0/reporting/f9081247-b6d3-48b8-a6e2-82d3b0b018ce/page/EczbB\n\n"
     
-    text12= "前回データより、\n"
-    text13 = "・ダウンロードは、" + str(download_increment) + "件増\n"
+    text12= "前回更新より、\n"
+    text13 = "・ダウンロードは、" + str(download_increment) + "万件増\n"
     text14 = "・陽性登録件数は、" + str(positive_increment) + "件増\n\n"
     
     #text12 = "Sheetデータを閲覧用で公開"
