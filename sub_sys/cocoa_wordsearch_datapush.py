@@ -166,8 +166,8 @@ def search_and_push(set):
         y2 = open(output_path2, 'r', encoding='utf-8')
         yy2 = y2.read()
 
-        dx1 = ffound - yy1
-        dx2 = ffound2 - yy2
+        dx1 = ffound - int(yy1)
+        dx2 = ffound2 - int(yy2)
         #dx1 = ffound - int(yy1.replace(',', ''))
         #dx1 = ffound - int(yy1.translate(str.maketrans({',': None, '.': None})))
         #dx2 = ffound2 - int(yy2.replace('.', ''))
