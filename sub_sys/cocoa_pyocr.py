@@ -30,7 +30,7 @@ def py_ocr():
     # OCR対象の画像ファイルを読み込む
     img_in = Image.open(file_name_dy)
     img_out = img_in.crop((50, 50, 320, 160))
-    img = img_out.resize((880,330), resample=Image.LANCZOS) #270*110
+    img_resize = img_out.resize((880,330), resample=Image.LANCZOS) #270*110
     #img_resize.save('/home/pi/Desktop/lena_pillow_zoom.png')
     
     # 画像を読みやすいように加工。
@@ -48,10 +48,19 @@ def py_ocr():
                 g = 255
                 b = 255
                 img2.putpixel((x, y), (r, g, b))
+    
+    img_rgb = img_resize.convert("RGB")
+    pixels = img_rgb.load()            
+    c_max = 169
+    for j in range(img_rgb.size[1]):
+        for i in range(img_rgb.size[0]):
+            if (pixels[i, j][0] > c_max or pixels[i, j][1] > c_max or
+                    pixels[i, j][0] > c_max):
+                pixels[i, j] = (255, 255, 255)
 
     # 画像から文字を読み込む
     builder = pyocr.builders.TextBuilder(tesseract_layout=3)
-    text = tool.image_to_string(img2, lang="jpn", builder=builder)
+    text = tool.image_to_string(img_rgb, lang="jpn", builder=builder)
 
     print("\n" + text + "\n")
 
