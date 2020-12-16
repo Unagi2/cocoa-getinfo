@@ -28,7 +28,8 @@ def py_ocr():
     tool = tools[0]
 
     # OCR対象の画像ファイルを読み込む
-    img = Image.open(file_name_dy)
+    img_in = Image.open(file_name_dy)
+    img = img_in.crop((50, 50, 320, 160))
 
     # 画像を読みやすいように加工。
     img = img.convert('RGB')
