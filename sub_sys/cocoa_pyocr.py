@@ -31,7 +31,7 @@ def py_ocr():
     img_in = Image.open(file_name_dy)
     img_out = img_in.crop((50, 50, 320, 160))
     img_resize = img_out.resize((880,330), resample=Image.LANCZOS) #270*110
-    img_resize.save('/home/pi/Desktop/lena_pillow_zoom.png')
+    #img_resize.save('/home/pi/Desktop/lena_pillow_zoom.png')
     img = img_resize
     
     # 画像を読みやすいように加工。
