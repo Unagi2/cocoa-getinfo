@@ -185,7 +185,7 @@ def graph_date(df):
     # 1つのaxesオブジェクトのlines属性に2つのLine2Dオブジェクトを追加
     ## 曲線グラフ
     ax1.plot(df['Update'][s1mask], df['Download(×10,000)'][s1mask],
-             color=color_1, label="累積ダウンロード数", marker="o",zorder=2,linestyle="None",markersize=5)
+             color=color_1, label="累積ダウンロード数", marker="o",zorder=2,linestyle="None",markersize=3)
     ## スプライン曲線
     ax1.plot(spline[0],spline[1],color=color_1, label="",zorder=3)
     ## 移動平均線
@@ -342,7 +342,7 @@ def graph_dy(df):
 
     # 1つのaxesオブジェクトのlines属性に2つのLine2Dオブジェクトを追加
     ax1.plot(df['Update'][s1mask], df['Downlowd incremental(×10,000)'][s1mask],
-             color=color_1, label="ダウンロード数", marker="o",zorder=2,markersize=5)
+             color=color_1, label="ダウンロード数", marker="o",zorder=2,markersize=3)
     #スプライン曲線
     #ax1.plot(spline[0],spline[1],color=color_1, label="",zorder=3)
 
