@@ -85,9 +85,9 @@ def tweet():
         genzai.strftime('%d').lstrip("0") + "日17:00時点\n"
     text2 = "・ダウンロードは、合計" + str(found1) + "万件\n"
     text3 = "・陽性登録件数は、合計" + str(found2) + "件\n\n"
-    #text4 = "Google Sheetにてグラフを公開中\n"
+    #"Google Sheetにてグラフを公開中\n"
     text5 = "より詳細に変化を読み取ることができます。\n"
-    #text6 = "https://t.co/an3puQWSOJ?amp=1\n\n"
+    #"https://t.co/an3puQWSOJ?amp=1\n\n"
     text7 = "#COCOA #接触確認アプリ"
     text9 = "更新日毎の増分変化について\n\n"
     text10 = "\nGoogle Data Studioにてレポート公開\n"
@@ -98,8 +98,8 @@ def tweet():
     text15 = "ダウンロード数に関する移動平均グラフ\n\n"
     text16 = "陽性登録数に関する移動平均グラフ\n\n"
     
-    #text12 = "Sheetデータを閲覧用で公開"
-    #text13 = "https://docs.google.com/spreadsheets/d/1mq_yfYhArPPoL_n3zNZSoL_dMaxGLMmBkVnM3gcJGgM/edit?usp=sharing"
+    #"Sheetデータを閲覧用で公開"
+    #"https://docs.google.com/spreadsheets/d/1mq_yfYhArPPoL_n3zNZSoL_dMaxGLMmBkVnM3gcJGgM/edit?usp=sharing"
 
     # ツイート本文生成
     twitter_first = text1 + text2 + text3 + text10 + text11 + text7
