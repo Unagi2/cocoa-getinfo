@@ -23,22 +23,16 @@ def sheet_load():
     # 画像の保存先パス
     my_path = os.path.abspath(os.path.dirname(__file__))
 
-    #file_name_today = os.path.join(my_path, r"..\chart_pool\sheet_today" + str_date + r".png")
     file_name_today = os.path.normpath(os.path.join(os.path.dirname(
         __file__), '../chart_pool/sheet_today' + str_date + '.png'))
-    #file_name_date = os.path.join(my_path, r"..\chart_pool\sheet_date" + str_date + r".png")
     file_name_date = os.path.normpath(os.path.join(os.path.dirname(
         __file__), '../chart_pool/sheet_date' + str_date + '.png'))
-    #file_name_dy = os.path.join(my_path, r"..\chart_pool\sheet_dy" + str_date + r".png")
     file_name_dy = os.path.normpath(os.path.join(os.path.dirname(
         __file__), '../chart_pool/sheet_dy' + str_date + '.png'))
-    #file_name_today_eng = os.path.join(my_path, r"..\chart_pool\sheet_today_eng" + str_date + r".png")
     file_name_today_eng = os.path.normpath(os.path.join(os.path.dirname(
         __file__), '../chart_pool/sheet_today_eng' + str_date + '.png'))
-    #file_name_date_eng = os.path.join(my_path, r"..\chart_pool\sheet_date_eng" + str_date + r".png")
     file_name_date_eng = os.path.normpath(os.path.join(os.path.dirname(
         __file__), '../chart_pool/sheet_date_eng' + str_date + '.png'))
-    #file_name_dy_eng = os.path.join(my_path, r"..\chart_pool\sheet_dy_eng" + str_date + r".png")
     file_name_dy_eng = os.path.normpath(os.path.join(os.path.dirname(
         __file__), '../chart_pool/sheet_dy_eng' + str_date + '.png'))
 
