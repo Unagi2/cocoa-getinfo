@@ -42,14 +42,14 @@ def main_process():
     cocoa_create_plot.graph_dy(df[0])
 
     # Moving average
-    # download
+    ## download
     cocoa_rolling_plot.graph_dl_rol(df[0],df[1])
 
-    # positive
+    ## positive
     cocoa_rolling_plot.graph_posi_rol(df[0],df[1])
-    #####
 
-    print("\nInterval Time 5sec\n")
+
+    print("\nInterval Time 1sec\n")
     time.sleep(1)
 
     # Tweet Process(Test ver.)
