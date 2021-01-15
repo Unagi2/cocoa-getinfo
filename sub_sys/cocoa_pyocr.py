@@ -4,6 +4,7 @@ from PIL import Image
 import pyocr
 import os
 import os.path
+import re
 # インストールしたTesseract-OCRのパスを環境変数「PATH」へ追記する。
 # OS自体に設定してあれば以下の2行は不要
 path = 'C:\\Program Files\\Tesseract-OCR'
@@ -64,6 +65,9 @@ def py_ocr():
     text = tool.image_to_string(img_rgb, lang="jpn", builder=builder)
 
     print("\n" + text + "\n")
+    #result = re.sub('[^0-9]','', text)
+    new_text = re.sub(r"[a-z]", "", text.lower())
+    print("\n" + new_text + "\n")
 
     #log_path = os.path.join(my_path, r"..\log_pool\log.txt")
     log_path = os.path.normpath(os.path.join(
