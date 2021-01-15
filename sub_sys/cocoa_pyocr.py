@@ -74,7 +74,7 @@ def py_ocr():
         os.path.dirname(__file__), '../log_pool/log.txt'))
 
     with open(log_path, 'w', encoding="utf_8") as f:
-        print(text, file=f)
+        print(new_text, file=f)
         f.write('\n')
 
     print("[Completed!]\n")
