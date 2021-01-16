@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 import matplotlib.dates as mdates
 from matplotlib import cm
 from matplotlib.ticker import MaxNLocator
-import matplotlib.ticker as ticker
+import matplotlib.ticker #as ticker
 
 import numpy as np
 import pandas as pd
@@ -115,20 +115,28 @@ def graph_date(df):
     genzai = datetime.now()
     str_date = genzai.strftime('%Y%m%d')
 
-    # Graph
+    # Graph main settings
     sns.set(style="whitegrid", font="IPAexGothic")
     rcParams['figure.figsize'] =  9, 5
+
+    #plt.rcParams['font.family'] ='sans-serif'#使用するフォント
+    plt.rcParams['xtick.direction'] = 'in'#x軸の目盛線が内向き('in')か外向き('out')か双方向か('inout')
+    plt.rcParams['ytick.direction'] = 'in'#y軸の目盛線が内向き('in')か外向き('out')か双方向か('inout')
+    plt.rcParams['xtick.major.width'] = 1.0#x軸主目盛り線の線幅
+    plt.rcParams['ytick.major.width'] = 1.0#y軸主目盛り線の線幅
+    plt.rcParams['font.size'] = 8 #フォントの大きさ
+    plt.rcParams['axes.linewidth'] = 1.0# 軸の線幅edge linewidth。囲みの太さ
 
     # Figure and Axes
     plt.close(1)  # 既にFigure1が開かれていれば閉じる
 
     # twinx設定
     fig, ax1 = plt.subplots()
-    ax2 = ax1.twinx()
+    #ax2 = ax1.twinx()
 
     # styleを適用している場合はgrid線を片方消す
     ax1.grid(False)
-    ax2.grid(False)
+    #ax2.grid(False)
 
     # グラフのグリッドをグラフの本体の下にずらす
     ax1.set_axisbelow(True)
@@ -182,27 +190,49 @@ def graph_date(df):
     rol = rol_meen(df_copy['Update'][s222mask],df_copy['Positive registration'][s222mask])
 
 
-    # 1つのaxesオブジェクトのlines属性に2つのLine2Dオブジェクトを追加
-    ## 曲線グラフ
+    # 1つのaxesオブジェクトのlines属性に2つのLine2Dオブジェクトを追加 
+    # 曲線グラフのプロットデータ設定
     ax1.plot(df['Update'][s1mask], df['Download(×10,000)'][s1mask],
              color=color_1, label="累積ダウンロード数", marker="o",zorder=2,linestyle="None",markersize=3)
-    ## スプライン曲線
+    
+    # スプライン曲線設定
     ax1.plot(spline[0],spline[1],color=color_1, label="",zorder=3)
-    ## 移動平均線
+    
+    ax1.grid(axis='y', color='black', lw=0.4)
+    ax2 = ax1.twinx()
+    
+    ## 移動平均線設定
     #ax2.plot(rol[0],rol[1],color=color_3, label="移動平均",zorder=4)
-    ## 棒グラフ
+    
+    # 棒グラフデータ設定
     ax2.bar(df['Update'][s2mask], df['Positive registration']
             [s2mask], color=color_2, label="累積陽性登録数",zorder=1)
+    ax2.grid(None)
+
+    # 軸の目盛り設定
+    ## axesオブジェクトに属するYaxisオブジェクトの値を変更
+    #ax1.yaxis.set_major_locator(MaxNLocator(nbins=5))
+    #ax2.yaxis.set_major_locator(MaxNLocator(nbins=5))
 
 
-    # 軸の目盛りの最大値をしている
-    # axesオブジェクトに属するYaxisオブジェクトの値を変更
-    ax1.yaxis.set_major_locator(MaxNLocator(nbins=5))
-    ax2.yaxis.set_major_locator(MaxNLocator(nbins=5))
+    # Y-axis setting(edited 2021/1)
+    nticks = 6
+    mticks = 11
+
+    ax1.yaxis.set_major_locator(matplotlib.ticker.LinearLocator(nticks))
+    ax2.yaxis.set_major_locator(matplotlib.ticker.LinearLocator(nticks))
+
+    ax1.xaxis.set_major_locator(matplotlib.ticker.LinearLocator(mticks))
+    ax2.xaxis.set_major_locator(matplotlib.ticker.LinearLocator(mticks))
+
+    # round()で四捨五入して丸める
+    ax1.set_ylim(0,round(max(df['Download(×10,000)'][s1mask])+100, -2))
+    #ax1.set_xlim(0,10)
+    ax2.set_ylim(0,round(max(df['Positive registration'][s2mask])+100, -2))
 
     # 軸の縦線の色を変更している
-    # axesオブジェクトに属するSpineオブジェクトの値を変更
-    # 図を重ねてる関係で、ax2のみ
+    ## axesオブジェクトに属するSpineオブジェクトの値を変更
+    ## 図を重ねてる関係で、ax2のみ
     ax2.spines['left'].set_color(color_1)
     ax2.spines['right'].set_color(color_2)
 
@@ -210,22 +240,22 @@ def graph_date(df):
     ax1.spines['right'].set_color(color_2)
 
     # 軸の縦線の色を変更している
-    ax1.tick_params(axis='y', colors=color_1, direction='out',length = 5,width = 1)
-    ax2.tick_params(axis='y', colors=color_3, direction='out',length = 5,width = 1)
-    ax1.tick_params(axis='x', which='major',direction='out',length = 5,width = 1)
-    ax2.tick_params(axis='x', which='major',direction='out',length = 5,width = 1)
+    ax1.tick_params(axis='y', colors=color_1, direction='in',length = 5,width = 1)
+    ax2.tick_params(axis='y', colors=color_3, direction='in',length = 5,width = 1)
+    ax1.tick_params(axis='x', which='major',direction='in',length = 5,width = 1)
+    ax2.tick_params(axis='x', which='major',direction='in',length = 5,width = 1)
 
-    # 軸の目盛りの単位を変更する
+    # 軸の目盛りの単位を設定
     # ax1.yaxis.set_major_formatter(ticker.FormatStrFormatter("%d件"))
     # ax2.yaxis.set_major_formatter(ticker.FormatStrFormatter("%d件"))
 
-    #重ね順として折れ線グラフを前面
-    #棒グラフに折れ線が隠れてしまうのを防ぐ
+    # 重ね順として折れ線グラフを前面
+    # 棒グラフに折れ線が隠れてしまうのを防ぐ
     ax1.set_zorder(2)
     ax2.set_zorder(1)
 
-    #折れ線グラフの背景を透明
-    #重ね順が後ろに設定した棒グラフが消えるのを防ぐ
+    # 折れ線グラフの背景を透明
+    # 重ね順が後ろに設定した棒グラフが消えるのを防ぐ
     ax1.patch.set_alpha(0)
 
     # 凡例
@@ -253,9 +283,9 @@ def graph_date(df):
     #ax1.set_ylim([0, download_max])
     #ax2.set_ylim([0, positive_max])
 
-    # x軸の設定(表示形式)
+    # X-axis setting(表示形式)
     ax1.xaxis.set_major_locator(mdates.DayLocator(
-        bymonthday=None, interval=7, tz=None))
+        bymonthday=None, interval=14, tz=None))
     daysFmt = mdates.DateFormatter('%m/%d')
     ax1.xaxis.set_major_formatter(daysFmt)
     fig.autofmt_xdate()
@@ -267,10 +297,9 @@ def graph_date(df):
     #レイアウト自動整理
     plt.tight_layout()
 
-    print("Saving\n")
+    print("Saving sheet_date\n")
 
     file_name_date = os.path.normpath(os.path.join(os.path.dirname(__file__), '../chart_pool/sheet_date' + str_date + '.png'))
-    #file_name_date = '/Users/Ishikari 1/Documents/python3_projectfile/plot_date_' + str_date +'.png'
     plt.savefig(file_name_date, dpi=400)
     #plt.show()
 
@@ -284,20 +313,27 @@ def graph_dy(df):
     genzai = datetime.now()
     str_date = genzai.strftime('%Y%m%d')
 
-    # Graph Create
-
+    # Graph main settings
     sns.set(style="whitegrid", font="IPAexGothic")
     rcParams['figure.figsize'] =  9, 5
+
+    #plt.rcParams['font.family'] ='sans-serif'#使用するフォント
+    plt.rcParams['xtick.direction'] = 'in'#x軸の目盛線が内向き('in')か外向き('out')か双方向か('inout')
+    plt.rcParams['ytick.direction'] = 'in'#y軸の目盛線が内向き('in')か外向き('out')か双方向か('inout')
+    plt.rcParams['xtick.major.width'] = 1.0#x軸主目盛り線の線幅
+    plt.rcParams['ytick.major.width'] = 1.0#y軸主目盛り線の線幅
+    plt.rcParams['font.size'] = 8 #フォントの大きさ
+    plt.rcParams['axes.linewidth'] = 1.0# 軸の線幅edge linewidth。囲みの太さ
 
     # Figure and Axes
     plt.close(1)  # 既にFigure1が開かれていれば閉じる
 
     fig, ax1 = plt.subplots()
-    ax2 = ax1.twinx()
+    #ax2 = ax1.twinx()
 
-    # styleを適用している場合はgrid線を片方消す
+    # styleを適用している場合はgrid線を片方消す(2021/1)
     ax1.grid(False)
-    ax2.grid(False)
+    #ax2.grid(False)
 
     # グラフのグリッドをグラフの本体の下にずらす
     ax1.set_axisbelow(True)
@@ -343,6 +379,10 @@ def graph_dy(df):
     # 1つのaxesオブジェクトのlines属性に2つのLine2Dオブジェクトを追加
     ax1.plot(df['Update'][s1mask], df['Downlowd incremental(×10,000)'][s1mask],
              color=color_1, label="ダウンロード数", marker="o",zorder=2,markersize=3)
+    
+    ax1.grid(axis='y', color='black', lw=0.4)
+    ax2 = ax1.twinx()
+    
     #スプライン曲線
     #ax1.plot(spline[0],spline[1],color=color_1, label="",zorder=3)
 
@@ -352,11 +392,28 @@ def graph_dy(df):
     #棒グラフ
     ax2.bar(df['Update'][s2mask], df['Increment of positive registration']
             [s2mask], color=color_2, label="陽性登録数",zorder=1)
-
+    ax2.grid(None)
+    
     # 軸の目盛りの最大値をしている
-    # axesオブジェクトに属するYaxisオブジェクトの値を変更
-    ax1.yaxis.set_major_locator(MaxNLocator(nbins=5))
-    ax2.yaxis.set_major_locator(MaxNLocator(nbins=5))
+    ## axesオブジェクトに属するYaxisオブジェクトの値を変更
+    #ax1.yaxis.set_major_locator(MaxNLocator(nbins=5))
+    #ax2.yaxis.set_major_locator(MaxNLocator(nbins=5))
+
+    # Y-axis setting(edited 2021/1)
+    nticks = 6
+    mticks = 11
+
+    ax1.yaxis.set_major_locator(matplotlib.ticker.LinearLocator(nticks))
+    ax2.yaxis.set_major_locator(matplotlib.ticker.LinearLocator(nticks))
+
+    ax1.xaxis.set_major_locator(matplotlib.ticker.LinearLocator(mticks))
+    ax2.xaxis.set_major_locator(matplotlib.ticker.LinearLocator(mticks))
+
+    # round()で四捨五入して丸める
+    ax1.set_ylim(0,round(max(df['Downlowd incremental(×10,000)'][s1mask])+  20, -1))
+    #ax1.set_xlim(0,10)
+    ax2.set_ylim(0,round(max(df['Increment of positive registration'][s2mask])+ 20, -1))
+
 
     # 軸の縦線の色を変更している
     # axesオブジェクトに属するSpineオブジェクトの値を変更
@@ -368,10 +425,10 @@ def graph_dy(df):
     ax1.spines['right'].set_color(color_2)
 
     # 軸の縦線の色を変更している
-    ax1.tick_params(axis='y', colors=color_1, direction='out',length = 5,width = 1)
-    ax2.tick_params(axis='y', colors=color_3, direction='out',length = 5,width = 1)
-    ax1.tick_params(axis='x', which='major',direction='out',length = 5,width = 1)
-    ax2.tick_params(axis='x', which='major',direction='out',length = 5,width = 1)
+    ax1.tick_params(axis='y', colors=color_1, direction='in',length = 5,width = 1)
+    ax2.tick_params(axis='y', colors=color_3, direction='in',length = 5,width = 1)
+    ax1.tick_params(axis='x', which='major',direction='in',length = 5,width = 1)
+    ax2.tick_params(axis='x', which='major',direction='in',length = 5,width = 1)
 
     ax1.tick_params(labelbottom=True)
     ax2.tick_params(labelbottom=True)
@@ -412,11 +469,11 @@ def graph_dy(df):
     #positive_max = 1.2 * max(df['Increment of positive registration'])
 
     # 最大値設定
-    ax1.set_ylim([0, download_max])
+    #ax1.set_ylim([0, download_max])
     #ax2.set_ylim([0, positive_max])
 
     # ##以下をカスタマイズする
-    ax1.xaxis.set_major_locator(mdates.DayLocator(bymonthday=None, interval=7, tz=None))
+    ax1.xaxis.set_major_locator(mdates.DayLocator(bymonthday=None, interval=14, tz=None))
     daysFmt = mdates.DateFormatter('%m/%d')
     ax1.xaxis.set_major_formatter(daysFmt)
     fig.autofmt_xdate()
@@ -430,9 +487,8 @@ def graph_dy(df):
     #レイアウト整理
     plt.tight_layout()
 
-    print("Saving\n")
+    print("Saving sheet_dy\n")
     file_name_date = os.path.normpath(os.path.join(os.path.dirname(__file__), '../chart_pool/sheet_dy' + str_date + '.png'))
-    #file_name_date = '/Users/Ishikari 1/Documents/python3_projectfile/plot_dy_' + str_date +'.png'
     plt.savefig(file_name_date, dpi=400)
     #plt.show()
 

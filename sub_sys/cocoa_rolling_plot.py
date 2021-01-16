@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 import matplotlib.dates as mdates
 from matplotlib import cm
 from matplotlib.ticker import MaxNLocator
-import matplotlib.ticker as ticker
+import matplotlib.ticker #as ticker
 
 import numpy as np
 import pandas as pd
@@ -154,8 +154,16 @@ def graph_dl_rol(df_zero,df):
     # Graph Create
 
     sns.set(style="whitegrid", font="IPAexGothic")
-
     rcParams['figure.figsize'] = 9, 5
+
+    # plt settting
+    #plt.rcParams['font.family'] ='sans-serif'#使用するフォント
+    #plt.rcParams['xtick.direction'] = 'in'#x軸の目盛線が内向き('in')か外向き('out')か双方向か('inout')
+    #plt.rcParams['ytick.direction'] = 'in'#y軸の目盛線が内向き('in')か外向き('out')か双方向か('inout')
+    plt.rcParams['xtick.major.width'] = 1.0#x軸主目盛り線の線幅
+    plt.rcParams['ytick.major.width'] = 1.0#y軸主目盛り線の線幅
+    plt.rcParams['font.size'] = 8 #フォントの大きさ
+    plt.rcParams['axes.linewidth'] = 1.0# 軸の線幅edge linewidth。囲みの太さ
 
     # Figure and Axes
     plt.close(1)  # 既にFigure1が開かれていれば閉じる
@@ -215,15 +223,23 @@ def graph_dl_rol(df_zero,df):
 
     ## 移動平均線
     ax1.plot(rol[0],rol[1],color=color_2, label="移動平均（７日間）",zorder=2,linewidth=2)
-  
+    
+    ##y軸グリッド線表示
+    ax1.grid(axis='y', color='black', lw=0.4)
 
     # 軸の目盛りの最大値をしている
     # axesオブジェクトに属するYaxisオブジェクトの値を変更
-    ax1.yaxis.set_major_locator(MaxNLocator(nbins=5))
+    #ax1.yaxis.set_major_locator(MaxNLocator(nbins=5))
 
+    # y-axis setting
+    nticks = 6
+    mticks = 11
+
+    ax1.yaxis.set_major_locator(matplotlib.ticker.LinearLocator(nticks))
+    ax1.xaxis.set_major_locator(matplotlib.ticker.LinearLocator(mticks))
 
     #目盛設定
-    ax1.tick_params(axis='y', direction='out',length = 5,width = 1)
+    ax1.tick_params(axis='y', direction='in',length = 5,width = 1)
     ax1.tick_params(axis='x', which='major',direction='out',length = 5,width = 1)
 
     #重ね順として折れ線グラフを前面
@@ -251,13 +267,16 @@ def graph_dl_rol(df_zero,df):
                loc="upper left", borderaxespad=1)
     
     # 最大値設定
-    download_max = 1.4 * max(df['Downlowd incremental(×10,000)'])
-    ax1.set_ylim([0, download_max])
+    #download_max = 1.4 * max(df['Downlowd incremental(×10,000)'])
+    #ax1.set_ylim([0, download_max])
     #ax2.set_ylim([0, positive_max])
+    
+    #round()で四捨五入して丸める
+    ax1.set_ylim(0,round(max(df_zero['Downlowd incremental(×10,000)'][s1mask])+ 20, -1))
 
     # x軸の設定(表示形式)
     ax1.xaxis.set_major_locator(mdates.DayLocator(
-        bymonthday=None, interval=7, tz=None))
+        bymonthday=None, interval=14, tz=None))
     daysFmt = mdates.DateFormatter('%m/%d')
     ax1.xaxis.set_major_formatter(daysFmt)
     fig.autofmt_xdate()
@@ -271,7 +290,7 @@ def graph_dl_rol(df_zero,df):
     #レイアウト自動整理
     plt.tight_layout()
 
-    print("Saving\n")
+    print("Saving sheet_dl_moveave\n")
 
     file_name_date = os.path.normpath(os.path.join(os.path.dirname(__file__), '../chart_pool/sheet_dl_moveave' + str_date + '.png'))
     plt.savefig(file_name_date, dpi=400)
@@ -290,6 +309,15 @@ def graph_posi_rol(df_zero,df):
     # Graph
     sns.set(style="whitegrid", font="IPAexGothic")
     rcParams['figure.figsize'] = 9, 5
+
+    # plt settting
+    #plt.rcParams['font.family'] ='sans-serif'#使用するフォント
+    #plt.rcParams['xtick.direction'] = 'in'#x軸の目盛線が内向き('in')か外向き('out')か双方向か('inout')
+    #plt.rcParams['ytick.direction'] = 'in'#y軸の目盛線が内向き('in')か外向き('out')か双方向か('inout')
+    plt.rcParams['xtick.major.width'] = 1.0#x軸主目盛り線の線幅
+    plt.rcParams['ytick.major.width'] = 1.0#y軸主目盛り線の線幅
+    plt.rcParams['font.size'] = 8 #フォントの大きさ
+    plt.rcParams['axes.linewidth'] = 1.0# 軸の線幅edge linewidth。囲みの太さ
 
     # Figure and Axes
     plt.close(1)  # 既にFigure1が開かれていれば閉じる
@@ -337,13 +365,27 @@ def graph_posi_rol(df_zero,df):
     ## 移動平均線
     ax1.plot(rol[0],rol[1],color=color_2, label="移動平均（７日間）",zorder=2,linewidth=2)
     
+    # y軸グリッド線表示
+    ax1.grid(axis='y', color='black', lw=0.4)
+
     # 軸の目盛りの最大値をしている
     # axesオブジェクトに属するYaxisオブジェクトの値を変更
-    ax1.yaxis.set_major_locator(MaxNLocator(nbins=5))
+    #ax1.yaxis.set_major_locator(MaxNLocator(nbins=5))
 
-    # 軸
-    ax1.tick_params(axis='y', direction='out',length = 5,width = 1)
-    ax1.tick_params(axis='x', direction='out',length = 5,width = 1)
+    # Y-axis setting
+    nticks = 6
+    mticks = 11
+
+    ax1.yaxis.set_major_locator(matplotlib.ticker.LinearLocator(nticks))
+    ax1.xaxis.set_major_locator(matplotlib.ticker.LinearLocator(mticks))
+
+    ## round()で四捨五入して丸める
+    ax1.set_ylim(0,round(max(df_zero['Increment of positive registration'][s2mask])+  20, -1))
+
+
+    # tick setting
+    ax1.tick_params(axis='y', direction='in',length = 5,width = 1)
+    ax1.tick_params(axis='x', which='major',direction='out',length = 5,width = 1)
     ax1.tick_params(labelbottom=True)
 
     #重ね順として折れ線グラフを前面
@@ -371,7 +413,7 @@ def graph_posi_rol(df_zero,df):
     
     # x軸の設定(表示形式)
     ax1.xaxis.set_major_locator(mdates.DayLocator(
-        bymonthday=None, interval=7, tz=None))
+        bymonthday=None, interval=14, tz=None))
     daysFmt = mdates.DateFormatter('%m/%d')
     ax1.xaxis.set_major_formatter(daysFmt)
     fig.autofmt_xdate()
@@ -385,7 +427,7 @@ def graph_posi_rol(df_zero,df):
     #レイアウト整理
     plt.tight_layout()
 
-    print("Saving\n")
+    print("Saving sheet_posi_moveave\n")
     
     file_name_date = os.path.normpath(os.path.join(os.path.dirname(__file__), '../chart_pool/sheet_posi_moveave' + str_date + '.png'))
     plt.savefig(file_name_date, dpi=400)
