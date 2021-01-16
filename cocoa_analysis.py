@@ -32,6 +32,7 @@ def main_process():
 
     #DataFlame Get
     df = cocoa_gspread_pull.sheet_pull()
+    #df = pd.read_csv('df.csv')
     #print(df)
     #print(gspread_pull())
 
