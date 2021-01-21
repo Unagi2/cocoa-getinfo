@@ -285,3 +285,100 @@ UnboundLocalError: local variable 'img' referenced before assignment
 1610956800098
 1611043200072
 1611129600090
+1611216000078
+Traceback (most recent call last):
+  File "/home/pi/.local/lib/python3.5/site-packages/urllib3/connectionpool.py", line 426, in _make_request
+
+    six.raise_from(e, None)
+
+  File "<string>", line 3, in raise_from
+  File "/home/pi/.local/lib/python3.5/site-packages/urllib3/connectionpool.py", line 421, in _make_request
+
+    httplib_response = conn.getresponse()
+  File "/usr/lib/python3.5/http/client.py", line 1236, in getresponse
+
+    response.begin()
+  File "/usr/lib/python3.5/http/client.py", line 307, in begin
+
+    version, status, reason = self._read_status()
+  File "/usr/lib/python3.5/http/client.py", line 268, in _read_status
+
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+  File "/usr/lib/python3.5/socket.py", line 576, in readinto
+
+    return self._sock.recv_into(b)
+  File "/usr/lib/python3.5/ssl.py", line 937, in recv_into
+
+    return self.read(nbytes, buffer)
+  File "/usr/lib/python3.5/ssl.py", line 799, in read
+
+    return self._sslobj.read(len, buffer)
+  File "/usr/lib/python3.5/ssl.py", line 583, in read
+
+    v = self._sslobj.read(len, buffer)
+
+socket.timeout: The read operation timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/pi/.local/lib/python3.5/site-packages/requests/adapters.py", line 449, in send
+
+    timeout=timeout
+  File "/home/pi/.local/lib/python3.5/site-packages/urllib3/connectionpool.py", line 727, in urlopen
+
+    method, url, error=e, _pool=self, _stacktrace=sys.exc_info()[2]
+  File "/home/pi/.local/lib/python3.5/site-packages/urllib3/util/retry.py", line 403, in increment
+
+    raise six.reraise(type(error), error, _stacktrace)
+  File "/home/pi/.local/lib/python3.5/site-packages/urllib3/packages/six.py", line 735, in reraise
+
+    raise value
+  File "/home/pi/.local/lib/python3.5/site-packages/urllib3/connectionpool.py", line 677, in urlopen
+
+    chunked=chunked,
+  File "/home/pi/.local/lib/python3.5/site-packages/urllib3/connectionpool.py", line 428, in _make_request
+
+    self._raise_timeout(err=e, url=url, timeout_value=read_timeout)
+  File "/home/pi/.local/lib/python3.5/site-packages/urllib3/connectionpool.py", line 336, in _raise_timeout
+
+    self, url, "Read timed out. (read timeout=%s)" % timeout_value
+urllib3.exceptions.ReadTimeoutError: HTTPSConnectionPool(host='sheets.googleapis.com', port=443): Read timed out. (read timeout=120)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/pi/Documents/Github/cocoa-getinfo/webupdate_notify.py", line 85, in <module>
+
+    cocoa_analysis.main_process()
+  File "/home/pi/Documents/Github/cocoa-getinfo/cocoa_analysis.py", line 34, in main_process
+    df = cocoa_gspread_pull.sheet_pull()
+
+  File "/home/pi/Documents/Github/cocoa-getinfo/sub_sys/cocoa_gspread_pull.py", line 57, in sheet_pull
+    days_list = ws.col_values(1)
+  File "/home/pi/.local/lib/python3.5/site-packages/gspread/models.py", line 831, in col_values
+
+    'majorDimension': 'COLUMNS',
+  File "/home/pi/.local/lib/python3.5/site-packages/gspread/models.py", line 191, in values_get
+
+    r = self.client.request('get', url, params=params)
+  File "/home/pi/.local/lib/python3.5/site-packages/gspread/client.py", line 67, in request
+    headers=headers,
+  File "/home/pi/.local/lib/python3.5/site-packages/requests/sessions.py", line 543, in get
+
+    return self.request('GET', url, **kwargs)
+  File "/home/pi/.local/lib/python3.5/site-packages/google/auth/transport/requests.py", line 470, in request
+
+    **kwargs
+  File "/home/pi/.local/lib/python3.5/site-packages/requests/sessions.py", line 530, in request
+
+    resp = self.send(prep, **send_kwargs)
+  File "/home/pi/.local/lib/python3.5/site-packages/requests/sessions.py", line 643, in send
+
+    r = adapter.send(request, **kwargs)
+  File "/home/pi/.local/lib/python3.5/site-packages/requests/adapters.py", line 529, in send
+
+    raise ReadTimeout(e, request=request)
+
+requests.exceptions.ReadTimeout: HTTPSConnectionPool(host='sheets.googleapis.com', port=443): Read timed out. (read timeout=120)
+
