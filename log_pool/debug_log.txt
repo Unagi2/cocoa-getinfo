@@ -414,3 +414,5 @@ requests.exceptions.ReadTimeout: HTTPSConnectionPool(host='sheets.googleapis.com
 1613808000070
 1613894400069
 1613980800083
+python3: can't open file '/home/pi/Documents/Github/cocoa_analysis_holiday.py': [Errno 2] No such file or directory
+
