@@ -31,7 +31,7 @@ def py_ocr():
     # OCR対象の画像ファイルを読み込む
     img_in = Image.open(file_name_dy)
     img_out = img_in.crop((50, 50, 320, 160))
-    img = img_out.resize((880,330), resample=Image.LANCZOS) #270*110
+    img_rgb = img_out.resize((880,330), resample=Image.LANCZOS) #270*110
     
     # 画像を読みやすいように加工。
     """
