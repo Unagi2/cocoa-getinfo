@@ -50,6 +50,7 @@ def py_ocr():
                 b = 255
                 img2.putpixel((x, y), (r, g, b))
     """
+    """
     img_rgb = img.convert("RGB")
     pixels = img_rgb.load()            
     c_max = 160 #169
@@ -59,6 +60,7 @@ def py_ocr():
                     pixels[i, j][0] > c_max):
                 pixels[i, j] = (255, 255, 255)
     img_rgb.save('/home/pi/Desktop/img_rgb.png')
+    """
 
     # 画像から文字を読み込む
     builder = pyocr.builders.TextBuilder(tesseract_layout=3)
