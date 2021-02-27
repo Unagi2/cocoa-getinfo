@@ -53,7 +53,7 @@ def py_ocr():
     
     img_rgb = img.convert("RGB")
     pixels = img_rgb.load()            
-    c_max = 159 #169
+    c_max = 169 #169
     for j in range(img_rgb.size[1]):
         for i in range(img_rgb.size[0]):
             if (pixels[i, j][0] > c_max or pixels[i, j][1] > c_max or
