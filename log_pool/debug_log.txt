@@ -554,3 +554,36 @@ UnboundLocalError: local variable 'found2' referenced before assignment
 
 1614758400112
 1614844800102
+1614931200077
+Traceback (most recent call last):
+  File "/home/pi/Documents/Github/cocoa-getinfo/webupdate_notify.py", line 2, in <module>
+
+    import requests
+ModuleNotFoundError: No module named 'requests'
+
+Traceback (most recent call last):
+  File "/home/pi/Documents/Github/cocoa-getinfo/webupdate_notify.py", line 3, in <module>
+
+    from bs4 import BeautifulSoup
+ModuleNotFoundError: No module named 'bs4'
+
+Traceback (most recent call last):
+  File "/home/pi/Documents/Github/cocoa-getinfo/webupdate_notify.py", line 6, in <module>
+
+    import cocoa_analysis
+  File "/home/pi/Documents/Github/cocoa-getinfo/cocoa_analysis.py", line 3, in <module>
+    from sub_sys import cocoa_pyocr
+  File "/home/pi/Documents/Github/cocoa-getinfo/sub_sys/cocoa_pyocr.py", line 3, in <module>
+    from PIL import Image
+ModuleNotFoundError: No module named 'PIL'
+
+Traceback (most recent call last):
+  File "/home/pi/Documents/Github/cocoa-getinfo/webupdate_notify.py", line 6, in <module>
+
+    import cocoa_analysis
+  File "/home/pi/Documents/Github/cocoa-getinfo/cocoa_analysis.py", line 3, in <module>
+    from sub_sys import cocoa_pyocr
+  File "/home/pi/Documents/Github/cocoa-getinfo/sub_sys/cocoa_pyocr.py", line 4, in <module>
+    import pyocr
+ModuleNotFoundError: No module named 'pyocr'
+
