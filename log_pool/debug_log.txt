@@ -667,3 +667,36 @@ Traceback (most recent call last):
     from pylab import rcParams
 ModuleNotFoundError: No module named 'pylab'
 
+1615017600324
+Traceback (most recent call last):
+  File "/home/pi/Documents/Github/cocoa-getinfo/webupdate_notify.py", line 6, in <module>
+
+    import cocoa_analysis
+  File "/home/pi/Documents/Github/cocoa-getinfo/cocoa_analysis.py", line 7, in <module>
+    from sub_sys import cocoa_gspread_pull
+  File "/home/pi/Documents/Github/cocoa-getinfo/sub_sys/cocoa_gspread_pull.py", line 2, in <module>
+    from pylab import rcParams
+  File "/home/pi/.local/lib/python3.7/site-packages/pylab.py", line 1, in <module>
+    from matplotlib.pylab import *
+  File "/home/pi/.local/lib/python3.7/site-packages/matplotlib/__init__.py", line 107, in <module>
+
+    from . import cbook, rcsetup
+  File "/home/pi/.local/lib/python3.7/site-packages/matplotlib/cbook/__init__.py", line 28, in <module>
+    import numpy as np
+  File "/home/pi/.local/lib/python3.7/site-packages/numpy/__init__.py", line 148, in <module>
+    from . import lib
+  File "/home/pi/.local/lib/python3.7/site-packages/numpy/lib/__init__.py", line 25, in <module>
+    from .index_tricks import *
+  File "/home/pi/.local/lib/python3.7/site-packages/numpy/lib/index_tricks.py", line 12, in <module>
+    import numpy.matrixlib as matrixlib
+  File "/home/pi/.local/lib/python3.7/site-packages/numpy/matrixlib/__init__.py", line 4, in <module>
+    from .defmatrix import *
+  File "/home/pi/.local/lib/python3.7/site-packages/numpy/matrixlib/defmatrix.py", line 11, in <module>
+    from numpy.linalg import matrix_power
+  File "/home/pi/.local/lib/python3.7/site-packages/numpy/linalg/__init__.py", line 73, in <module>
+    from .linalg import *
+  File "/home/pi/.local/lib/python3.7/site-packages/numpy/linalg/linalg.py", line 33, in <module>
+    from numpy.linalg import lapack_lite, _umath_linalg
+ImportError: liblapack.so.3: cannot open shared object file: No such file or directory
+
+1615035806443
