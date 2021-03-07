@@ -713,3 +713,17 @@ Traceback (most recent call last):
     import seaborn as sns
 ModuleNotFoundError: No module named 'seaborn'
 
+Traceback (most recent call last):
+  File "/home/pi/Documents/Github/cocoa-getinfo/webupdate_notify.py", line 6, in <module>
+
+    import cocoa_analysis
+  File "/home/pi/Documents/Github/cocoa-getinfo/cocoa_analysis.py", line 7, in <module>
+    from sub_sys import cocoa_gspread_pull
+  File "/home/pi/Documents/Github/cocoa-getinfo/sub_sys/cocoa_gspread_pull.py", line 3, in <module>
+
+    from sub_sys import cocoa_create_plot
+  File "/home/pi/Documents/Github/cocoa-getinfo/sub_sys/cocoa_create_plot.py", line 14, in <module>
+
+    import japanize_matplotlib #matplotlib日本語モジュール
+ModuleNotFoundError: No module named 'japanize_matplotlib'
+
