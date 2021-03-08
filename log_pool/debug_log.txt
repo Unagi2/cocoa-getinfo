@@ -727,3 +727,4 @@ Traceback (most recent call last):
     import japanize_matplotlib #matplotlib日本語モジュール
 ModuleNotFoundError: No module named 'japanize_matplotlib'
 
+1615190413008
