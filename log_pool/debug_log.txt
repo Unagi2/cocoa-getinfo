@@ -729,3 +729,15 @@ ModuleNotFoundError: No module named 'japanize_matplotlib'
 
 1615190413008
 1615276812705
+1615363213308
+Traceback (most recent call last):
+  File "/home/pi/Documents/Github/cocoa-getinfo/webupdate_notify.py", line 85, in <module>
+
+    cocoa_analysis.main_process()
+  File "/home/pi/Documents/Github/cocoa-getinfo/cocoa_analysis.py", line 23, in main_process
+    cocoa_wordsearch_datapush.search_and_push(1)
+  File "/home/pi/Documents/Github/cocoa-getinfo/sub_sys/cocoa_wordsearch_datapush.py", line 121, in search_and_push
+    if found == 'N/A' and found2 == 'N/A':  # 追加処理のみ更新無
+UnboundLocalError: local variable 'found' referenced before assignment
+
+
