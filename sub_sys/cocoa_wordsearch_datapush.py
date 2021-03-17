@@ -82,7 +82,7 @@ def search_and_push(set):
                             '日17:00時点、合計で約(.+?)万件です。', text).group(1)
             '''
             for line in open(input_path, 'r', encoding='utf-8'):
-                if "ダウンロード数" in line.replace(' ', ''):
+                if "ロード数" in line.replace(' ', ''):
                     line = line.replace(' ', '').translate(
                         str.maketrans({',': '', '.': ''}))
                     match = regex.findall(line.replace(' ', ''))
