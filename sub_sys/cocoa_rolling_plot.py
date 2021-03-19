@@ -222,7 +222,7 @@ def graph_dl_rol(df_zero,df):
     
 
     ## 移動平均線
-    ax1.plot(rol[0],rol[1],color=color_2, label="移動平均（７日間）",zorder=2,linewidth=2)
+    ax1.plot(rol[0],rol[1],color=color_2, label="移動平均（７日間）",zorder=2,linewidth=1)
     
     ##y軸グリッド線表示
     ax1.grid(axis='y', color='black', lw=0.4)
@@ -363,7 +363,7 @@ def graph_posi_rol(df_zero,df):
     ax1.bar(df_zero['Update'][s2mask], df_zero['Increment of positive registration'][s2mask], color=color_3, label="陽性登録数",zorder=1)
     
     ## 移動平均線
-    ax1.plot(rol[0],rol[1],color=color_2, label="移動平均（７日間）",zorder=2,linewidth=2)
+    ax1.plot(rol[0],rol[1],color=color_2, label="移動平均（７日間）",zorder=2,linewidth=1)
     
     # y軸グリッド線表示
     ax1.grid(axis='y', color='black', lw=0.4)
