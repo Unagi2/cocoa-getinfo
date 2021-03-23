@@ -815,3 +815,4 @@ Traceback (most recent call last):
     if found == 'N/A' and found2 == 'N/A':  # 追加処理のみ更新無
 UnboundLocalError: local variable 'found' referenced before assignment
 
+1616486412577
