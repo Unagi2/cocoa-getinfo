@@ -906,3 +906,34 @@ Traceback (most recent call last):
     print("陽性者登録数 : " + found2 + "\n")
 UnboundLocalError: local variable 'found2' referenced before assignment
 
+Traceback (most recent call last):
+  File "/home/pi/.local/lib/python3.7/site-packages/PIL/ImageFile.py", line 247, in load
+
+    s = read(self.decodermaxblock)
+  File "/home/pi/.local/lib/python3.7/site-packages/PIL/PngImagePlugin.py", line 896, in load_read
+
+    cid, pos, length = self.png.read()
+  File "/home/pi/.local/lib/python3.7/site-packages/PIL/PngImagePlugin.py", line 162, in read
+
+    length = i32(s)
+  File "/home/pi/.local/lib/python3.7/site-packages/PIL/_binary.py", line 75, in i32be
+    return unpack_from(">I", c, o)[0]
+struct.error: unpack_from requires a buffer of at least 4 bytes
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/pi/Documents/Github/cocoa-getinfo/webupdate_notify.py", line 85, in <module>
+    cocoa_analysis.main_process()
+  File "/home/pi/Documents/Github/cocoa-getinfo/cocoa_analysis.py", line 20, in main_process
+    cocoa_pyocr.py_ocr()
+  File "/home/pi/Documents/Github/cocoa-getinfo/sub_sys/cocoa_pyocr.py", line 33, in py_ocr
+    img_out = img_in.crop((55, 70, 320, 160)) #50,50,320,160
+  File "/home/pi/.local/lib/python3.7/site-packages/PIL/Image.py", line 1138, in crop
+
+    self.load()
+  File "/home/pi/.local/lib/python3.7/site-packages/PIL/ImageFile.py", line 253, in load
+
+    raise OSError("image file is truncated") from e
+OSError: image file is truncated
+
