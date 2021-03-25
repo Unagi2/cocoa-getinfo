@@ -829,3 +829,12 @@ Traceback (most recent call last):
 
 UnboundLocalError: local variable 'found2' referenced before assignment
 
+Traceback (most recent call last):
+  File "/home/pi/Documents/Github/cocoa-getinfo/webupdate_notify.py", line 85, in <module>
+    cocoa_analysis.main_process()
+  File "/home/pi/Documents/Github/cocoa-getinfo/cocoa_analysis.py", line 23, in main_process
+    cocoa_wordsearch_datapush.search_and_push(1)
+  File "/home/pi/Documents/Github/cocoa-getinfo/sub_sys/cocoa_wordsearch_datapush.py", line 153, in search_and_push
+    print("陽性者登録数 : " + found2 + "\n")
+UnboundLocalError: local variable 'found2' referenced before assignment
+
