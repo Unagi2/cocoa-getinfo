@@ -878,3 +878,21 @@ Traceback (most recent call last):
     if found == 'N/A' and found2 == 'N/A':  # 追加処理のみ更新無
 UnboundLocalError: local variable 'found' referenced before assignment
 
+Traceback (most recent call last):
+  File "/home/pi/Documents/Github/cocoa-getinfo/webupdate_notify.py", line 85, in <module>
+
+    cocoa_analysis.main_process()
+  File "/home/pi/Documents/Github/cocoa-getinfo/cocoa_analysis.py", line 20, in main_process
+    cocoa_pyocr.py_ocr()
+  File "/home/pi/Documents/Github/cocoa-getinfo/sub_sys/cocoa_pyocr.py", line 33, in py_ocr
+    img_out = img_in.crop((55, 70, 320, 160)) #50,50,320,160
+  File "/home/pi/.local/lib/python3.7/site-packages/PIL/Image.py", line 1138, in crop
+
+    self.load()
+  File "/home/pi/.local/lib/python3.7/site-packages/PIL/ImageFile.py", line 284, in load
+
+    raise_oserror(err_code)
+  File "/home/pi/.local/lib/python3.7/site-packages/PIL/ImageFile.py", line 67, in raise_oserror
+    raise OSError(message + " when reading image file")
+OSError: unrecognized data stream contents when reading image file
+
