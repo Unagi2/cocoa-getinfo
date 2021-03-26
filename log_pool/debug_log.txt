@@ -947,3 +947,5 @@ Traceback (most recent call last):
     print("陽性者登録数 : " + found2 + "\n")
 UnboundLocalError: local variable 'found2' referenced before assignment
 
+1616665550550
+1616745613523
