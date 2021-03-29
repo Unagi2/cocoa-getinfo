@@ -206,7 +206,7 @@ def graph_date(df):
     
     # 棒グラフデータ設定
     ax2.bar(df['Update'][s2mask], df['Positive registration']
-            [s2mask], color=color_2, label="累積陽性登録数",zorder=1)
+            [s2mask], color=color_3, label="累積陽性登録数",zorder=1)
     ax2.grid(None)
 
     # 軸の目盛り設定
@@ -341,8 +341,8 @@ def graph_dy(df):
     # 色の設定
     cycle = plt.rcParams['axes.prop_cycle'].by_key()['color']  # ココがポイント
     color_1 = cm.tab20.colors[0]
-    color_2 = cm.tab20.colors[7]
-    color_3 = cm.tab20.colors[6]
+    color_2 = cm.tab20.colors[7] # pink
+    color_3 = cm.tab20.colors[6] # red
 
     #新たなデータフレーム
     #print(df)
@@ -391,7 +391,7 @@ def graph_dy(df):
 
     #棒グラフ
     ax2.bar(df['Update'][s2mask], df['Increment of positive registration']
-            [s2mask], color=color_2, label="陽性登録数",zorder=1)
+            [s2mask], color=color_3, label="陽性登録数",zorder=1)
     ax2.grid(None)
     
     # 軸の目盛りの最大値をしている

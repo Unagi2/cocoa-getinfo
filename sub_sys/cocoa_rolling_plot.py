@@ -181,7 +181,7 @@ def graph_dl_rol(df_zero,df):
     color_1 = cm.tab20.colors[1]
     #color_2 = cm.tab20.colors[10]
     color_2 = cm.tab20.colors[2]
-    color_3 = cm.tab20.colors[7]
+    color_3 = cm.tab20.colors[6]
 
     # Nanを無視して点間を結ぶ
     s1mask = np.isfinite(df['Downlowd incremental(×10,000)'])
@@ -333,7 +333,7 @@ def graph_posi_rol(df_zero,df):
     # 色の設定
     color_1 = cm.tab20.colors[1]
     color_2 = cm.tab20.colors[10]
-    color_3 = cm.tab20.colors[7]  
+    color_3 = cm.tab20.colors[6]  
 
     #新たなデータフレーム
     df_copy = df.copy()
