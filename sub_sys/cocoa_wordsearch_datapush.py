@@ -101,7 +101,7 @@ def search_and_push(set):
                             '日17:00時点、合計で(.+?)件です。', text).group(1)
             '''
             for line in open(input_path, 'r', encoding='utf-8'):
-                if "作六" in line.replace(' ', ''): # 陽性登録件数
+                if "明伯" in line.replace(' ', ''): # 陽性登録件数
                     line2 = line.replace(' ', '').translate(
                         str.maketrans({',': '', '.': ''}))
                     match2 = regex.findall(line2.replace(' ', ''))
