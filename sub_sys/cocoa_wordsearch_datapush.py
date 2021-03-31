@@ -82,7 +82,7 @@ def search_and_push(set):
                             '日17:00時点、合計で約(.+?)万件です。', text).group(1)
             '''
             for line in open(input_path, 'r', encoding='utf-8'):
-                if "ロード数" in line.replace(' ', ''):
+                if "ロード" in line.replace(' ', ''):
                     line = line.replace(' ', '').translate(
                         str.maketrans({',': '', '.': ''}))
                     match = regex.findall(line.replace(' ', ''))
@@ -101,7 +101,7 @@ def search_and_push(set):
                             '日17:00時点、合計で(.+?)件です。', text).group(1)
             '''
             for line in open(input_path, 'r', encoding='utf-8'):
-                if "登録件数" in line.replace(' ', ''): # 陽性登録件数
+                if "作六" in line.replace(' ', ''): # 陽性登録件数
                     line2 = line.replace(' ', '').translate(
                         str.maketrans({',': '', '.': ''}))
                     match2 = regex.findall(line2.replace(' ', ''))
