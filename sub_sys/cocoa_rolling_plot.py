@@ -178,7 +178,7 @@ def graph_dl_rol(df_zero,df):
     ax1.set_axisbelow(True)
 
     # 色の設定(tab20採用)
-    color_1 = cm.tab20.colors[1]
+    color_1 = cm.tab20.colors[0]
     #color_2 = cm.tab20.colors[10]
     color_2 = cm.tab20.colors[2]
     color_3 = cm.tab20.colors[6]
@@ -331,7 +331,7 @@ def graph_posi_rol(df_zero,df):
     ax1.set_axisbelow(True)
 
     # 色の設定
-    color_1 = cm.tab20.colors[1]
+    color_1 = cm.tab20.colors[0]
     color_2 = cm.tab20.colors[10]
     color_3 = cm.tab20.colors[6]  
 

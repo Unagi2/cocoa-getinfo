@@ -48,12 +48,19 @@ def search_and_push(set):
 
     # ファイル読み込みと改行コード削除
     f = open(input_path, 'r', encoding='utf-8')
-    Allf = f.read()
+    #Allf = f.read()
 
-    text = Allf.replace('\n', '')
-    text = text.replace('\r', '')
-    text = text.replace(' ', '')
-    print(text)
+    #text = Allf.replace('\n', '')
+    #text = text.replace('\r', '')
+    #text = text.replace(' ', '')
+    #print(text)
+    
+    #read_data_line = f.readlines
+    #print(read_data_line)
+    f1 = f.readline()
+    f2 = f.readline()
+    print(f1)
+    print(f2)
 
     f.close()
 
@@ -82,13 +89,24 @@ def search_and_push(set):
                             '日17:00時点、合計で約(.+?)万件です。', text).group(1)
             '''
             for line in open(input_path, 'r', encoding='utf-8'):
-                if "ロード" in line.replace(' ', ''):
+                if "ダウンロード数" in line.replace(' ', ''):
                     line = line.replace(' ', '').translate(
                         str.maketrans({',': '', '.': ''}))
                     match = regex.findall(line.replace(' ', ''))
                     found = match[0]
                     # print(line)
                     print(match[0])
+                
+                if f1 is not None:
+                    f1 = f1.replace(' ', '').translate(
+                        str.maketrans({',': '', '.': ''}))
+                    match = regex.findall(f1.replace(' ', ''))
+                    found = match[0]
+                    # print(line)
+                    #print(match)
+                    print(match[0])
+                    break
+                    
 
         except:
             # AAA, ZZZ not found in the original string
@@ -101,13 +119,22 @@ def search_and_push(set):
                             '日17:00時点、合計で(.+?)件です。', text).group(1)
             '''
             for line in open(input_path, 'r', encoding='utf-8'):
-                if "明伯" in line.replace(' ', ''): # 陽性登録件数
+                if "陽性登録件数" in line.replace(' ', ''): # 陽性登録件数
                     line2 = line.replace(' ', '').translate(
                         str.maketrans({',': '', '.': ''}))
                     match2 = regex.findall(line2.replace(' ', ''))
                     found2 = match2[0]
                     # print(line2)
                     print(match2[0])
+                    
+                if f2 is not None:
+                    f2 = f2.replace(' ', '').translate(
+                        str.maketrans({',': '', '.': ''}))
+                    match2 = regex.findall(f2.replace(' ', ''))
+                    found2 = match2[0]
+                    # print(line2)
+                    print(match2[0])
+                    break
 
         except:
             # AAA, ZZZ not found in the original string
@@ -116,7 +143,7 @@ def search_and_push(set):
     else:
         found = 'N/A'
         found2 = 'N/A'
-
+    
     # googleスプレッドシートに追加処理と各種値更新
     if found == 'N/A' and found2 == 'N/A':  # 追加処理のみ更新無
         print("\nデータ取得日 : " + str_date + "\n")
@@ -217,9 +244,9 @@ def search_and_push(set):
         with open(output_path4, mode='w', encoding='utf-8') as f:
             #f.write(str_genzai + ':')
             f.writelines(str(dx2))
-
+    
     print("\n[Completed!]\n")
 
 
 if __name__ == "__main__":
-    search_and_push()
+    search_and_push(1)
