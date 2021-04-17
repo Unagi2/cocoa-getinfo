@@ -58,7 +58,9 @@ def search_and_push(set):
     #read_data_line = f.readlines
     #print(read_data_line)
     f1 = f.readline()
+    #f1 = f.read().splitlines()
     f2 = f.readline()
+    #f2 = f.read().splitlines()
     print(f1)
     print(f2)
 

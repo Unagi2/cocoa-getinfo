@@ -20,7 +20,7 @@ def main_process():
     #cocoa_pyocr.py_ocr()
 
     # print("[Data Sample & GoogleSheet DataPush Process... ]\n")
-    cocoa_wordsearch_datapush.search_and_push(1)
+    #cocoa_wordsearch_datapush.search_and_push(1)
 
     print("\nInterval Time 5sec\n")
     time.sleep(5)

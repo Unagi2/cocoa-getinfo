@@ -30,8 +30,9 @@ def py_ocr():
 
     # OCR対象の画像ファイルを読み込む
     img_in = Image.open(file_name_dy)
-    img_out = img_in.crop((55, 70, 320, 160)) #50,50,320,160
-    img = img_out.resize((880,330), resample=Image.LANCZOS) #270*110
+    #img_out = img_in.crop((55, 70, 320, 160)) #50,50,320,160
+    img_out = img_in.crop((840, 130, 883, 210))
+    img = img_out.resize((430,800), resample=Image.LANCZOS) #270*110
     
     # 画像を読みやすいように加工。
     """
@@ -53,7 +54,7 @@ def py_ocr():
     
     img_rgb = img.convert("RGB")
     pixels = img_rgb.load()            
-    c_max = 170 #169
+    c_max = 200 #170
     for j in range(img_rgb.size[1]):
         for i in range(img_rgb.size[0]):
             if (pixels[i, j][0] > c_max or pixels[i, j][1] > c_max or
@@ -65,7 +66,16 @@ def py_ocr():
     # 画像から文字を読み込む
     builder = pyocr.builders.TextBuilder(tesseract_layout=3)
     text = tool.image_to_string(img_rgb, lang="jpn", builder=builder)
-
+    
+    """
+    for line in text:
+        if line != '\n':
+            print (line.split()[0])
+            #print(line.lstrip("\n"))
+    #print(text)
+    """
+    text = text.replace( '\n\n' , '\n' )
+    
     print("\n" + text + "\n")
     #result = re.sub('[^0-9]','', text)
     new_text = re.sub(r"[a-z]", "", text.lower())
