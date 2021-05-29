@@ -205,8 +205,9 @@ def graph_date(df):
     #ax2.plot(rol[0],rol[1],color=color_3, label="移動平均",zorder=4)
     
     # 棒グラフデータ設定
-    ax2.bar(df['Update'][s2mask], df['Positive registration']
-            [s2mask], color=color_3, label="累積陽性登録数",zorder=1)
+    #ax2.bar(df['Update'][s2mask], df['Positive registration'][s2mask], color=color_3, label="累積陽性登録数",zorder=1)
+    ax2.plot(df['Update'][s2mask], df['Positive registration']
+            [s2mask], color=color_3, label="累積陽性登録数",marker="o",zorder=1,markersize=1)
     ax2.grid(None)
 
     # 軸の目盛り設定
@@ -282,6 +283,9 @@ def graph_date(df):
     # 最大値設定
     #ax1.set_ylim([0, download_max])
     #ax2.set_ylim([0, positive_max])
+    
+    #Fill
+    plt.fill_between(df['Update'][s2mask], df['Positive registration'][s2mask], color=color_3, alpha=0.1)
 
     # X-axis setting(表示形式)
     ax1.xaxis.set_major_locator(mdates.DayLocator(
@@ -390,8 +394,9 @@ def graph_dy(df):
     #ax1.plot(rol[0],rol[1],color=color_3, label="移動平均",zorder=4)
 
     #棒グラフ
-    ax2.bar(df['Update'][s2mask], df['Increment of positive registration']
-            [s2mask], color=color_3, label="陽性登録数",zorder=1)
+    #ax2.bar(df['Update'][s2mask], df['Increment of positive registration'][s2mask], color=color_3, label="陽性登録数",zorder=1)
+    ax2.plot(df['Update'][s2mask], df['Increment of positive registration']
+            [s2mask], color=color_3, label="陽性登録数",marker="o",zorder=1,markersize=1, alpha=0.5)
     ax2.grid(None)
     
     # 軸の目盛りの最大値をしている
@@ -471,7 +476,10 @@ def graph_dy(df):
     # 最大値設定
     #ax1.set_ylim([0, download_max])
     #ax2.set_ylim([0, positive_max])
-
+    
+    #Fill
+    plt.fill_between(df['Update'][s2mask], df['Increment of positive registration'][s2mask], color=color_3, alpha=0.1)
+    
     # ##以下をカスタマイズする
     ax1.xaxis.set_major_locator(mdates.DayLocator(bymonthday=None, interval=14, tz=None))
     daysFmt = mdates.DateFormatter('%m/%d')

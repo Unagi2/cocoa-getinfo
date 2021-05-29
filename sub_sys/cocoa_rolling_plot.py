@@ -218,11 +218,11 @@ def graph_dl_rol(df_zero,df):
     
     # 1つのaxesオブジェクトのlines属性に2つのLine2Dオブジェクトを追加
     ## 棒グラフ
-    ax1.bar(df_zero['Update'][s1mask], df_zero['Downlowd incremental(×10,000)'][s1mask],color=color_1, label="ダウンロード数",zorder=1)
-    
+    ax1.bar(df_zero['Update'][s1mask], df_zero['Downlowd incremental(×10,000)'][s1mask],color=color_1, label="ダウンロード数",zorder=1,width=1,linewidth= 0.1, edgecolor=color_1, alpha=0.5)
+    #ax1.plot(df_zero['Update'][s1mask], df_zero['Downlowd incremental(×10,000)'][s1mask],color=color_1, label="ダウンロード数",marker="o",zorder=1,markersize=1)
 
     ## 移動平均線
-    ax1.plot(rol[0],rol[1],color=color_2, label="移動平均（７日間）",zorder=2,linewidth=1)
+    ax1.plot(rol[0],rol[1],color=color_2, label="移動平均（７日間）",zorder=2,linewidth=2)
     
     ##y軸グリッド線表示
     ax1.grid(axis='y', color='black', lw=0.4)
@@ -270,6 +270,9 @@ def graph_dl_rol(df_zero,df):
     #download_max = 1.4 * max(df['Downlowd incremental(×10,000)'])
     #ax1.set_ylim([0, download_max])
     #ax2.set_ylim([0, positive_max])
+    
+    #Fill
+    #plt.fill_between(rol[0],rol[1],color=color_2, alpha=0.3)
     
     #round()で四捨五入して丸める
     ax1.set_ylim(0,round(max(df_zero['Downlowd incremental(×10,000)'][s1mask])+ 20, -1))
@@ -360,10 +363,10 @@ def graph_posi_rol(df_zero,df):
 
     # 1つのaxesオブジェクトのlines属性に2つのLine2Dオブジェクトを追加
     ## 棒グラフ
-    ax1.bar(df_zero['Update'][s2mask], df_zero['Increment of positive registration'][s2mask], color=color_3, label="陽性登録数",zorder=1)
+    ax1.bar(df_zero['Update'][s2mask], df_zero['Increment of positive registration'][s2mask], color=color_3, label="陽性登録数",zorder=1,width=1.0,linewidth=0.1, edgecolor=color_3, alpha=0.5)
     
     ## 移動平均線
-    ax1.plot(rol[0],rol[1],color=color_2, label="移動平均（７日間）",zorder=2,linewidth=1)
+    ax1.plot(rol[0],rol[1],color=color_2, label="移動平均（７日間）",zorder=2,linewidth=2)
     
     # y軸グリッド線表示
     ax1.grid(axis='y', color='black', lw=0.4)
