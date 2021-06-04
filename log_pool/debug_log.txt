@@ -1258,3 +1258,21 @@ ValueError: invalid literal for int() with base 10: ''
 1622200420205
 1622275212753
 1622361613010
+1622448012422
+1622534413195
+1622620812638
+1622707213148
+1622793613103
+Traceback (most recent call last):
+  File "/home/pi/Documents/Github/cocoa-getinfo/webupdate_notify.py", line 85, in <module>
+
+    cocoa_analysis.main_process()
+  File "/home/pi/Documents/Github/cocoa-getinfo/cocoa_analysis.py", line 17, in main_process
+    cocoa_fetch.fetch_image()
+  File "/home/pi/Documents/Github/cocoa-getinfo/sub_sys/cocoa_fetch.py", line 38, in fetch_image
+    img = base64.b64decode(imgcode_clear.encode())
+  File "/usr/local/lib/python3.7/base64.py", line 87, in b64decode
+
+    return binascii.a2b_base64(s)
+binascii.Error: Incorrect padding
+
