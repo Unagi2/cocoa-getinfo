@@ -2,11 +2,22 @@
 import requests
 from bs4 import BeautifulSoup
 import base64
-from datetime import datetime
+from datetime import datetime 
+import urllib.error
+import urllib.request
+
 import os.path
 my_path = os.path.abspath(os.path.dirname(__file__))
 
-
+def download_file(url, dst_path):
+    try:
+        with urllib.request.urlopen(url) as web_file:
+            data = web_file.read()
+            with open(dst_path, mode='wb') as local_file:
+                local_file.write(data)
+    except urllib.error.URLError as e:
+        print(e)
+        
 def fetch_image():
 
     print("\n[1/5 Processing image acquisition...]\n")
@@ -35,15 +46,21 @@ def fetch_image():
         # print(element['src'])
         # print(imgcode_clear)
 
-        img = base64.b64decode(imgcode_clear.encode())
+        #img = base64.b64decode(imgcode_clear.encode())
+        img =  "https://www.mhlw.go.jp"  + imgcode
+        
 
         # 取得画像保存
         #file_name_dy = os.path.join(my_path, r"..\getIMG_pool\cocoa_info_" + str_date + r".png")
         file_name_dy = os.path.normpath(os.path.join(os.path.dirname(
             __file__), '../getIMG_pool/cocoa_info_' + str_date + '.png'))
-
-        with open(file_name_dy, "wb") as aaa:
-            aaa.write(img)
+        
+        #with open(file_name_dy, "wb") as aaa:
+        #    aaa.write(img)
+            
+        url =  img
+        dst_path = file_name_dy
+        download_file(url, dst_path)
 
     print("[Completed!]\n")
 

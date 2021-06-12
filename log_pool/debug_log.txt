@@ -1306,3 +1306,21 @@ Traceback (most recent call last):
 binascii.
 Error: Incorrect padding
 
+1623052812669
+Traceback (most recent call last):
+  File "/home/pi/Documents/Github/cocoa-getinfo/cocoa_analysis_holiday.py", line 26, in <module>
+
+    main_process()
+  File "/home/pi/Documents/Github/cocoa-getinfo/cocoa_analysis_holiday.py", line 14, in main_process
+    cocoa_fetch.fetch_image()
+  File "/home/pi/Documents/Github/cocoa-getinfo/sub_sys/cocoa_fetch.py", line 38, in fetch_image
+    img = base64.b64decode(imgcode_clear.encode())
+  File "/usr/local/lib/python3.7/base64.py", line 87, in b64decode
+    return binascii.a2b_base64(s)
+binascii.Error: Incorrect padding
+
+1623139212727
+1623225612850
+1623313917195
+1623399487802
+1623484812830
