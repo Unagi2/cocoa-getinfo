@@ -1330,3 +1330,45 @@ binascii.Error: Incorrect padding
 1623830414059
 1623916812626
 1624003213157
+1624013114216
+1624089620137
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/http/client.py", line 877, in _get_hostport
+
+    port = int(host[i+1:])
+ValueError: invalid literal for int() with base 10: 'image'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/pi/Documents/Github/cocoa-getinfo/webupdate_notify.py", line 104, in <module>
+    cocoa_analysis_holiday.main_process()
+  File "/home/pi/Documents/Github/cocoa-getinfo/cocoa_analysis_holiday.py", line 14, in main_process
+    cocoa_fetch.fetch_image()
+  File "/home/pi/Documents/Github/cocoa-getinfo/sub_sys/cocoa_fetch.py", line 63, in fetch_image
+    download_file(url, dst_path)
+  File "/home/pi/Documents/Github/cocoa-getinfo/sub_sys/cocoa_fetch.py", line 14, in download_file
+    with urllib.request.urlopen(url) as web_file:
+  File "/usr/local/lib/python3.7/urllib/request.py", line 222, in urlopen
+    return opener.open(url, data, timeout)
+  File "/usr/local/lib/python3.7/urllib/request.py", line 525, in open
+    response = self._open(req, data)
+  File "/usr/local/lib/python3.7/urllib/request.py", line 543, in _open
+
+    '_open', req)
+  File "/usr/local/lib/python3.7/urllib/request.py", line 503, in _call_chain
+    result = func(*args)
+  File "/usr/local/lib/python3.7/urllib/request.py", line 1360, in https_open
+    context=self._context, check_hostname=self._check_hostname)
+  File "/usr/local/lib/python3.7/urllib/request.py", line 1285, in do_open
+
+    h = http_class(host, timeout=req.timeout, **http_conn_args)
+  File "/usr/local/lib/python3.7/http/client.py", line 1358, in __init__
+    blocksize=blocksize)
+  File "/usr/local/lib/python3.7/http/client.py", line 841, in __init__
+    (self.host, self.port) = self._get_hostport(host, port)
+  File "/usr/local/lib/python3.7/http/client.py", line 882, in _get_hostport
+
+    raise InvalidURL("nonnumeric port: '%s'" % host[i+1:])
+http.client.InvalidURL: nonnumeric port: 'image'
+
