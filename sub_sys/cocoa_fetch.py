@@ -36,18 +36,37 @@ def fetch_image():
     html = requests.get(load_url, headers=headers)
     soup = BeautifulSoup(html.content, "html.parser")
 
+
+    img_select = soup.select_one('#content > div.l-contentBody > div > div.l-contentMain > div:nth-child(4) > div > p:nth-child(7) > img')
+    img_select = img_select['src']
+    imgcode_fit = img_select.replace('data:image/png;base64,', '')
+    #base64
+    img_decode = base64.b64decode(imgcode_fit.encode())
+    
+    file_name_dy = os.path.normpath(os.path.join(os.path.dirname(
+            __file__), '../getIMG_pool/cocoa_info_' + str_date + '.png'))
+        
+    with open(file_name_dy, "wb") as aaa:
+        aaa.write(img_decode )
+    
+    """
     # IDで検索し、その中のすべてのliタグを検索して表示する
     # 要素 = soup.find(class_="class名")
     # 「class」はPythonの予約語でそのままでは使えないので「class_」と書く。
     chap2 = soup.find(class_="m-grid__col1")    # idが「chap2」を検索
-    for element in chap2.find_all('img'):    # その中のimgタグの文字列を表示
+    for element in chap2.find_all('data:image/png;base64'):    # その中のimgタグの文字列を表示
+
+        
         imgcode = element['src']
+        #imgcode = element[1].attrs['src']
         imgcode_clear = imgcode.replace('data:image/png;base64,', '')
         # print(element['src'])
-        # print(imgcode_clear)
+        print(imgcode_clear)
 
-        #img = base64.b64decode(imgcode_clear.encode())
-        img =  "https://www.mhlw.go.jp"  + imgcode
+        #base64
+        img = base64.b64decode(imgcode_clear.encode())
+        #png 
+        #img =  "https://www.mhlw.go.jp"  + imgcode
         
 
         # 取得画像保存
@@ -55,13 +74,13 @@ def fetch_image():
         file_name_dy = os.path.normpath(os.path.join(os.path.dirname(
             __file__), '../getIMG_pool/cocoa_info_' + str_date + '.png'))
         
-        #with open(file_name_dy, "wb") as aaa:
-        #    aaa.write(img)
+        with open(file_name_dy, "wb") as aaa:
+            aaa.write(img)
             
-        url =  img
-        dst_path = file_name_dy
-        download_file(url, dst_path)
-
+        #url =  img
+        #dst_path = file_name_dy
+        #download_file(url, dst_path)
+    """
     print("[Completed!]\n")
 
 

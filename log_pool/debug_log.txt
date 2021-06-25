@@ -1411,3 +1411,188 @@ Traceback (most recent call last):
     raise InvalidURL("nonnumeric port: '%s'" % host[i+1:])
 http.client.InvalidURL: nonnumeric port: 'image'
 
+1624262413493
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/http/client.py", line 877, in _get_hostport
+
+    port = int(host[i+1:])
+ValueError: invalid literal for int() with base 10: 'image'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/pi/Documents/Github/cocoa-getinfo/cocoa_analysis_holiday.py", line 26, in <module>
+    main_process()
+  File "/home/pi/Documents/Github/cocoa-getinfo/cocoa_analysis_holiday.py", line 14, in main_process
+    cocoa_fetch.fetch_image()
+  File "/home/pi/Documents/Github/cocoa-getinfo/sub_sys/cocoa_fetch.py", line 63, in fetch_image
+
+    download_file(url, dst_path)
+  File "/home/pi/Documents/Github/cocoa-getinfo/sub_sys/cocoa_fetch.py", line 14, in download_file
+    with urllib.request.urlopen(url) as web_file:
+  File "/usr/local/lib/python3.7/urllib/request.py", line 222, in urlopen
+    return opener.open(url, data, timeout)
+  File "/usr/local/lib/python3.7/urllib/request.py", line 525, in open
+    response = self._open(req, data)
+  File "/usr/local/lib/python3.7/urllib/request.py", line 543, in _open
+    '_open', req)
+  File "/usr/local/lib/python3.7/urllib/request.py", line 503, in _call_chain
+    result = func(*args)
+  File "/usr/local/lib/python3.7/urllib/request.py", line 1360, in https_open
+    context=self._context, check_hostname=self._check_hostname)
+  File "/usr/local/lib/python3.7/urllib/request.py", line 1285, in do_open
+    h = http_class(host, timeout=req.timeout, **http_conn_args)
+  File "/usr/local/lib/python3.7/http/client.py", line 1358, in __init__
+    blocksize=blocksize)
+  File "/usr/local/lib/python3.7/http/client.py", line 841, in __init__
+    (self.host, self.port) = self._get_hostport(host, port)
+  File "/usr/local/lib/python3.7/http/client.py", line 882, in _get_hostport
+    raise InvalidURL("nonnumeric port: '%s'" % host[i+1:])
+http.client.InvalidURL: nonnumeric port: 'image'
+
+1624267037728
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/http/client.py", line 877, in _get_hostport
+
+    port = int(host[i+1:])
+ValueError: invalid literal for int() with base 10: 'image'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/pi/Documents/Github/cocoa-getinfo/cocoa_analysis_holiday.py", line 26, in <module>
+    main_process()
+  File "/home/pi/Documents/Github/cocoa-getinfo/cocoa_analysis_holiday.py", line 14, in main_process
+
+    cocoa_fetch.fetch_image()
+  File "/home/pi/Documents/Github/cocoa-getinfo/sub_sys/cocoa_fetch.py", line 63, in fetch_image
+    download_file(url, dst_path)
+  File "/home/pi/Documents/Github/cocoa-getinfo/sub_sys/cocoa_fetch.py", line 14, in download_file
+    with urllib.request.urlopen(url) as web_file:
+  File "/usr/local/lib/python3.7/urllib/request.py", line 222, in urlopen
+    return opener.open(url, data, timeout)
+  File "/usr/local/lib/python3.7/urllib/request.py", line 525, in open
+    response = self._open(req, data)
+  File "/usr/local/lib/python3.7/urllib/request.py", line 543, in _open
+    '_open', req)
+  File "/usr/local/lib/python3.7/urllib/request.py", line 503, in _call_chain
+    result = func(*args)
+  File "/usr/local/lib/python3.7/urllib/request.py", line 1360, in https_open
+    context=self._context, check_hostname=self._check_hostname)
+  File "/usr/local/lib/python3.7/urllib/request.py", line 1285, in do_open
+    h = http_class(host, timeout=req.timeout, **http_conn_args)
+  File "/usr/local/lib/python3.7/http/client.py", line 1358, in __init__
+    blocksize=blocksize)
+  File "/usr/local/lib/python3.7/http/client.py", line 841, in __init__
+
+    (self.host, self.port) = self._get_hostport(host, port)
+  File "/usr/local/lib/python3.7/http/client.py", line 882, in _get_hostport
+
+    raise InvalidURL("nonnumeric port: '%s'" % host[i+1:])
+http.client.InvalidURL: nonnumeric port: 'image'
+
+1624267351164
+Traceback (most recent call last):
+  File "/home/pi/Documents/Github/cocoa-getinfo/cocoa_analysis_holiday.py", line 26, in <module>
+    main_process()
+  File "/home/pi/Documents/Github/cocoa-getinfo/cocoa_analysis_holiday.py", line 14, in main_process
+    cocoa_fetch.fetch_image()
+  File "/home/pi/Documents/Github/cocoa-getinfo/sub_sys/cocoa_fetch.py", line 50, in fetch_image
+    img = base64.b64decode(imgcode_clear.encode())
+  File "/usr/local/lib/python3.7/base64.py", line 87, in b64decode
+
+    return binascii.a2b_base64(s)
+binascii.Error: Incorrect padding
+
+1624267435910
+Traceback (most recent call last):
+  File "/home/pi/Documents/Github/cocoa-getinfo/cocoa_analysis_holiday.py", line 26, in <module>
+
+    main_process()
+  File "/home/pi/Documents/Github/cocoa-getinfo/cocoa_analysis_holiday.py", line 14, in main_process
+    cocoa_fetch.fetch_image()
+  File "/home/pi/Documents/Github/cocoa-getinfo/sub_sys/cocoa_fetch.py", line 50, in fetch_image
+    img = base64.b64decode(imgcode_clear.encode())
+  File "/usr/local/lib/python3.7/base64.py", line 87, in b64decode
+    return binascii.a2b_base64(s)
+binascii.Error: Incorrect padding
+
+1624267508282
+Traceback (most recent call last):
+  File "/home/pi/Documents/Github/cocoa-getinfo/cocoa_analysis_holiday.py", line 26, in <module>
+    main_process()
+  File "/home/pi/Documents/Github/cocoa-getinfo/cocoa_analysis_holiday.py", line 14, in main_process
+
+    cocoa_fetch.fetch_image()
+  File "/home/pi/Documents/Github/cocoa-getinfo/sub_sys/cocoa_fetch.py", line 50, in fetch_image
+    img = base64.b64decode(imgcode_clear.encode())
+  File "/usr/local/lib/python3.7/base64.py", line 87, in b64decode
+    return binascii.a2b_base64(s)
+binascii.Error: Incorrect padding
+
+1624267972751
+/home/pi/.local/lib/python3.7/site-packages/PIL/Image.py:963: UserWarning: Palette images with Transparency expressed in bytes should be converted to RGBA images
+  "Palette images with Transparency expressed in bytes should be "
+
+1624268257492
+Traceback (most recent call last):
+  File "/home/pi/Documents/Github/cocoa-getinfo/cocoa_analysis_holiday.py", line 26, in <module>
+
+    main_process()
+  File "/home/pi/Documents/Github/cocoa-getinfo/cocoa_analysis_holiday.py", line 14, in main_process
+    cocoa_fetch.fetch_image()
+  File "/home/pi/Documents/Github/cocoa-getinfo/sub_sys/cocoa_fetch.py", line 45, in fetch_image
+    imgcode = element[1].attrs['src']
+  File "/home/pi/.local/lib/python3.7/site-packages/bs4/element.py", line 1406, in __getitem__
+
+    return self.attrs[key]
+KeyError: 1
+
+1624268449378
+/home/pi/.local/lib/python3.7/site-packages/PIL/Image.py:963: UserWarning: Palette images with Transparency expressed in bytes should be converted to RGBA images
+  "Palette images with Transparency expressed in bytes should be "
+
+1624268865205
+/home/pi/.local/lib/python3.7/site-packages/PIL/Image.py:963: UserWarning: Palette images with Transparency expressed in bytes should be converted to RGBA images
+  "Palette images with Transparency expressed in bytes should be "
+
+1624269016250
+/home/pi/.local/lib/python3.7/site-packages/PIL/Image.py:963: UserWarning: Palette images with Transparency expressed in bytes should be converted to RGBA images
+  "Palette images with Transparency expressed in bytes should be "
+
+1624269239588
+Traceback (most recent call last):
+  File "/home/pi/Documents/Github/cocoa-getinfo/cocoa_analysis_holiday.py", line 2, in <module>
+
+    from sub_sys import cocoa_fetch
+  File "/home/pi/Documents/Github/cocoa-getinfo/sub_sys/cocoa_fetch.py", line 40
+    img_select = soup.select_one('#content > div.l-contentBody > div > div.l-contentMain > div:nth-child(4) > div > p:nth-child(7) > img'))
+                                                                                                                                          ^
+SyntaxError: invalid syntax
+
+1624269268520
+Traceback (most recent call last):
+  File "/home/pi/Documents/Github/cocoa-getinfo/cocoa_analysis_holiday.py", line 2, in <module>
+
+    from sub_sys import cocoa_fetch
+  File "/home/pi/Documents/Github/cocoa-getinfo/sub_sys/cocoa_fetch.py", line 51
+    """
+      ^
+IndentationError: unindent does not match any outer indentation level
+
+1624269309711
+Traceback (most recent call last):
+  File "/home/pi/Documents/Github/cocoa-getinfo/cocoa_analysis_holiday.py", line 26, in <module>
+
+    main_process()
+  File "/home/pi/Documents/Github/cocoa-getinfo/cocoa_analysis_holiday.py", line 14, in main_process
+    cocoa_fetch.fetch_image()
+  File "/home/pi/Documents/Github/cocoa-getinfo/sub_sys/cocoa_fetch.py", line 41, in fetch_image
+    imgcode_fit = img_select.replace('data:image/png;base64,', '')
+TypeError: 'NoneType' object is not callable
+
+1624269385546
+1624348813401
+1624435212912
+1624521612540
+1624608013314
