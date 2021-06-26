@@ -1596,3 +1596,18 @@ TypeError: 'NoneType' object is not callable
 1624435212912
 1624521612540
 1624608013314
+1624632714251
+1624694413426
+Traceback (most recent call last):
+  File "/home/pi/Documents/Github/cocoa-getinfo/webupdate_notify.py", line 104, in <module>
+
+    cocoa_analysis_holiday.main_process()
+  File "/home/pi/Documents/Github/cocoa-getinfo/cocoa_analysis_holiday.py", line 14, in main_process
+    cocoa_fetch.fetch_image()
+  File "/home/pi/Documents/Github/cocoa-getinfo/sub_sys/cocoa_fetch.py", line 44, in fetch_image
+    img_decode = base64.b64decode(imgcode_fit.encode())
+  File "/usr/local/lib/python3.7/base64.py", line 87, in b64decode
+
+    return binascii.a2b_base64(s)
+binascii.Error: Incorrect padding
+
