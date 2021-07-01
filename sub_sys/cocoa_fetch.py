@@ -40,14 +40,29 @@ def fetch_image():
     img_select = soup.select_one('#content > div.l-contentBody > div > div.l-contentMain > div:nth-child(4) > div > p:nth-child(7) > img')
     img_select = img_select['src']
     imgcode_fit = img_select.replace('data:image/png;base64,', '')
-    #base64
-    img_decode = base64.b64decode(imgcode_fit.encode())
     
     file_name_dy = os.path.normpath(os.path.join(os.path.dirname(
             __file__), '../getIMG_pool/cocoa_info_' + str_date + '.png'))
+            
+            
+    if 'base64' in img_select:
+        #base64
+        img_decode = base64.b64decode(imgcode_fit.encode())
         
-    with open(file_name_dy, "wb") as aaa:
-        aaa.write(img_decode )
+        with open(file_name_dy, "wb") as aaa:
+            aaa.write(img_decode)
+    
+    elif '.png' in img_select:
+        #png 
+        img =  "https://www.mhlw.go.jp"  + img_select
+    
+        url =  img
+        dst_path = file_name_dy
+        download_file(url, dst_path)
+    else:
+        print('error')
+    
+    
     
     """
     # IDで検索し、その中のすべてのliタグを検索して表示する

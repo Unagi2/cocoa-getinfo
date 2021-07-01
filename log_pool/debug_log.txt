@@ -1625,3 +1625,93 @@ Traceback (most recent call last):
     return binascii.a2b_base64(s)
 binascii.Error: Incorrect padding
 
+1624867212943
+Traceback (most recent call last):
+  File "/home/pi/Documents/Github/cocoa-getinfo/cocoa_analysis_holiday.py", line 26, in <module>
+
+    main_process()
+  File "/home/pi/Documents/Github/cocoa-getinfo/cocoa_analysis_holiday.py", line 14, in main_process
+    cocoa_fetch.fetch_image()
+  File "/home/pi/Documents/Github/cocoa-getinfo/sub_sys/cocoa_fetch.py", line 44, in fetch_image
+    img_decode = base64.b64decode(imgcode_fit.encode())
+  File "/usr/local/lib/python3.7/base64.py", line 87, in b64decode
+
+    return binascii.a2b_base64(s)
+binascii.Error: Incorrect padding
+
+1624953612620
+Traceback (most recent call last):
+  File "/home/pi/Documents/Github/cocoa-getinfo/cocoa_analysis_holiday.py", line 26, in <module>
+
+    main_process()
+  File "/home/pi/Documents/Github/cocoa-getinfo/cocoa_analysis_holiday.py", line 14, in main_process
+    cocoa_fetch.fetch_image()
+  File "/home/pi/Documents/Github/cocoa-getinfo/sub_sys/cocoa_fetch.py", line 44, in fetch_image
+    img_decode = base64.b64decode(imgcode_fit.encode())
+  File "/usr/local/lib/python3.7/base64.py", line 87, in b64decode
+
+    return binascii.a2b_base64(s)
+binascii.Error: Incorrect padding
+
+1625040012485
+Traceback (most recent call last):
+  File "/home/pi/Documents/Github/cocoa-getinfo/cocoa_analysis_holiday.py", line 26, in <module>
+
+    main_process()
+  File "/home/pi/Documents/Github/cocoa-getinfo/cocoa_analysis_holiday.py", line 14, in main_process
+    cocoa_fetch.fetch_image()
+  File "/home/pi/Documents/Github/cocoa-getinfo/sub_sys/cocoa_fetch.py", line 44, in fetch_image
+    img_decode = base64.b64decode(imgcode_fit.encode())
+  File "/usr/local/lib/python3.7/base64.py", line 87, in b64decode
+
+    return binascii.a2b_base64(s)
+binascii.Error: Incorrect padding
+
+1625126413163
+Traceback (most recent call last):
+  File "/home/pi/Documents/Github/cocoa-getinfo/cocoa_analysis_holiday.py", line 26, in <module>
+
+    main_process()
+  File "/home/pi/Documents/Github/cocoa-getinfo/cocoa_analysis_holiday.py", line 14, in main_process
+    cocoa_fetch.fetch_image()
+  File "/home/pi/Documents/Github/cocoa-getinfo/sub_sys/cocoa_fetch.py", line 44, in fetch_image
+    img_decode = base64.b64decode(imgcode_fit.encode())
+  File "/usr/local/lib/python3.7/base64.py", line 87, in b64decode
+
+    return binascii.a2b_base64(s)
+binascii.Error: Incorrect padding
+
+1625140977793
+Traceback (most recent call last):
+  File "/home/pi/Documents/Github/cocoa-getinfo/cocoa_analysis_holiday.py", line 26, in <module>
+
+    main_process()
+  File "/home/pi/Documents/Github/cocoa-getinfo/cocoa_analysis_holiday.py", line 14, in main_process
+    cocoa_fetch.fetch_image()
+  File "/home/pi/Documents/Github/cocoa-getinfo/sub_sys/cocoa_fetch.py", line 44, in fetch_image
+    img_decode = base64.b64decode(imgcode_fit.encode())
+  File "/usr/local/lib/python3.7/base64.py", line 87, in b64decode
+    return binascii.a2b_base64(s)
+binascii.Error: Incorrect padding
+
+1625141534409
+Traceback (most recent call last):
+  File "/home/pi/Documents/Github/cocoa-getinfo/cocoa_analysis_holiday.py", line 2, in <module>
+
+    from sub_sys import cocoa_fetch
+  File "/home/pi/Documents/Github/cocoa-getinfo/sub_sys/cocoa_fetch.py", line 48
+    if('base64' in img_select){
+                              ^
+SyntaxError: invalid syntax
+
+1625141707648
+Traceback (most recent call last):
+  File "/home/pi/Documents/Github/cocoa-getinfo/cocoa_analysis_holiday.py", line 2, in <module>
+
+    from sub_sys import cocoa_fetch
+  File "/home/pi/Documents/Github/cocoa-getinfo/sub_sys/cocoa_fetch.py", line 55
+    elif '.png' in img_select:
+                             ^
+IndentationError: unindent does not match any outer indentation level
+
+1625141780090
