@@ -1775,3 +1775,31 @@ ValueError: `x` must be strictly increasing sequence.
 1627027212406
 1627113613116
 1627200012600
+1627286412994
+1627372812825
+1627459212811
+1627545612871
+1627632012763
+/home/pi/.local/lib/python3.7/site-packages/PIL/Image.py:963: UserWarning: Palette images with Transparency expressed in bytes should be converted to RGBA images
+  "Palette images with Transparency expressed in bytes should be "
+
+Traceback (most recent call last):
+  File "/home/pi/Documents/Github/cocoa-getinfo/webupdate_notify.py", line 85, in <module>
+
+    cocoa_analysis.main_process()
+  File "/home/pi/Documents/Github/cocoa-getinfo/cocoa_analysis.py", line 40, in main_process
+
+    cocoa_create_plot.graph_date(df[0])
+  File "/home/pi/Documents/Github/cocoa-getinfo/sub_sys/cocoa_create_plot.py", line 175, in graph_date
+
+    spline = spline_interp(df_copy['Update'][s11mask],df_copy['Download(×10,000)'][s11mask])
+  File "/home/pi/Documents/Github/cocoa-getinfo/sub_sys/cocoa_create_plot.py", line 46, in spline_interp
+
+    f = interpolate.Akima1DInterpolator(t_uni,y)
+  File "/home/pi/.local/lib/python3.7/site-packages/scipy/interpolate/_cubic.py", line 415, in __init__
+
+    x, dx, y, axis, _ = prepare_input(x, y, axis)
+  File "/home/pi/.local/lib/python3.7/site-packages/scipy/interpolate/_cubic.py", line 61, in prepare_input
+    raise ValueError("`x` must be strictly increasing sequence.")
+ValueError: `x` must be strictly increasing sequence.
+
