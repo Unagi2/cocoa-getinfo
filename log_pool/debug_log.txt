@@ -1845,3 +1845,106 @@ ValueError: `x` must be strictly increasing sequence.
 1627641885923
 1627718412961
 1627804812316
+1627891212441
+Traceback (most recent call last):
+  File "/home/pi/Documents/Github/cocoa-getinfo/cocoa_analysis_holiday.py", line 26, in <module>
+
+    main_process()
+  File "/home/pi/Documents/Github/cocoa-getinfo/cocoa_analysis_holiday.py", line 20, in main_process
+    cocoa_wordsearch_datapush.search_and_push(0)
+  File "/home/pi/Documents/Github/cocoa-getinfo/sub_sys/cocoa_wordsearch_datapush.py", line 175, in search_and_push
+    ws.append_row(datas, value_input_option='USER_ENTERED')
+  File "/home/pi/.local/lib/python3.7/site-packages/gspread/models.py", line 1469, in append_row
+
+    table_range=table_range,
+  File "/home/pi/.local/lib/python3.7/site-packages/gspread/models.py", line 1507, in append_rows
+
+    return self.spreadsheet.values_append(range_label, params, body)
+  File "/home/pi/.local/lib/python3.7/site-packages/gspread/models.py", line 165, in values_append
+    r = self.client.request('post', url, params=params, json=body)
+  File "/home/pi/.local/lib/python3.7/site-packages/gspread/client.py", line 76, in request
+    raise APIError(response)
+gspread.exceptions.APIError: {'code': 403, 'message': 'The caller does not have permission', 'status': 'PERMISSION_DENIED'}
+
+1627977612229
+Traceback (most recent call last):
+  File "/home/pi/Documents/Github/cocoa-getinfo/cocoa_analysis_holiday.py", line 26, in <module>
+
+    main_process()
+  File "/home/pi/Documents/Github/cocoa-getinfo/cocoa_analysis_holiday.py", line 20, in main_process
+    cocoa_wordsearch_datapush.search_and_push(0)
+  File "/home/pi/Documents/Github/cocoa-getinfo/sub_sys/cocoa_wordsearch_datapush.py", line 175, in search_and_push
+    ws.append_row(datas, value_input_option='USER_ENTERED')
+  File "/home/pi/.local/lib/python3.7/site-packages/gspread/models.py", line 1469, in append_row
+
+    table_range=table_range,
+  File "/home/pi/.local/lib/python3.7/site-packages/gspread/models.py", line 1507, in append_rows
+
+    return self.spreadsheet.values_append(range_label, params, body)
+  File "/home/pi/.local/lib/python3.7/site-packages/gspread/models.py", line 165, in values_append
+    r = self.client.request('post', url, params=params, json=body)
+  File "/home/pi/.local/lib/python3.7/site-packages/gspread/client.py", line 76, in request
+    raise APIError(response)
+gspread.exceptions.APIError: {'code': 403, 'message': 'The caller does not have permission', 'status': 'PERMISSION_DENIED'}
+
+1628064012715
+Traceback (most recent call last):
+  File "/home/pi/Documents/Github/cocoa-getinfo/cocoa_analysis_holiday.py", line 26, in <module>
+
+    main_process()
+  File "/home/pi/Documents/Github/cocoa-getinfo/cocoa_analysis_holiday.py", line 20, in main_process
+    cocoa_wordsearch_datapush.search_and_push(0)
+  File "/home/pi/Documents/Github/cocoa-getinfo/sub_sys/cocoa_wordsearch_datapush.py", line 175, in search_and_push
+    ws.append_row(datas, value_input_option='USER_ENTERED')
+  File "/home/pi/.local/lib/python3.7/site-packages/gspread/models.py", line 1469, in append_row
+
+    table_range=table_range,
+  File "/home/pi/.local/lib/python3.7/site-packages/gspread/models.py", line 1507, in append_rows
+
+    return self.spreadsheet.values_append(range_label, params, body)
+  File "/home/pi/.local/lib/python3.7/site-packages/gspread/models.py", line 165, in values_append
+    r = self.client.request('post', url, params=params, json=body)
+  File "/home/pi/.local/lib/python3.7/site-packages/gspread/client.py", line 76, in request
+    raise APIError(response)
+gspread.exceptions.APIError: {'code': 403, 'message': 'The caller does not have permission', 'status': 'PERMISSION_DENIED'}
+
+1628150412735
+Traceback (most recent call last):
+  File "/home/pi/Documents/Github/cocoa-getinfo/cocoa_analysis_holiday.py", line 26, in <module>
+    main_process()
+  File "/home/pi/Documents/Github/cocoa-getinfo/cocoa_analysis_holiday.py", line 20, in main_process
+    cocoa_wordsearch_datapush.search_and_push(0)
+  File "/home/pi/Documents/Github/cocoa-getinfo/sub_sys/cocoa_wordsearch_datapush.py", line 175, in search_and_push
+
+    ws.append_row(datas, value_input_option='USER_ENTERED')
+  File "/home/pi/.local/lib/python3.7/site-packages/gspread/models.py", line 1469, in append_row
+
+    table_range=table_range,
+  File "/home/pi/.local/lib/python3.7/site-packages/gspread/models.py", line 1507, in append_rows
+
+    return self.spreadsheet.values_append(range_label, params, body)
+  File "/home/pi/.local/lib/python3.7/site-packages/gspread/models.py", line 165, in values_append
+    r = self.client.request('post', url, params=params, json=body)
+  File "/home/pi/.local/lib/python3.7/site-packages/gspread/client.py", line 76, in request
+    raise APIError(response)
+gspread.exceptions.APIError: {'code': 403, 'message': 'The caller does not have permission', 'status': 'PERMISSION_DENIED'}
+
+1628236812689
+Traceback (most recent call last):
+  File "/home/pi/Documents/Github/cocoa-getinfo/webupdate_notify.py", line 85, in <module>
+
+    cocoa_analysis.main_process()
+  File "/home/pi/Documents/Github/cocoa-getinfo/cocoa_analysis.py", line 47, in main_process
+    cocoa_rolling_plot.graph_dl_rol(df[0],df[1])
+  File "/home/pi/Documents/Github/cocoa-getinfo/sub_sys/cocoa_rolling_plot.py", line 206, in graph_dl_rol
+
+    spline = spline_interp(df_copy['Update'][s11mask],df_copy['Downlowd incremental(×10,000)'][s11mask])
+  File "/home/pi/Documents/Github/cocoa-getinfo/sub_sys/cocoa_rolling_plot.py", line 51, in spline_interp
+    f = interpolate.Akima1DInterpolator(t_uni,y)
+  File "/home/pi/.local/lib/python3.7/site-packages/scipy/interpolate/_cubic.py", line 415, in __init__
+
+    x, dx, y, axis, _ = prepare_input(x, y, axis)
+  File "/home/pi/.local/lib/python3.7/site-packages/scipy/interpolate/_cubic.py", line 61, in prepare_input
+    raise ValueError("`x` must be strictly increasing sequence.")
+ValueError: `x` must be strictly increasing sequence.
+
