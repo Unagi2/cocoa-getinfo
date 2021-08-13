@@ -1950,3 +1950,18 @@ ValueError: `x` must be strictly increasing sequence.
 
 1628323212741
 1628409612871
+1628496012832
+1628582412912
+1628668812728
+1628755212553
+1628841612600
+Traceback (most recent call last):
+  File "/home/pi/Documents/Github/cocoa-getinfo/webupdate_notify.py", line 85, in <module>
+
+    cocoa_analysis.main_process()
+  File "/home/pi/Documents/Github/cocoa-getinfo/cocoa_analysis.py", line 23, in main_process
+    cocoa_wordsearch_datapush.search_and_push(1)
+  File "/home/pi/Documents/Github/cocoa-getinfo/sub_sys/cocoa_wordsearch_datapush.py", line 189, in search_and_push
+    ffound2 = int(re.sub("\\D", "", found2))
+ValueError: invalid literal for int() with base 10: ''
+
