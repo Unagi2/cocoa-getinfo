@@ -1995,3 +1995,18 @@ ValueError: invalid literal for int() with base 10: ''
 1630057109061
 1630137613236
 1630224012086
+1630310412265
+1630396812036
+1630483212984
+1630569613028
+1630656013005
+Traceback (most recent call last):
+  File "/home/pi/Documents/Github/cocoa-getinfo/webupdate_notify.py", line 85, in <module>
+
+    cocoa_analysis.main_process()
+  File "/home/pi/Documents/Github/cocoa-getinfo/cocoa_analysis.py", line 23, in main_process
+    cocoa_wordsearch_datapush.search_and_push(1)
+  File "/home/pi/Documents/Github/cocoa-getinfo/sub_sys/cocoa_wordsearch_datapush.py", line 189, in search_and_push
+    ffound2 = int(re.sub("\\D", "", found2))
+ValueError: invalid literal for int() with base 10: ''
+
