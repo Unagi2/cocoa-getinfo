@@ -2274,3 +2274,15 @@ Traceback (most recent call last):
     img_select = img_select['src']
 TypeError: 'NoneType' object is not subscriptable
 
+1632643212590
+Traceback (most recent call last):
+  File "/home/pi/Documents/Github/cocoa-getinfo/webupdate_notify.py", line 104, in <module>
+
+    cocoa_analysis_holiday.main_process()
+  File "/home/pi/Documents/Github/cocoa-getinfo/cocoa_analysis_holiday.py", line 14, in main_process
+    cocoa_fetch.fetch_image()
+  File "/home/pi/Documents/Github/cocoa-getinfo/sub_sys/cocoa_fetch.py", line 41, in fetch_image
+
+    img_select = img_select['src']
+TypeError: 'NoneType' object is not subscriptable
+
