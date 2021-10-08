@@ -48,23 +48,34 @@ def search_and_push(set):
 
     # ファイル読み込みと改行コード削除
     f = open(input_path, 'r', encoding='utf-8')
+    
+    lines = f.readlines()
+    f.close()
+    
+    f= [line.strip() for line in lines]
+    f = [a for a in f if a != '']
+
     #Allf = f.read()
 
     #text = Allf.replace('\n', '')
     #text = text.replace('\r', '')
     #text = text.replace(' ', '')
-    #print(text)
+    print(f)
     
     #read_data_line = f.readlines
     #print(read_data_line)
-    f1 = f.readline()
+    
+    #f1 = f.readline()
+    f1 = str(f[0])
     #f1 = f.read().splitlines()
-    f2 = f.readline()
+    
+    #f2 = f.readline()
+    f2 = str(f[1])
     #f2 = f.read().splitlines()
     print(f1)
     print(f2)
 
-    f.close()
+    #f.close()
 
     # 現在時刻取得
     genzai = datetime.now()

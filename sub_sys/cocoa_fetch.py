@@ -34,13 +34,21 @@ def fetch_image():
     # Webページを取得して解析する
     load_url = "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/cocoa_00138.html"
     html = requests.get(load_url, headers=headers)
-    soup = BeautifulSoup(html.content, "html.parser")
+    #soup = BeautifulSoup(html.content, "html.parser")
+    soup = BeautifulSoup(html.content, "lxml")
 
 
-    img_select = soup.select_one('#content > div.l-contentBody > div > div.l-contentMain > div:nth-child(4) > div > p:nth-child(7) > img')
-    img_select = img_select['src']
-    imgcode_fit = img_select.replace('data:image/png;base64,', '')
+    #img_select = soup.select_one('#content > div.l-contentBody > div > div.l-contentMain > div:nth-child(4) > div > p:nth-child(7) > img')
+    #img_select = soup.select('#content')
+    img_select = soup.select('#content > div.l-contentBody > div > div.l-contentMain > div:nth-of-type(3) > div > p:nth-of-type(5) > img')
+    # > div.l-contentBody > div > div.l-contentMain > div:nth-of-type(4) > div > p:nth-of-type(9) > img
+    #img_select = soup.find_all('img')
+    img_select = img_select[0].attrs['src']
+    #imgcode_fit = img_select.replace('data:image/png;base64,', '')
     
+    print(img_select)
+    
+
     file_name_dy = os.path.normpath(os.path.join(os.path.dirname(
             __file__), '../getIMG_pool/cocoa_info_' + str_date + '.png'))
             
@@ -59,10 +67,19 @@ def fetch_image():
         url =  img
         dst_path = file_name_dy
         download_file(url, dst_path)
+    
+    elif '.jpg' in img_select:
+        #png 
+        img =  "https://www.mhlw.go.jp"  + img_select
+    
+        url =  img
+        dst_path = file_name_dy
+        download_file(url, dst_path)
+        
     else:
         print('error')
     
-    
+
     
     """
     # IDで検索し、その中のすべてのliタグを検索して表示する
