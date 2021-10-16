@@ -6,6 +6,10 @@ from datetime import datetime
 import urllib.error
 import urllib.request
 
+import io
+from PIL import Image
+import binascii
+
 import os.path
 my_path = os.path.abspath(os.path.dirname(__file__))
 
@@ -44,9 +48,9 @@ def fetch_image():
     # > div.l-contentBody > div > div.l-contentMain > div:nth-of-type(4) > div > p:nth-of-type(9) > img
     #img_select = soup.find_all('img')
     img_select = img_select[0].attrs['src']
-    #imgcode_fit = img_select.replace('data:image/png;base64,', '')
+    imgcode_fit = img_select.replace('data:image/png;base64,', '')
     
-    print(img_select)
+    print(imgcode_fit)
     
 
     file_name_dy = os.path.normpath(os.path.join(os.path.dirname(
@@ -55,6 +59,11 @@ def fetch_image():
             
     if 'base64' in img_select:
         #base64
+        #img_select += "=" * ((4 - len(img_select) % 4) % 4)        
+        #img_data = base64.urlsafe_b64decode(img_select)
+        
+        #print(img_data)
+        
         img_decode = base64.b64decode(imgcode_fit.encode())
         
         with open(file_name_dy, "wb") as aaa:

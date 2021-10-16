@@ -2470,3 +2470,16 @@ Traceback (most recent call last):
     img_decode = base64.b64decode(imgcode_fit.encode())
 NameError: name 'imgcode_fit' is not defined
 
+1634296424959
+1634371212995
+Traceback (most recent call last):
+  File "/home/pi/Documents/Github/cocoa-getinfo/webupdate_notify.py", line 104, in <module>
+    cocoa_analysis_holiday.main_process()
+  File "/home/pi/Documents/Github/cocoa-getinfo/cocoa_analysis_holiday.py", line 20, in main_process
+
+    cocoa_wordsearch_datapush.search_and_push(0)
+  File "/home/pi/Documents/Github/cocoa-getinfo/sub_sys/cocoa_wordsearch_datapush.py", line 69, in search_and_push
+
+    f1 = str(f[0])
+IndexError: list index out of range
+

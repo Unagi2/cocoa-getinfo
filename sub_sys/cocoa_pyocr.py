@@ -32,6 +32,8 @@ def py_ocr():
     img_in = Image.open(file_name_dy)
     #img_out = img_in.crop((55, 70, 320, 160)) #50,50,320,160
     #img_out = img_in.crop((917, 120,  965, 198)) #x1,y1,x2,y2
+    #img_in = img_in.thumbnail((1230, 824),resample=Image.LANCZOS)
+    img_in = img_in.resize((1230, 824))
     img = img_in.crop((1120, 189,  1176, 650)) 
     #img = img_out.resize((430,800), resample=Image.LANCZOS) #270*110
     
