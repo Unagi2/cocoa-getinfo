@@ -2553,3 +2553,19 @@ Traceback (most recent call last):
     fp = builtins.open(filename, "rb")
 FileNotFoundError: [Errno 2] No such file or directory: '/home/pi/Documents/Github/cocoa-getinfo/getIMG_pool/cocoa_info_20211022.png'
 
+1634899062094
+1634976012464
+Traceback (most recent call last):
+  File "/home/pi/Documents/Github/cocoa-getinfo/webupdate_notify.py", line 104, in <module>
+
+    cocoa_analysis_holiday.main_process()
+  File "/home/pi/Documents/Github/cocoa-getinfo/cocoa_analysis_holiday.py", line 17, in main_process
+    cocoa_pyocr.py_ocr()
+  File "/home/pi/Documents/Github/cocoa-getinfo/sub_sys/cocoa_pyocr.py", line 32, in py_ocr
+
+    img_in = Image.open(file_name_dy)
+  File "/home/pi/.local/lib/python3.7/site-packages/PIL/Image.py", line 2904, in open
+
+    fp = builtins.open(filename, "rb")
+FileNotFoundError: [Errno 2] No such file or directory: '/home/pi/Documents/Github/cocoa-getinfo/getIMG_pool/cocoa_info_20211023.png'
+
