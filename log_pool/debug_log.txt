@@ -2584,3 +2584,70 @@ Traceback (most recent call last):
     fp = builtins.open(filename, "rb")
 FileNotFoundError: [Errno 2] No such file or directory: '/home/pi/Documents/Github/cocoa-getinfo/getIMG_pool/cocoa_info_20211024.png'
 
+1635148812976
+Traceback (most recent call last):
+  File "/home/pi/Documents/Github/cocoa-getinfo/cocoa_analysis_holiday.py", line 26, in <module>
+
+    main_process()
+  File "/home/pi/Documents/Github/cocoa-getinfo/cocoa_analysis_holiday.py", line 17, in main_process
+    cocoa_pyocr.py_ocr()
+  File "/home/pi/Documents/Github/cocoa-getinfo/sub_sys/cocoa_pyocr.py", line 32, in py_ocr
+    img_in = Image.open(file_name_dy)
+  File "/home/pi/.local/lib/python3.7/site-packages/PIL/Image.py", line 2904, in open
+
+    fp = builtins.open(filename, "rb")
+FileNotFoundError: [Errno 2] No such file or directory: '/home/pi/Documents/Github/cocoa-getinfo/getIMG_pool/cocoa_info_20211025.png'
+
+1635235212827
+Traceback (most recent call last):
+  File "/home/pi/Documents/Github/cocoa-getinfo/cocoa_analysis_holiday.py", line 26, in <module>
+
+    main_process()
+  File "/home/pi/Documents/Github/cocoa-getinfo/cocoa_analysis_holiday.py", line 17, in main_process
+    cocoa_pyocr.py_ocr()
+  File "/home/pi/Documents/Github/cocoa-getinfo/sub_sys/cocoa_pyocr.py", line 32, in py_ocr
+    img_in = Image.open(file_name_dy)
+  File "/home/pi/.local/lib/python3.7/site-packages/PIL/Image.py", line 2904, in open
+
+    fp = builtins.open(filename, "rb")
+FileNotFoundError: [Errno 2] No such file or directory: '/home/pi/Documents/Github/cocoa-getinfo/getIMG_pool/cocoa_info_20211026.png'
+
+1635321612774
+Traceback (most recent call last):
+  File "/home/pi/Documents/Github/cocoa-getinfo/cocoa_analysis_holiday.py", line 26, in <module>
+
+    main_process()
+  File "/home/pi/Documents/Github/cocoa-getinfo/cocoa_analysis_holiday.py", line 17, in main_process
+    cocoa_pyocr.py_ocr()
+  File "/home/pi/Documents/Github/cocoa-getinfo/sub_sys/cocoa_pyocr.py", line 32, in py_ocr
+    img_in = Image.open(file_name_dy)
+  File "/home/pi/.local/lib/python3.7/site-packages/PIL/Image.py", line 2904, in open
+
+    fp = builtins.open(filename, "rb")
+FileNotFoundError: [Errno 2] No such file or directory: '/home/pi/Documents/Github/cocoa-getinfo/getIMG_pool/cocoa_info_20211027.png'
+
+1635408012350
+Traceback (most recent call last):
+  File "/home/pi/Documents/Github/cocoa-getinfo/cocoa_analysis_holiday.py", line 26, in <module>
+
+    main_process()
+  File "/home/pi/Documents/Github/cocoa-getinfo/cocoa_analysis_holiday.py", line 17, in main_process
+    cocoa_pyocr.py_ocr()
+  File "/home/pi/Documents/Github/cocoa-getinfo/sub_sys/cocoa_pyocr.py", line 32, in py_ocr
+    img_in = Image.open(file_name_dy)
+  File "/home/pi/.local/lib/python3.7/site-packages/PIL/Image.py", line 2904, in open
+
+    fp = builtins.open(filename, "rb")
+FileNotFoundError: [Errno 2] No such file or directory: '/home/pi/Documents/Github/cocoa-getinfo/getIMG_pool/cocoa_info_20211028.png'
+
+1635494412297
+Traceback (most recent call last):
+  File "/home/pi/Documents/Github/cocoa-getinfo/webupdate_notify.py", line 85, in <module>
+
+    cocoa_analysis.main_process()
+  File "/home/pi/Documents/Github/cocoa-getinfo/cocoa_analysis.py", line 23, in main_process
+    cocoa_wordsearch_datapush.search_and_push(1)
+  File "/home/pi/Documents/Github/cocoa-getinfo/sub_sys/cocoa_wordsearch_datapush.py", line 69, in search_and_push
+    f1 = str(f[0])
+IndexError: list index out of range
+
