@@ -2675,3 +2675,58 @@ Traceback (most recent call last):
     f1 = str(f[0])
 IndexError: list index out of range
 
+1635753612949
+Traceback (most recent call last):
+  File "/home/pi/Documents/Github/cocoa-getinfo/cocoa_analysis_holiday.py", line 26, in <module>
+    main_process()
+  File "/home/pi/Documents/Github/cocoa-getinfo/cocoa_analysis_holiday.py", line 20, in main_process
+
+    cocoa_wordsearch_datapush.search_and_push(0)
+  File "/home/pi/Documents/Github/cocoa-getinfo/sub_sys/cocoa_wordsearch_datapush.py", line 69, in search_and_push
+    f1 = str(f[0])
+IndexError: list index out of range
+
+1635840012867
+Traceback (most recent call last):
+  File "/home/pi/Documents/Github/cocoa-getinfo/cocoa_analysis_holiday.py", line 26, in <module>
+    main_process()
+  File "/home/pi/Documents/Github/cocoa-getinfo/cocoa_analysis_holiday.py", line 20, in main_process
+
+    cocoa_wordsearch_datapush.search_and_push(0)
+  File "/home/pi/Documents/Github/cocoa-getinfo/sub_sys/cocoa_wordsearch_datapush.py", line 69, in search_and_push
+    f1 = str(f[0])
+IndexError: list index out of range
+
+1635926412781
+Traceback (most recent call last):
+  File "/home/pi/Documents/Github/cocoa-getinfo/cocoa_analysis_holiday.py", line 26, in <module>
+    main_process()
+  File "/home/pi/Documents/Github/cocoa-getinfo/cocoa_analysis_holiday.py", line 20, in main_process
+
+    cocoa_wordsearch_datapush.search_and_push(0)
+  File "/home/pi/Documents/Github/cocoa-getinfo/sub_sys/cocoa_wordsearch_datapush.py", line 69, in search_and_push
+    f1 = str(f[0])
+IndexError: list index out of range
+
+1636012812756
+Traceback (most recent call last):
+  File "/home/pi/Documents/Github/cocoa-getinfo/cocoa_analysis_holiday.py", line 26, in <module>
+    main_process()
+  File "/home/pi/Documents/Github/cocoa-getinfo/cocoa_analysis_holiday.py", line 20, in main_process
+
+    cocoa_wordsearch_datapush.search_and_push(0)
+  File "/home/pi/Documents/Github/cocoa-getinfo/sub_sys/cocoa_wordsearch_datapush.py", line 69, in search_and_push
+    f1 = str(f[0])
+IndexError: list index out of range
+
+1636099212576
+Traceback (most recent call last):
+  File "/home/pi/Documents/Github/cocoa-getinfo/webupdate_notify.py", line 85, in <module>
+    cocoa_analysis.main_process()
+
+  File "/home/pi/Documents/Github/cocoa-getinfo/cocoa_analysis.py", line 23, in main_process
+    cocoa_wordsearch_datapush.search_and_push(1)
+  File "/home/pi/Documents/Github/cocoa-getinfo/sub_sys/cocoa_wordsearch_datapush.py", line 197, in search_and_push
+    ffound = int(re.sub("\\D", "", found))
+ValueError: invalid literal for int() with base 10: ''
+
