@@ -5419,3 +5419,59 @@ Traceback (most recent call last):
     img_select = img_select[0].attrs['src']
 IndexError: list index out of range
 
+1656316812851
+Traceback (most recent call last):
+  File "/home/pi/Documents/Github/cocoa-getinfo/cocoa_analysis_holiday.py", line 26, in <module>
+    main_process()
+  File "/home/pi/Documents/Github/cocoa-getinfo/cocoa_analysis_holiday.py", line 14, in main_process
+    cocoa_fetch.fetch_image()
+  File "/home/pi/Documents/Github/cocoa-getinfo/sub_sys/cocoa_fetch.py", line 50, in fetch_image
+
+    img_select = img_select[0].attrs['src']
+IndexError: list index out of range
+
+1656403213195
+Traceback (most recent call last):
+  File "/home/pi/Documents/Github/cocoa-getinfo/cocoa_analysis_holiday.py", line 26, in <module>
+
+    main_process()
+  File "/home/pi/Documents/Github/cocoa-getinfo/cocoa_analysis_holiday.py", line 14, in main_process
+    cocoa_fetch.fetch_image()
+  File "/home/pi/Documents/Github/cocoa-getinfo/sub_sys/cocoa_fetch.py", line 50, in fetch_image
+    img_select = img_select[0].attrs['src']
+IndexError: list index out of range
+
+1656489612474
+Traceback (most recent call last):
+  File "/home/pi/Documents/Github/cocoa-getinfo/cocoa_analysis_holiday.py", line 26, in <module>
+
+    main_process()
+  File "/home/pi/Documents/Github/cocoa-getinfo/cocoa_analysis_holiday.py", line 14, in main_process
+    cocoa_fetch.fetch_image()
+  File "/home/pi/Documents/Github/cocoa-getinfo/sub_sys/cocoa_fetch.py", line 50, in fetch_image
+    img_select = img_select[0].attrs['src']
+IndexError: list index out of range
+
+1656576012635
+Traceback (most recent call last):
+  File "/home/pi/Documents/Github/cocoa-getinfo/cocoa_analysis_holiday.py", line 26, in <module>
+
+    main_process()
+  File "/home/pi/Documents/Github/cocoa-getinfo/cocoa_analysis_holiday.py", line 14, in main_process
+    cocoa_fetch.fetch_image()
+  File "/home/pi/Documents/Github/cocoa-getinfo/sub_sys/cocoa_fetch.py", line 50, in fetch_image
+    img_select = img_select[0].attrs['src']
+IndexError: list index out of range
+
+1656662412815
+Traceback (most recent call last):
+  File "/home/pi/Documents/Github/cocoa-getinfo/webupdate_notify.py", line 85, in <module>
+
+    cocoa_analysis.main_process()
+  File "/home/pi/Documents/Github/cocoa-getinfo/cocoa_analysis.py", line 17, in main_process
+    cocoa_fetch.fetch_image()
+  File "/home/pi/Documents/Github/cocoa-getinfo/sub_sys/cocoa_fetch.py", line 50, in fetch_image
+
+    img_select = img_select[0].attrs['src']
+IndexError: list index out of range
+
